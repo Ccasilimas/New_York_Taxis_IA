@@ -17,38 +17,22 @@ Este proyecto tiene como finalidad asesorar a una empresa de transporte de pasaj
 - **Data Scientist**: Encargado de desarrollar modelos predictivos y sistemas de recomendación.
 
 ## Cronograma de Trabajo
-### Semana 1: Investigación y Recopilación de Datos
-| Día       | Actividad                                                                              | Responsable           |
-|-----------|----------------------------------------------------------------------------------------|------------------------|
-| Lunes     | Reunión de lanzamiento, definición de objetivos y alcance                              | Todo el equipo        |
-| Martes    | Recolección de datos de movilidad de taxis en NYC: Utilizar fuentes como NYC TLC       | Analista de Datos 1   |
-| Miércoles | Recolección de datos ambientales: Emisiones de CO₂, calidad del aire, contaminación sonora | Analista de Datos 2   |
-| Jueves    | Investigación de infraestructura: Disponibilidad y ubicación de estaciones de carga    | Ingeniero de Datos    |
-| Viernes   | Análisis Exploratorio de Datos (EDA): Limpieza y preparación de datos, visualizaciones iniciales | Todo el equipo |
-| Sábado    | Documentación de hallazgos preliminares: Preparación de resumen para el Product Owner (PO) | Todo el equipo |
-| Domingo   | Descanso: Revisión individual de avances y planificación personal                      | -                      |
 
-### Semana 2: Análisis y Evaluación de Datos
-| Día       | Actividad                                                                  | Responsable         |
-|-----------|----------------------------------------------------------------------------|----------------------|
-| Lunes     | Presentación al PO: Exposición de avances, retroalimentación y alineación de objetivos | Todo el equipo      |
-| Martes    | Análisis de movilidad: Identificación de zonas y horarios de alta demanda  | Analista de Datos 1 |
-| Miércoles | Evaluación de emisiones: Análisis de rutas para reducción de CO₂ y consumo de combustible | Analista de Datos 2 |
-| Jueves    | Desarrollo del pipeline de datos: Implementación de procesos ETL, aseguramiento de calidad de datos | Ingeniero de Datos |
-| Viernes   | Desarrollo del sistema de recomendación: Aplicación de técnicas de Machine Learning | Data Scientist |
-| Sábado    | Validación y ajuste de modelos: Pruebas y optimizaciones necesarias        | Data Scientist      |
-| Domingo   | Documentación: Registro detallado de metodologías y resultados             | Todo el equipo      |
 
-### Semana 3: Consolidación y Presentación Final
-| Día       | Actividad                                                                | Responsable          |
-|-----------|--------------------------------------------------------------------------|-----------------------|
-| Lunes     | Integración de resultados: Consolidación de análisis y modelos desarrollados | Analistas y Data Scientist |
-| Martes    | Optimización del pipeline de datos: Mejoras en eficiencia y escalabilidad | Ingeniero de Datos   |
-| Miércoles | Preparación de informes: Redacción del informe final con hallazgos clave y recomendaciones estratégicas | Todo el equipo |
-| Jueves    | Diseño de presentación: Creación de una presentación atractiva y efectiva para stakeholders | Todo el equipo |
-| Viernes   | Ensayo de presentación: Práctica y refinamiento de la exposición         | Todo el equipo       |
-| Sábado    | Presentación final: Exposición a inversores y directivos, con espacio para preguntas y retroalimentación | Todo el equipo |
-| Domingo   | Planificación de pasos siguientes: Ajustes basados en feedback y definición de etapas futuras | Todo el equipo |
+# Calendario del Proyecto: Implementación de Vehículos Ambientalmente Amigables en Nueva York
+
+## Fases del Proyecto
+
+| Fase del Proyecto           | Actividades Principales                                                         | Responsable         | Duración   | Fechas                          |
+|-----------------------------|----------------------------------------------------------------------------------|---------------------|------------|----------------------------------|
+| **Fase 1: Recopilación de Datos**  | - Identificación de fuentes de datos <br> - Recolección de datasets              | Gustavo             | 2 días     | 4 - 5 de Noviembre de 2024      |
+| **Fase 2: Preparación de Datos**   | - Limpieza de datos <br> - Selección de características <br> - Integración de datasets | Gustavo             | 4 días     | 6 - 9 de Noviembre de 2024      |
+| **Fase 3: Análisis Exploratorio**  | - Análisis descriptivo <br> - Visualización inicial de datos                     | Vera                | 3 días     | 10 - 12 de Noviembre de 2024    |
+| **Fase 4: Modelado Predictivo**    | - Desarrollo de modelos <br> - Validación de modelos                            | Camilo              | 5 días     | 13 - 17 de Noviembre de 2024    |
+| **Fase 5: Optimización de Rutas**  | - Algoritmos de optimización <br> - Evaluación de rutas optimizadas              | Camilo y Gustavo    | 3 días     | 18 - 20 de Noviembre de 2024    |
+| **Fase 6: Evaluación Ambiental**   | - Análisis de emisiones <br> - Evaluación de impacto ambiental                   | Alberto             | 1 día      | 21 de Noviembre de 2024         |
+| **Fase 7: Generación de Informes** | - Preparación de informes visuales <br> - Presentación de resultados             | Vera                | 1 día      | 22 de Noviembre de 2024         |
+
 
 ## Entregables
 - **Informe Final**: Documento detallado con análisis, metodología, hallazgos y recomendaciones.
@@ -101,17 +85,3 @@ Para contribuir al proyecto, sigue estos pasos:
 
 ## Licencia
 Este proyecto se encuentra bajo la Licencia MIT - ver el archivo LICENSE para más detalles.
-
-# Calendario del Proyecto: Implementación de Vehículos Ambientalmente Amigables en Nueva York
-
-## Fases del Proyecto
-
-| Fase del Proyecto           | Actividades Principales                                                         | Responsable         | Duración   | Fechas                          |
-|-----------------------------|----------------------------------------------------------------------------------|---------------------|------------|----------------------------------|
-| **Fase 1: Recopilación de Datos**  | - Identificación de fuentes de datos <br> - Recolección de datasets              | Gustavo             | 2 días     | 4 - 5 de Noviembre de 2024      |
-| **Fase 2: Preparación de Datos**   | - Limpieza de datos <br> - Selección de características <br> - Integración de datasets | Gustavo             | 4 días     | 6 - 9 de Noviembre de 2024      |
-| **Fase 3: Análisis Exploratorio**  | - Análisis descriptivo <br> - Visualización inicial de datos                     | Vera                | 3 días     | 10 - 12 de Noviembre de 2024    |
-| **Fase 4: Modelado Predictivo**    | - Desarrollo de modelos <br> - Validación de modelos                            | Camilo              | 5 días     | 13 - 17 de Noviembre de 2024    |
-| **Fase 5: Optimización de Rutas**  | - Algoritmos de optimización <br> - Evaluación de rutas optimizadas              | Camilo y Gustavo    | 3 días     | 18 - 20 de Noviembre de 2024    |
-| **Fase 6: Evaluación Ambiental**   | - Análisis de emisiones <br> - Evaluación de impacto ambiental                   | Alberto             | 1 día      | 21 de Noviembre de 2024         |
-| **Fase 7: Generación de Informes** | - Preparación de informes visuales <br> - Presentación de resultados             | Vera                | 1 día      | 22 de Noviembre de 2024         |
