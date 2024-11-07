@@ -101,3 +101,17 @@ Para contribuir al proyecto, sigue estos pasos:
 
 ## Licencia
 Este proyecto se encuentra bajo la Licencia MIT - ver el archivo LICENSE para más detalles.
+
+# Calendario del Proyecto: Implementación de Vehículos Ambientalmente Amigables en Nueva York
+
+## Fases del Proyecto
+
+| Fase del Proyecto           | Actividades Principales                                                         | Responsable         | Duración   | Fechas                          |
+|-----------------------------|----------------------------------------------------------------------------------|---------------------|------------|----------------------------------|
+| **Fase 1: Recopilación de Datos**  | - Identificación de fuentes de datos <br> - Recolección de datasets              | Gustavo             | 2 días     | 4 - 5 de Noviembre de 2024      |
+| **Fase 2: Preparación de Datos**   | - Limpieza de datos <br> - Selección de características <br> - Integración de datasets | Gustavo             | 4 días     | 6 - 9 de Noviembre de 2024      |
+| **Fase 3: Análisis Exploratorio**  | - Análisis descriptivo <br> - Visualización inicial de datos                     | Vera                | 3 días     | 10 - 12 de Noviembre de 2024    |
+| **Fase 4: Modelado Predictivo**    | - Desarrollo de modelos <br> - Validación de modelos                            | Camilo              | 5 días     | 13 - 17 de Noviembre de 2024    |
+| **Fase 5: Optimización de Rutas**  | - Algoritmos de optimización <br> - Evaluación de rutas optimizadas              | Camilo y Gustavo    | 3 días     | 18 - 20 de Noviembre de 2024    |
+| **Fase 6: Evaluación Ambiental**   | - Análisis de emisiones <br> - Evaluación de impacto ambiental                   | Alberto             | 1 día      | 21 de Noviembre de 2024         |
+| **Fase 7: Generación de Informes** | - Preparación de informes visuales <br> - Presentación de resultados             | Vera                | 1 día      | 22 de Noviembre de 2024         |
