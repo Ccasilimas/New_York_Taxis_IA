@@ -138,3 +138,41 @@
 - **Planificación de Flota**: Determinar qué modelos de vehículos eléctricos son más adecuados para la flota en términos de autonomía y eficiencia.
 - **Reducción de Costos**: Analizar el potencial de reducción de costos operativos mediante la adopción de vehículos eléctricos.
 
+# 9. Dataset de For Hire Vehicles (FHV) Activos
+
+## Descripción del Contenido
+Este dataset contiene información sobre los vehículos for hire (FHV) activos en Nueva York, autorizados por la Taxi and Limousine Commission (TLC). Incluye detalles sobre el estado del permiso, el número de licencia del vehículo, el tipo de vehículo, y datos del propietario y la base.
+
+## Columnas Incluidas:
+- **Active**: Indica si el permiso está activo (`YES`) o no (`NO`).
+- **Vehicle License Number**: Número de licencia del vehículo FHV.
+- **License Type**: Tipo de licencia TLC (FOR HIRE VEHICLE).
+- **Vehicle VIN Number**: Número de Identificación del Vehículo (VIN).
+- **Wheelchair Accessible**: Indicador de accesibilidad para sillas de ruedas (`WAV` o vacío).
+- **Vehicle Year**: Año del vehículo.
+- **Base Type**: Tipo de base (`LIVERY`, `LUXURY`, `COMMUNITY CAR`, `VAN`, `PARATRANSIT`).
+- **VEH**: Indicador de vehículo híbrido (`HYB`).
+- **Last Date Updated**: Última fecha de actualización.
+- **Last Time Updated**: Última hora de actualización.
+
+## Columnas Irrelevantes para el Proyecto:
+- **Name**: Nombre del propietario.
+- **Expiration Date**: Fecha de vencimiento del permiso.
+- **Permit License Number**: Número de permiso.
+- **DMV License Plate Number**: Número de placa DMV.
+- **Certification Date**: Fecha de certificación.
+- **Hack Up Date**: Fecha de puesta en servicio.
+- **Base Number**: Número de la base.
+- **Base Name**: Nombre de la base.
+- **Base Telephone Number**: Número de teléfono de la base.
+- **Website**: Página web de la base.
+- **Base Address**: Dirección de la base.
+- **Reason**: Código de razón (`G` si activo, `A`, `B`, `C` o combinación si no activo).
+- **Order Date**: Fecha de orden de suspensión.
+
+## Utilidad del Dataset:
+- **Análisis Comparativo**: Permite comparar la eficiencia operativa y las emisiones entre diferentes tipos de vehículos, incluyendo taxis y FHVs.
+- **Evaluación de Sostenibilidad**: Ayuda a analizar la proporción de vehículos híbridos (`HYB`) y accesibles para sillas de ruedas (`WAV`), crucial para iniciativas de sostenibilidad y accesibilidad.
+- **Estado de Permisos**: Utiliza la información sobre el estado del permiso (`Active`) para identificar y anali
+
+
