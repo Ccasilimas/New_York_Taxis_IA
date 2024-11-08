@@ -15,6 +15,27 @@ Este proyecto tiene como finalidad asesorar a una empresa de transporte de pasaj
 - **Ingeniero de Datos**: Responsable de construir y mantener el pipeline de datos.
 - **Data Scientist**: Encargado de desarrollar modelos predictivos y sistemas de recomendación.
 
+## Indicadores Clave de Rendimiento (KPI)
+
+## 1. Reducción de Emisiones de CO₂ por Viaje
+
+**Descripción**: Mide la cantidad de dióxido de carbono emitido por cada viaje realizado por la flota.
+
+**Meta**: Disminuir las emisiones de CO₂ por viaje en un 20% cada mes.
+
+## 2. Eficiencia de Combustible de la Flota
+
+**Descripción**: Evalúa la cantidad de kilómetros recorridos por litro de combustible (o su equivalente en energía para vehículos eléctricos).
+
+**Meta**: Incrementar la eficiencia de combustible en un 15% cada mes.
+
+## 3. Optimización del Tiempo de Viaje
+
+**Descripción**: Analiza el tiempo promedio de viaje de los vehículos.
+
+**Meta**: Reducir el tiempo promedio de viaje en un 10% cada mes.
+
+
 ## Cronograma de Trabajo
 
 
