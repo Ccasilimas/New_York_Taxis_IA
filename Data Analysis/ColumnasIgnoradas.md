@@ -1,4 +1,4 @@
-# README - Columnas No Utilizadas en los Datasets del Proyecto
+# Columnas No Utilizadas en los Datasets del Proyecto
 
 ## Dataset de Medallions
 ### Columnas No Utilizadas:
