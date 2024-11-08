@@ -1,71 +1,57 @@
-# Columnas No Utilizadas en los Datasets del Proyecto
+# Descripción y Utilidad de los Datasets del Proyecto
 
-## Dataset de Medallions
-### Columnas No Utilizadas:
-- **Vehicle VIN Number**
-  - **Razón**: No es necesario para los análisis de emisiones, costos operativos o predicciones de tarifas.
-- **Last Date Updated**
-  - **Razón**: Esta columna solo indica la última fecha de actualización y no aporta valor al análisis de datos históricos o predictivos.
-- **Last Time Updated**
-  - **Razón**: Similar a la columna anterior, esta columna no es relevante para nuestros objetivos de análisis.
+## 1. Dataset de Especificaciones de Vehículos de Gasolina
+**Descripción del Contenido**: Este dataset contiene información detallada sobre las especificaciones de vehículos que utilizan gasolina. Incluye datos como el año del modelo, el fabricante, el modelo, la eficiencia de combustible combinada y las emisiones de CO₂.
 
-## Dataset de Taxis Amarillos y Verdes
-### Columnas No Utilizadas:
-- **store_and_fwd_flag**
-  - **Razón**: Esta columna indica si los datos del viaje fueron almacenados antes de ser enviados, lo cual no es relevante para el análisis de emisiones o eficiencia.
-- **RatecodeID**
-  - **Razón**: Aunque describe el tipo de tarifa, no es fundamental para nuestros análisis de emisiones y eficiencia operativa.
-- **extra**
-  - **Razón**: Representa cargos adicionales, que no son críticos para el análisis de rendimiento del vehículo y rutas.
-- **mta_tax**
-  - **Razón**: Impuesto de la Autoridad de Transporte Metropolitano, no relevante para análisis operativos.
-- **tolls_amount**
-  - **Razón**: Monto de peajes, que no es necesario para el análisis de rutas y emisiones.
-- **improvement_surcharge**
-  - **Razón**: Cargos de mejora, no pertinentes para el análisis de eficiencia y sostenibilidad.
+**Columnas Incluidas**:
+- **Year**: Año del modelo del vehículo.
+- **Manufacturer**: Fabricante del vehículo.
+- **Model**: Modelo del vehículo.
+- **fuelType**: Tipo de combustible (Gasolina).
+- **comb08**: Eficiencia de combustible combinada.
+- **co2**: Emisiones de CO₂.
 
-## Dataset de For-Hire Vehicles (FHV) Activos
-### Columnas No Utilizadas:
-- **Base Name**
-  - **Razón**: El nombre de la base del vehículo no es relevante para el análisis de rendimiento operativo o de emisiones.
-- **Wheelchair Accessible**
-  - **Razón**: Aunque importante para la accesibilidad, esta columna no afecta directamente los análisis de eficiencia de combustible y emisiones de CO₂.
-- **Base Number**
-  - **Razón**: Similar a Base Name, no tiene relevancia directa para los análisis operativos y ambientales.
+**Utilidad del Dataset**:
+- **Análisis de Eficiencia**: Evaluar la eficiencia de los vehículos de gasolina en comparación con los vehículos eléctricos.
+- **Emisiones de CO₂**: Comparar las emisiones de CO₂ de los vehículos de gasolina con las de los vehículos eléctricos para analizar el impacto ambiental.
+- **Optimización de Flota**: Ayudar a determinar qué vehículos de gasolina pueden ser reemplazados por eléctricos para mejorar la sostenibilidad.
 
-## Dataset de Tráfico
-### Columnas No Utilizadas:
-- **boro**
-  - **Razón**: Aunque útil para segmentar datos por distrito, no es crítico para los análisis de optimización de rutas y emisiones.
-- **yr**
-  - **Razón**: La columna año puede ser redundante si ya estamos analizando por meses y días específicos.
-- **HH**
-  - **Razón**: La hora específica puede no ser necesaria para todos los análisis, dependiendo del enfoque en tendencias diarias completas.
+## 2. Dataset de Medallions Activos en Nueva York
+**Descripción del Contenido**: Este dataset contiene información sobre los medallions activos en Nueva York, que representan licencias de operación para taxis. Incluye detalles como el número de licencia, el número de VIN del vehículo, el tipo de vehículo y el año del modelo.
 
-## Dataset de Emisiones de CO₂
-### Columnas No Utilizadas:
-- **geo_place_name**
-  - **Razón**: La granularidad de ubicación por nombre puede no ser esencial si ya estamos segmentando por áreas más grandes o tiempo.
-- **measurement_method**
-  - **Razón**: El método de medición puede no ser relevante si solo estamos interesados en los valores de emisión.
+**Columnas Incluidas**:
+- **License Number**: Número de licencia del medallón.
+- **Vehicle VIN Number**: Número de Identificación del Vehículo (VIN).
+- **Vehicle Type**: Tipo de vehículo (por ejemplo, eléctrico, híbrido).
+- **Model Year**: Año del modelo del vehículo.
+- **Last Date Updated**: Fecha de la última actualización de la información.
+- **Last Time Updated**: Hora de la última actualización de la información.
 
-## Dataset de Especificaciones de Vehículos
-### Columnas No Utilizadas:
-- **Manufacturer**
-  - **Razón**: La marca del fabricante no es crucial para el análisis de eficiencia operativa y emisiones.
-- **Model**
-  - **Razón**: El modelo específico no es necesario si ya estamos segmentando por tipo y año del vehículo.
+**Utilidad del Dataset**:
+- **Identificación de Vehículos**: Permitir el mapeo de viajes a vehículos específicos mediante el número de licencia y VIN.
+- **Análisis de Flota**: Evaluar la composición de la flota de taxis en términos de tipos y años de vehículos.
+- **Actualización de Datos**: Mantener actualizada la base de datos con información relevante sobre los vehículos operativos.
 
-## Dataset de Vehículos de Combustible Alternativo en EE.UU.
-### Columnas No Utilizadas:
-- **Category**
-  - **Razón**: La categoría del vehículo puede no ser relevante si ya estamos segmentando por tipo de combustible y año del modelo.
-- **Transmission Type**
-  - **Razón**: El tipo de transmisión no afecta directamente las emisiones y eficiencia del combustible en el contexto de nuestro análisis.
+## 3. Dataset de Viajes en Taxis Amarillos y Verdes
+**Descripción del Contenido**: Este dataset contiene datos de viajes realizados por taxis amarillos y verdes en Nueva York. Incluye información detallada sobre cada viaje, como la fecha y hora de recogida, la ubicación de recogida y destino, la distancia del viaje, el número de pasajeros y el monto total del viaje.
 
-## Dataset de Vehículos Eléctricos
-### Columnas No Utilizadas:
-- **PriceEuro**
-  - **Razón**: El precio en euros no es relevante para nuestros análisis en Nueva York y el rendimiento operativo del vehículo.
-- **RapidCharge**
-  - **Razón**: Aunque interesante, la capacidad de carga rápida puede no ser esencial para nuestros análisis de rutas y emisiones.
+**Columnas Incluidas**:
+- **pickup_datetime**: Fecha y hora de recogida.
+- **PULocationID**: ID de ubicación de recogida.
+- **DOLocationID**: ID de ubicación de destino.
+- **trip_distance**: Distancia del viaje (en millas).
+- **passenger_count**: Número de pasajeros.
+- **fare_amount**: Monto de la tarifa básica del viaje.
+- **total_amount**: Monto total del viaje.
+- **store_and_fwd_flag**: Indicador si los datos del viaje fueron almacenados antes de ser enviados.
+- **RatecodeID**: Código de la tarifa aplicada.
+- **extra**: Cargos adicionales.
+- **mta_tax**: Impuesto de la Autoridad de Transporte Metropolitano.
+- **tolls_amount**: Monto de peajes.
+- **improvement_surcharge**: Cargos de mejora.
+
+**Utilidad del Dataset**:
+- **Análisis de Demanda**: Identificar patrones de demanda y analizar las tendencias de viajes en diferentes zonas y horarios.
+- **Optimización de Rutas**: Utilizar datos de ubicaciones de recogida y destino para optimizar rutas y reducir tiempos de viaje.
+- **Predicción de Tarifas**: Implementar modelos predictivos para estimar el monto total de los viajes.
+- **Evaluación de Eficiencia Operativa**: Analizar la distancia y duración de los viajes para mejorar la eficiencia de la flota.
