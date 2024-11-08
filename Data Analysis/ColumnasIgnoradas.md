@@ -68,3 +68,4 @@
 - **PriceEuro**
   - **Razón**: El precio en euros no es relevante para nuestros análisis en Nueva York y el rendimiento operativo del vehículo.
 - **RapidCharge**
+  - **Razón**: Aunque interesante, la capacidad de carga rápida puede no ser esencial para nuestros análisis de rutas y emisiones.
