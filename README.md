@@ -77,13 +77,6 @@ Este proyecto tiene como finalidad asesorar a una empresa de transporte de pasaj
 - **Inconsistencias en datos**: Implementar validaciones rigurosas y limpieza exhaustiva.
 - **Cambios en requerimientos**: Mantener comunicación constante con el PO para adaptar el alcance de manera oportuna.
 
-## Contacto
-- **Product Owner (PO)**: [Nombre del PO] - [Correo electrónico]
-- **Equipo Técnico**:
-  - Analista de Datos 1: [Nombre] - [Contacto]
-  - Analista de Datos 2: [Nombre] - [Contacto]
-  - Ingeniero de Datos: [Nombre] - [Contacto]
-  - Data Scientist: [Nombre] - [Contacto]
 
 ## Cómo Contribuir
 Para contribuir al proyecto, sigue estos pasos:
