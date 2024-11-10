@@ -18,9 +18,6 @@ Este proyecto tiene como finalidad asesorar a una empresa de transporte de pasaj
 
 ## Indicadores Clave de Rendimiento (KPI)
 
-![Descripción de la imagen](img/cargaelectrica.jpg)
-
-
 ## 1. Reducción de Emisiones de CO₂ por Viaje
 
 **Descripción**: Mide la cantidad de dióxido de carbono emitido por cada viaje realizado por la flota.
