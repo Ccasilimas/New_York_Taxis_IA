@@ -15,14 +15,25 @@ Este proyecto tiene como finalidad asesorar a una empresa de transporte de pasaj
 - **Analistas de Datos**: 2 profesionales encargados del análisis de movilidad y emisiones.
 - **Ingeniero de Datos**: Responsable de construir y mantener el pipeline de datos.
 - **Data Scientist**: Encargado de desarrollar modelos predictivos y sistemas de recomendación.
-![Descripción de la imagen](img/cargaelectrica.jpg)
-## Indicadores Clave de Rendimiento (KPI)
 
-## 1. Reducción de Emisiones de CO₂ por Viaje
 
-**Descripción**: Mide la cantidad de dióxido de carbono emitido por cada viaje realizado por la flota.
+<div style="display: flex; justify-content: space-between;">
 
-**Meta**: Disminuir las emisiones de CO₂ por viaje en un 20% cada mes.
+<div style="flex: 1; margin-right: 10px;">
+    ![Descripción de la imagen](img/cargaelectrica.jpg)
+</div>
+
+<div style="flex: 1; margin-left: 10px;">
+    ## Indicadores Clave de Rendimiento (KPI)
+
+    ## 1. Reducción de Emisiones de CO₂ por Viaje
+
+    **Descripción**: Mide la cantidad de dióxido de carbono emitido por cada viaje realizado por la flota.
+
+    **Meta**: Disminuir las emisiones de CO₂ por viaje en un 20% cada mes.
+</div>
+
+</div>
 
 ## 2. Eficiencia de Combustible de la Flota
 
