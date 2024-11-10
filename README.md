@@ -1,4 +1,3 @@
-# Proyecto_final_Henry
 # Implementación de Vehículos Ambientalmente Amigables en Nueva York
 
 ## Descripción General
