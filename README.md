@@ -12,9 +12,12 @@ Este proyecto tiene como finalidad asesorar a una empresa de transporte de pasaj
 - **Generación de Informes para Decisiones Estratégicas**: Crear informes detallados que faciliten una toma de decisiones informada.
 
 ## Equipo del Proyecto
-- **Analistas de Datos**: 2 profesionales encargados del análisis de movilidad y emisiones.
-- **Ingeniero de Datos**: Responsable de construir y mantener el pipeline de datos.
-- **Data Scientist**: Encargado de desarrollar modelos predictivos y sistemas de recomendación.
+
+- **Vera Guillen** - Analista de Datos 
+- **Gustavo Coello** - Ingeniero de Datos
+- **Camilo Casilimas** - Científico de Datos
+- **Alberto Bernal** - Científico de Datos
+recomendación.
 
 ## Indicadores Clave de Rendimiento (KPI)
 
@@ -77,6 +80,8 @@ Este proyecto tiene como finalidad asesorar a una empresa de transporte de pasaj
 - **Retrasos en la obtención de datos**: Identificar fuentes alternativas y priorizar datasets críticos.
 - **Inconsistencias en datos**: Implementar validaciones rigurosas y limpieza exhaustiva.
 - **Cambios en requerimientos**: Mantener comunicación constante con el PO para adaptar el alcance de manera oportuna.
+
+## Contacto ##
 
 
 ## Cómo Contribuir
