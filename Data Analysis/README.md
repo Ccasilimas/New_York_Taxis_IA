@@ -177,7 +177,7 @@ Este dataset contiene información sobre los vehículos for hire (FHV) activos e
 - **Evaluación de Sostenibilidad**: Ayuda a analizar la proporción de vehículos híbridos (`HYB`) y accesibles para sillas de ruedas (`WAV`), crucial para iniciativas de sostenibilidad y accesibilidad.
 - **Estado de Permisos**: Utiliza la información sobre el estado del permiso (`Active`) para identificar y anali
 
-## Dataset de Zonas de Taxis
+# 10 Dataset de Zonas de Taxis
 
 **Descripción del Contenido**
 Este dataset contiene información sobre las zonas de taxis en Nueva York, proporcionado por la **Taxi and Limousine Commission (TLC)**. Las zonas están definidas por ubicaciones específicas y se utilizan para analizar y gestionar los patrones de viajes de taxis y FHV en la ciudad.
