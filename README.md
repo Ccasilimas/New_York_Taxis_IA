@@ -17,7 +17,6 @@ Este proyecto tiene como finalidad asesorar a una empresa de transporte de pasaj
 - **Gustavo Coello** - Ingeniero de Datos
 - **Camilo Casilimas** - Científico de Datos
 - **Alberto Bernal** - Científico de Datos
-recomendación.
 
 ## Indicadores Clave de Rendimiento (KPI)
 
