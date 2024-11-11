@@ -1,5 +1,8 @@
 # Implementación de Vehículos Ambientalmente Amigables en Nueva York
 
+
+![Descripción de la imagen](img/taxis.jpg)
+
 ## Descripción General
 Este proyecto tiene como finalidad asesorar a una empresa de transporte de pasajeros en la evaluación y viabilidad de implementar una nueva flota de taxis ambientalmente amigables en la ciudad de Nueva York. Se busca identificar las mejores zonas para iniciar el negocio, considerando la rentabilidad y los patrones de movilidad, alineando así los objetivos financieros con un impacto positivo en el medio ambiente.
 
