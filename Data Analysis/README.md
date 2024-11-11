@@ -1,6 +1,6 @@
 # Descripción y Utilidad de los Datasets del Proyecto
 
-![Descripción de la imagen](img/cargaelectrica.jpg)
+![Descripción de la imagen](/img/cargaelectrica.jpg)
 
 ## 1. Dataset de Especificaciones de Vehículos de Gasolina
 **Descripción del Contenido**: Este dataset contiene información detallada sobre las especificaciones de vehículos que utilizan gasolina. Incluye datos como el año del modelo, el fabricante, el modelo, la eficiencia de combustible combinada y las emisiones de CO₂.
