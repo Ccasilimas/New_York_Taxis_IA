@@ -1,134 +1,62 @@
-📝 Resumen del Proyecto y KPIs
+## Datasets Utilizados en el Proyecto 🚀
+A continuación, presentamos los datasets que emplearemos en nuestro proyecto, junto con una breve descripción de cada uno.
 
-🌍 Título del Proyecto:
-Implementación de Vehículos Ambientalmente Amigables en Nueva York
+### 1️⃣ Dataset de Medallions Activos en Nueva York 🛺
+**Descripción**: Este dataset contiene información sobre los medallions (licencias) activos de los taxis en la ciudad de Nueva York. Incluye detalles como el número de licencia, el número de VIN del vehículo, el tipo de vehículo y el año del modelo.
 
-🏏 Objetivos del Proyecto:
-- Análisis de Patrones de Movilidad y Demanda en Zonas Estratégicas
-- Determinación de Zonas Óptimas para Operaciones Sostenibles
-- Generación de Informes para Decisiones Estratégicas
+**Columnas Seleccionadas**: License Number, Vehicle VIN Number, Vehicle Type, Model Year
 
-## KPIs Definidos:
+**Utilidad**:
+- Identificar y analizar la composición actual de la flota de taxis.
+- Mapear los viajes a vehículos específicos.
+- Evaluar el tipo y antigüedad de los vehículos operativos.
 
-1️⃣ Número de Viajes por Zona y Hora
-**Descripción**: Mide el número total de viajes iniciados en cada zona y hora del día.
+### 2️⃣ Dataset de Viajes en Taxis Amarillos y Verdes 🚕
+**Descripción**: Este dataset contiene datos detallados de los viajes realizados por taxis amarillos y verdes en Nueva York. Incluye información como la fecha y hora de recogida, ubicaciones de origen y destino, distancia del viaje y monto total.
 
-**Meta**: Maximizar la disponibilidad de la flota en zonas y horarios de alta demanda.
+**Columnas Seleccionadas**: pickup_datetime, PULocationID, DOLocationID, trip_distance, total_amount, passenger_count
 
-2️⃣ Ingresos Totales por Zona
-**Descripción**: Mide el total de ingresos generados en cada zona de recogida.
+**Utilidad**:
+- Analizar los patrones de demanda y movilidad en la ciudad.
+- Calcular los KPIs definidos, como el número de viajes por zona y hora, ingresos totales por zona y duración promedio del viaje.
+- Optimizar la operación de la flota en zonas y horarios de alta demanda.
 
-**Meta**: Identificar y optimizar las zonas más rentables para maximizar los ingresos.
+### 3️⃣ Dataset de Tráfico en Nueva York 🚦
+**Descripción**: Este dataset proporciona información sobre los volúmenes de tráfico en diferentes segmentos viales de Nueva York. Incluye datos por distrito, año, mes, día y hora, así como el volumen de tráfico medido en número de vehículos.
 
-3️⃣ Duración Promedio del Viaje por Zona
-**Descripción**: Mide la duración promedio de los viajes iniciados en cada zona.
+**Columnas Seleccionadas**: boro, yr, m, d, HH, vol
 
-**Meta**: Optimizar las rutas para reducir la duración promedio de los viajes.
+**Utilidad**:
+- Correlacionar las condiciones del tráfico con los patrones de viaje.
+- Optimizar rutas y reducir tiempos de viaje considerando la congestión.
+- Mejorar la eficiencia operativa de la flota.
 
-⭐ Evaluación de los Criterios de Sobresaliente
+### 4️⃣ Dataset de Vehículos de Combustible Alternativo en EE.UU. ♻️
+**Descripción**: Contiene información sobre vehículos que utilizan combustibles alternativos en Estados Unidos. Incluye datos como la categoría del vehículo, modelo, año del modelo, fabricante, tipo de combustible y eficiencia de combustible.
 
-### Producto - Entregables
-**Criterio de Sobresaliente**: Define claramente los entregables del proyecto y el público objetivo.
+**Columnas Seleccionadas**: Category, Model, Model Year, Manufacturer, Fuel, Alternative Fuel Economy Combined
 
-**Evaluación**:
-- **Entregables**:
-  - Desarrollo de un sistema de recomendación para la distribución óptima de la flota.
-  - Dashboards interactivos para la presentación de KPIs.
-  - Implementación de vehículos sostenibles.
+**Utilidad**:
+- Evaluar y comparar la eficiencia de vehículos de combustibles alternativos.
+- Informar decisiones sobre la incorporación de vehículos más sostenibles en la flota.
+- Analizar el potencial de reducción de emisiones de CO₂.
 
-- **Público Objetivo**: Empresa de transporte de pasajeros que busca una flota de taxis ambientalmente amigables en Nueva York.
+### 5️⃣ Dataset de Vehículos Eléctricos ⚡
+**Descripción**: Este dataset incluye información detallada sobre vehículos eléctricos. Proporciona datos como la marca, modelo, autonomía en kilómetros, eficiencia energética y precio.
 
-**Conclusión**: Cumplimos con el criterio para una calificación sobresaliente en este apartado.
+**Columnas Seleccionadas**: Brand, Model, Range_Km, Efficiency_WhKm, PriceEuro
 
-### Planteo de Objetivos
-**Criterio de Sobresaliente**: Contiene objetivos claros y un plan fundamentado.
+**Utilidad**:
+- Analizar la viabilidad de integrar vehículos eléctricos en la flota.
+- Comparar autonomía y eficiencia para seleccionar los modelos más adecuados.
+- Evaluar la inversión necesaria y el potencial ahorro en costos operativos.
 
-**Evaluación**:
-- **Objetivos**: Específicos y bien definidos.
-- **Fundamentación**: Uso de AWS S3, Python, MySQL en AWS RDS, Amazon QuickSight, etc.
+### 6️⃣ Dataset de Zonas de Taxis en Nueva York 📍
+**Descripción**: Proporciona información sobre las zonas de taxis definidas por la Taxi and Limousine Commission (TLC) en Nueva York. Incluye identificadores de ubicación, distritos y nombres de las zonas.
 
-**Conclusión**: Cumplimos con el criterio de sobresaliente.
+**Columnas Seleccionadas**: LocationID, Borough, Zone
 
-### Stack Tecnológico
-**Criterio de Sobresaliente**: Stack tecnológico definido con relación al ciclo de vida del dato.
-
-**Evaluación**:
-- **Ingesta**: AWS S3.
-- **Procesamiento**: Python, AWS Lambda/EC2.
-- **Almacenamiento**: MySQL en AWS RDS.
-- **Visualización**: QuickSight.
-
-**Conclusión**: Cumplimos con el criterio de sobresaliente.
-
-### KPIs
-**Criterio de Sobresaliente**: KPIs bien definidos, específicos y medibles.
-
-**Evaluación**: KPIs claros y relevantes.
-
-**Conclusión**: Cumplimos con el criterio de sobresaliente.
-
-### Cronograma General
-**Criterio de Sobresaliente**: Diagrama de Gantt con tareas y dependencias.
-
-**Evaluación**: Completar y presentar el cronograma.
-
-**Conclusión**: Se debe verificar la presentación del cronograma.
-
-### EDA - Calidad
-**Criterio de Sobresaliente**: Resumen del EDA con análisis y visualizaciones.
-
-**Evaluación**: Elaborar y presentar un informe completo.
-
-**Conclusión**: Cumplimos al documentarlo.
-
-### ETL y Validación de Datos
-**Criterio de Sobresaliente**: Proceso reproducible con validación y automatización.
-
-**Evaluación**: Scripts, logs y evidencias de automatización.
-
-**Conclusión**: Cumplimos al implementarlo completamente.
-
-### Ciclo de Vida del Dato
-**Criterio de Sobresaliente**: Descripción técnica de cada etapa del ciclo de vida.
-
-**Evaluación**: Documentar etapas y tecnologías.
-
-**Conclusión**: Cumplimos al presentarlo.
-
-### Diseño del Modelo de Datos
-**Criterio de Sobresaliente**: Modelo de datos justificado y eficiente.
-
-**Evaluación**: Documentar estructura, claves y decisiones.
-
-**Conclusión**: Cumplimos al detallarlo.
-
-### Automatización y Carga Incremental
-**Criterio de Sobresaliente**: Proceso de carga incremental demostrado.
-
-**Evaluación**: Implementar y evidenciar la automatización.
-
-**Conclusión**: Cumplimos al finalizarlo.
-
-### Dashboard: Diseño y Funcionalidad
-**Criterio de Sobresaliente**: Dashboard efectivo y funcional.
-
-**Evaluación**: Crear un dashboard intuitivo con filtros.
-
-**Conclusión**: Cumplimos al seguir las mejores prácticas.
-
-### Modelo de Machine Learning
-**Criterio de Sobresaliente**: Modelo funcional y bien documentado.
-
-**Evaluación**: Implementar, ajustar y documentar el modelo.
-
-**Conclusión**: Cumplimos al completarlo.
-
-### Modelo ML en Producción
-**Criterio de Sobresaliente**: Despliegue en la nube accesible.
-
-**Evaluación**: Desplegar en AWS SageMaker u otros.
-
-**Conclusión**: Cumplimos al hacer el despliegue.
-
-🏆 Conclusión General
-Cumplimos con la mayoría de los criterios para una calificación sobresaliente, y al completar los elementos pendientes, aseguraremos el éxito del proyecto.
+**Utilidad**:
+- Mapear las ubicaciones de origen y destino de los viajes a zonas geográficas específicas.
+- Analizar patrones de demanda por zona.
+- Facilitar la planificación estratégica y optimización de rutas.
