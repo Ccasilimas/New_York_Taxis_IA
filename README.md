@@ -53,10 +53,11 @@ Desarrollaremos un sistema de recomendación basado en datos históricos desde e
 - **Modelos Predictivos**: Sistemas implementados para el sistema de recomendación y análisis futuro.
 
 ## 🛠️ Herramientas y Tecnologías
+
 - **Análisis de Datos**: Python (Pandas, NumPy), SQL, Jupyter Notebooks.
 - **Visualización**: Matplotlib, Seaborn, Tableau.
 - **Machine Learning**: Scikit-learn, TensorFlow.
-- **Pipeline de Datos**: Apache Airflow, Herramientas ETL.
+- **Pipeline de Datos**: AWS S3, AWS Lambda, MySQL en AWS RDS.
 - **Colaboración y Gestión**: GitHub, Slack, Trello, Microsoft Teams.
 
 ## 📢 Comunicación y Reuniones
