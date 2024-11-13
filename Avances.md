@@ -1,44 +1,86 @@
-# README - Implementación de Vehículos Ambientalmente Amigables en Nueva York 🚖🌱
+📋 **Puntos Claves Pendientes del Proyecto**
 
-## Descripción del Proyecto 📄
-El proyecto está enfocado en la implementación de una flota de vehículos ambientalmente amigables en Nueva York. Esto incluye la recopilación y análisis de datos relacionados con patrones de movilidad, la generación de informes para tomar decisiones estratégicas y recomendaciones para optimizar la operación de la flota.
+1️⃣ **Producto - Entregables**
+  
+**Tareas Pendientes:**
 
-## Objetivos Principales 🎯
-- 🔍 Analizar patrones de movilidad y demanda en zonas estratégicas.
-- 📍 Determinar las zonas óptimas para la operación de los vehículos sostenibles.
-- 📊 Desarrollar dashboards interactivos para visualizar KPIs relevantes.
-- 🤖 Crear un sistema de recomendaciones basado en datos para la distribución eficiente de la flota.
+- Desarrollo completo del sistema de recomendación.
+- Finalización de los dashboards interactivos.
+- Implementación y prueba de los vehículos sostenibles.
 
-## Tecnologías Utilizadas 🛠️
-- **AWS S3**: Ingesta y almacenamiento de datos.
-- **Python**: Procesamiento y análisis de datos.
-- **AWS Lambda / EC2**: Ejecución de scripts y procesos automáticos.
-- **MySQL (AWS RDS)**: Almacenamiento estructurado de datos.
-- **Amazon QuickSight**: Visualización de datos y creación de dashboards.
+2️⃣ **Planteo de Objetivos**
 
-## KPIs Clave 📈
-### 1. Número de Viajes por Zona y Hora 🕒
-**Descripción**: Mide el número de viajes iniciados en cada zona y hora del día.  
-**Meta**: Identificar patrones de alta demanda para optimizar la disponibilidad de la flota.
+**Tareas Pendientes:**
 
-### 2. Ingresos Totales por Zona 💰
-**Descripción**: Mide el total de ingresos generados en cada zona de recogida.  
-**Meta**: Maximizar los ingresos identificando y priorizando las zonas más rentables.
+- ✅ Revisar y ajustar los objetivos del proyecto según las mejores prácticas y la rúbrica.
+- Elaborar un plan fundamentado para alcanzar estos objetivos.
 
-### 3. Duración Promedio del Viaje por Zona ⏱️
-**Descripción**: Mide la duración promedio de los viajes iniciados en cada zona.  
-**Meta**: Optimizar las rutas para reducir el tiempo promedio de viaje y mejorar la experiencia del usuario.
+3️⃣ **Cronograma General**
 
-## Descripción Técnica del Ciclo de Vida del Dato 🔄
-### Etapas del Proceso 📝
-1. **Ingesta de Datos**: Se utiliza AWS S3 para cargar y almacenar datos de movilidad.
-2. **Procesamiento**: Scripts en Python se ejecutan mediante AWS Lambda o EC2 para procesar y limpiar los datos.
-3. **Almacenamiento**: Los datos procesados se guardan en una base de datos MySQL en AWS RDS.
-4. **Visualización**: Los dashboards en Amazon QuickSight muestran los KPIs clave y permiten el análisis interactivo.
+**Tareas Pendientes:**
 
-## Plan de Despliegue 🚀
-- **Machine Learning**: El modelo se desplegará en la nube, utilizando AWS SageMaker para realizar predicciones y optimizaciones en tiempo real.
-- **Automatización**: Los scripts de ETL se programarán en AWS Lambda para actualizaciones incrementales automáticas.
+- Completar el diagrama de Gantt.
+- Verificar y presentar el cronograma detallado con tareas y dependencias.
 
-## Conclusión 🏆
-Este proyecto proporciona una solución integral para la implementación y optimización de una flota de vehículos ambientalmente amigables en Nueva York, apoyada por un análisis robusto de datos y visualizaciones eficaces.
+4️⃣ **EDA - Calidad**
+
+**Tareas Pendientes:**
+
+- Elaborar y presentar un informe completo del EDA (Análisis Exploratorio de Datos).
+- Incluir análisis estadísticos, detección de outliers, y visualizaciones detalladas.
+
+5️⃣ **ETL y Validación de Datos**
+
+**Tareas Pendientes:**
+
+- Implementar los scripts de ETL y validación de datos.
+- Evidenciar la automatización con logs y ejemplos de ejecución.
+- Asegurar la reproducibilidad del proceso.
+
+6️⃣ **Ciclo de Vida del Dato**
+
+**Tareas Pendientes:**
+
+- Documentar cada etapa del ciclo de vida del dato.
+- Describir las tecnologías y herramientas utilizadas en cada etapa.
+- Asegurar la validación y seguridad de los datos.
+
+7️⃣ **Diseño del Modelo de Datos**
+
+**Tareas Pendientes:**
+
+- Documentar la estructura del modelo de datos.
+- Justificar las decisiones de diseño, incluyendo claves primarias y foráneas.
+- Crear y presentar un Diagrama Entidad-Relación (ERD).
+
+8️⃣ **Automatización y Carga Incremental**
+
+**Tareas Pendientes:**
+
+- Implementar el proceso de carga incremental.
+- Evidenciar la automatización con ejemplos de ejecución.
+- Asegurar que el proceso es escalable y eficiente.
+
+9️⃣ **Dashboard: Diseño y Funcionalidad**
+
+**Tareas Pendientes:**
+
+- Crear un dashboard intuitivo y funcional.
+- Incluir filtros y opciones interactivas para los usuarios.
+- Asegurar que el diseño sigue las mejores prácticas de usabilidad.
+
+🔟 **Modelo de Machine Learning**
+
+**Tareas Pendientes:**
+
+- Realizar un EDA profundo y selección de features.
+- Implementar, ajustar y documentar el modelo de machine learning.
+- Desplegar el modelo en producción usando AWS SageMaker u otras herramientas.
+
+1️⃣1️⃣ **Plus: Innovación y Soluciones Ingeniosas**
+
+**Tareas Pendientes:**
+
+- Implementar análisis geoespacial avanzado.
+- Integrar datos en tiempo real.
+- Desarrollar una interfaz para la interacción con el sistema de recomendación.
