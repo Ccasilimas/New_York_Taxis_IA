@@ -1,5 +1,7 @@
 # 🌟 **Ciclo de Vida del Dato**
 
+![Descripción de la imagen]('img/IA data.jpg')
+
 ## 1️⃣ Ingesta de Datos
 **Descripción**: Recopilación y almacenamiento inicial de datos desde diversas fuentes.
 
