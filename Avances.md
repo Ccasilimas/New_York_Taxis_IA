@@ -1,4 +1,4 @@
-📋 **Puntos Claves Pendientes del Proyecto**
+## 📋 **Puntos Claves Pendientes del Proyecto**
 
 1️⃣ **Producto - Entregables**
   
