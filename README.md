@@ -3,6 +3,7 @@
 ![Descripción de la imagen](img/taxis.jpg)
 
 ## 🌍 Descripción General
+
 Este proyecto tiene como finalidad asesorar a una empresa de transporte de pasajeros en la evaluación y viabilidad de implementar una nueva flota de taxis ambientalmente amigables en la ciudad de Nueva York. Se busca identificar las mejores zonas para iniciar el negocio, considerando la rentabilidad y los patrones de movilidad, alineando así los objetivos financieros con un impacto positivo en el medio ambiente.
 
 ## 🎯 Objetivos del Proyecto
@@ -15,6 +16,10 @@ Este proyecto tiene como finalidad asesorar a una empresa de transporte de pasaj
 - **Gustavo Coello** - Ingeniero de Datos
 - **Camilo Casilimas** - Científico de Datos
 - **Alberto Bernal** - Científico de Datos
+
+## 🧠 Sistema de Recomendación
+
+Desarrollaremos un sistema de recomendación basado en datos históricos desde enero de 2023 hasta agosto de 2024. Este sistema recomendará a los conductores de la flota que se desplacen a la zona más cercana con alta demanda histórica, calculada por hora, día de la semana y mes. Utilizaremos una muestra de 50 vehículos para medir los KPI históricamente y tomaremos un periodo de 4 meses para evaluar el modelo predictivo. Esto permitirá optimizar la operación diaria y maximizar la eficiencia de los conductores, asegurando que estén en los lugares correctos en los momentos correctos para satisfacer la demanda de manera efectiva.
 
 ## 📈 Indicadores Clave de Rendimiento (KPI)
 1. **Número de Viajes por Zona y Hora**  
