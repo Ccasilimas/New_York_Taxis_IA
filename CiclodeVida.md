@@ -1,6 +1,6 @@
-# Ciclo de Vida del Dato
+# 🌟 **Ciclo de Vida del Dato**
 
-## 1. Ingesta de Datos
+## 1️⃣ Ingesta de Datos
 **Descripción**: Recopilación y almacenamiento inicial de datos desde diversas fuentes.
 
 **Tecnologías y Herramientas**:
@@ -11,7 +11,7 @@
 - **Descarga de Datos**: Obtención de datasets de fuentes públicas o privadas.
 - **Almacenamiento Inicial**: Guardar archivos de datos en un bucket de S3.
 
-## 2. Procesamiento y ETL
+## 2️⃣ Procesamiento y ETL
 **Descripción**: Transformación y limpieza de datos para prepararlos para el análisis.
 
 **Tecnologías y Herramientas**:
@@ -24,7 +24,7 @@
 - **Transformación**: Limpieza y estructuración de datos con pandas.
 - **Carga**: Inserción de datos procesados en la base de datos MySQL en AWS RDS.
 
-## 3. Almacenamiento
+## 3️⃣ Almacenamiento
 **Descripción**: Gestión y almacenamiento de datos transformados en una base de datos relacional.
 
 **Tecnologías y Herramientas**:
@@ -35,7 +35,7 @@
 - **Carga de Datos**: Inserción de datos en las tablas.
 - **Indexación**: Creación de índices para optimizar las consultas.
 
-## 4. Análisis
+## 4️⃣ Análisis
 **Descripción**: Realización de EDA y cálculos de KPIs.
 
 **Tecnologías y Herramientas**:
@@ -46,7 +46,7 @@
 - **EDA**: Análisis para entender la estructura y calidad de los datos.
 - **Cálculo de KPIs**: Definición y cálculo de KPIs (Número de Viajes, Ingresos Totales, Duración Promedio).
 
-## 5. Visualización
+## 5️⃣ Visualización
 **Descripción**: Presentación de datos y KPIs en visualizaciones comprensibles.
 
 **Tecnologías y Herramientas**:
@@ -56,7 +56,7 @@
 - **Desarrollo de Dashboards**: Diseño e implementación de visualizaciones.
 - **Publicación**: Acceso a dashboards para stakeholders.
 
-## 6. Automatización y Monitoreo
+## 6️⃣ Automatización y Monitoreo
 **Descripción**: Automatización y monitoreo de procesos ETL para asegurar eficiencia y corrección.
 
 **Tecnologías y Herramientas**:
@@ -66,3 +66,13 @@
 **Pasos Involucrados**:
 - **Automatización del ETL**: Orquestación de procesos ETL con Step Functions.
 - **Monitorización**: Configuración de CloudWatch para monitorear y capturar logs de ejecución.
+
+## 7️⃣ Seguridad y Compliance 🔐
+**Descripción**: Asegurar el manejo seguro y conforme a normativas de los datos.
+
+**Tecnologías y Herramientas**:
+- **AWS IAM**: Gestión de roles y permisos.
+- **AWS KMS**: Cifrado de datos en reposo y en tránsito.
+
+**Pasos Involucrados**:
+- **Configuración de Permisos

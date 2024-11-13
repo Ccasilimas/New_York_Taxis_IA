@@ -1,133 +1,44 @@
-📝 Resumen del Proyecto y KPIs
+# README - Implementación de Vehículos Ambientalmente Amigables en Nueva York 🚖🌱
 
-🌍 Título del Proyecto:
-Implementación de Vehículos Ambientalmente Amigables en Nueva York
+## Descripción del Proyecto 📄
+El proyecto está enfocado en la implementación de una flota de vehículos ambientalmente amigables en Nueva York. Esto incluye la recopilación y análisis de datos relacionados con patrones de movilidad, la generación de informes para tomar decisiones estratégicas y recomendaciones para optimizar la operación de la flota.
 
-🏏 Objetivos del Proyecto:
-- Análisis de Patrones de Movilidad y Demanda en Zonas Estratégicas
-- Determinación de Zonas Óptimas para Operaciones Sostenibles
-- Generación de Informes para Decisiones Estratégicas
+## Objetivos Principales 🎯
+- 🔍 Analizar patrones de movilidad y demanda en zonas estratégicas.
+- 📍 Determinar las zonas óptimas para la operación de los vehículos sostenibles.
+- 📊 Desarrollar dashboards interactivos para visualizar KPIs relevantes.
+- 🤖 Crear un sistema de recomendaciones basado en datos para la distribución eficiente de la flota.
 
-📊 KPIs Definidos:
-1️⃣ Número de Viajes por Zona y Hora
-**Descripción**: Mide el número total de viajes iniciados en cada zona y hora del día.
+## Tecnologías Utilizadas 🛠️
+- **AWS S3**: Ingesta y almacenamiento de datos.
+- **Python**: Procesamiento y análisis de datos.
+- **AWS Lambda / EC2**: Ejecución de scripts y procesos automáticos.
+- **MySQL (AWS RDS)**: Almacenamiento estructurado de datos.
+- **Amazon QuickSight**: Visualización de datos y creación de dashboards.
 
-**Meta**: Maximizar la disponibilidad de la flota en zonas y horarios de alta demanda.
+## KPIs Clave 📈
+### 1. Número de Viajes por Zona y Hora 🕒
+**Descripción**: Mide el número de viajes iniciados en cada zona y hora del día.  
+**Meta**: Identificar patrones de alta demanda para optimizar la disponibilidad de la flota.
 
-2️⃣ Ingresos Totales por Zona
-**Descripción**: Mide el total de ingresos generados en cada zona de recogida.
+### 2. Ingresos Totales por Zona 💰
+**Descripción**: Mide el total de ingresos generados en cada zona de recogida.  
+**Meta**: Maximizar los ingresos identificando y priorizando las zonas más rentables.
 
-**Meta**: Identificar y optimizar las zonas más rentables para maximizar los ingresos.
+### 3. Duración Promedio del Viaje por Zona ⏱️
+**Descripción**: Mide la duración promedio de los viajes iniciados en cada zona.  
+**Meta**: Optimizar las rutas para reducir el tiempo promedio de viaje y mejorar la experiencia del usuario.
 
-3️⃣ Duración Promedio del Viaje por Zona
-**Descripción**: Mide la duración promedio de los viajes iniciados en cada zona.
+## Descripción Técnica del Ciclo de Vida del Dato 🔄
+### Etapas del Proceso 📝
+1. **Ingesta de Datos**: Se utiliza AWS S3 para cargar y almacenar datos de movilidad.
+2. **Procesamiento**: Scripts en Python se ejecutan mediante AWS Lambda o EC2 para procesar y limpiar los datos.
+3. **Almacenamiento**: Los datos procesados se guardan en una base de datos MySQL en AWS RDS.
+4. **Visualización**: Los dashboards en Amazon QuickSight muestran los KPIs clave y permiten el análisis interactivo.
 
-**Meta**: Optimizar las rutas para reducir la duración promedio de los viajes.
+## Plan de Despliegue 🚀
+- **Machine Learning**: El modelo se desplegará en la nube, utilizando AWS SageMaker para realizar predicciones y optimizaciones en tiempo real.
+- **Automatización**: Los scripts de ETL se programarán en AWS Lambda para actualizaciones incrementales automáticas.
 
-⭐ Evaluación de los Criterios de Sobresaliente
-
-### Producto - Entregables
-**Criterio de Sobresaliente**: Define claramente los entregables del proyecto y el público objetivo.
-
-**Evaluación**:
-- **Entregables**:
-  - Desarrollo de un sistema de recomendación para la distribución óptima de la flota.
-  - Dashboards interactivos para la presentación de KPIs.
-  - Implementación de vehículos sostenibles.
-
-- **Público Objetivo**: Empresa de transporte de pasajeros que busca una flota de taxis ambientalmente amigables en Nueva York.
-
-**Conclusión**: Cumplimos con el criterio para una calificación sobresaliente en este apartado.
-
-### Planteo de Objetivos
-**Criterio de Sobresaliente**: Contiene objetivos claros y un plan fundamentado.
-
-**Evaluación**:
-- **Objetivos**: Específicos y bien definidos.
-- **Fundamentación**: Uso de AWS S3, Python, MySQL en AWS RDS, Amazon QuickSight, etc.
-
-**Conclusión**: Cumplimos con el criterio de sobresaliente.
-
-### Stack Tecnológico
-**Criterio de Sobresaliente**: Stack tecnológico definido con relación al ciclo de vida del dato.
-
-**Evaluación**:
-- **Ingesta**: AWS S3.
-- **Procesamiento**: Python, AWS Lambda/EC2.
-- **Almacenamiento**: MySQL en AWS RDS.
-- **Visualización**: QuickSight.
-
-**Conclusión**: Cumplimos con el criterio de sobresaliente.
-
-### KPIs
-**Criterio de Sobresaliente**: KPIs bien definidos, específicos y medibles.
-
-**Evaluación**: KPIs claros y relevantes.
-
-**Conclusión**: Cumplimos con el criterio de sobresaliente.
-
-### Cronograma General
-**Criterio de Sobresaliente**: Diagrama de Gantt con tareas y dependencias.
-
-**Evaluación**: Completar y presentar el cronograma.
-
-**Conclusión**: Se debe verificar la presentación del cronograma.
-
-### EDA - Calidad
-**Criterio de Sobresaliente**: Resumen del EDA con análisis y visualizaciones.
-
-**Evaluación**: Elaborar y presentar un informe completo.
-
-**Conclusión**: Cumplimos al documentarlo.
-
-### ETL y Validación de Datos
-**Criterio de Sobresaliente**: Proceso reproducible con validación y automatización.
-
-**Evaluación**: Scripts, logs y evidencias de automatización.
-
-**Conclusión**: Cumplimos al implementarlo completamente.
-
-### Ciclo de Vida del Dato
-**Criterio de Sobresaliente**: Descripción técnica de cada etapa del ciclo de vida.
-
-**Evaluación**: Documentar etapas y tecnologías.
-
-**Conclusión**: Cumplimos al presentarlo.
-
-### Diseño del Modelo de Datos
-**Criterio de Sobresaliente**: Modelo de datos justificado y eficiente.
-
-**Evaluación**: Documentar estructura, claves y decisiones.
-
-**Conclusión**: Cumplimos al detallarlo.
-
-### Automatización y Carga Incremental
-**Criterio de Sobresaliente**: Proceso de carga incremental demostrado.
-
-**Evaluación**: Implementar y evidenciar la automatización.
-
-**Conclusión**: Cumplimos al finalizarlo.
-
-### Dashboard: Diseño y Funcionalidad
-**Criterio de Sobresaliente**: Dashboard efectivo y funcional.
-
-**Evaluación**: Crear un dashboard intuitivo con filtros.
-
-**Conclusión**: Cumplimos al seguir las mejores prácticas.
-
-### Modelo de Machine Learning
-**Criterio de Sobresaliente**: Modelo funcional y bien documentado.
-
-**Evaluación**: Implementar, ajustar y documentar el modelo.
-
-**Conclusión**: Cumplimos al completarlo.
-
-### Modelo ML en Producción
-**Criterio de Sobresaliente**: Despliegue en la nube accesible.
-
-**Evaluación**: Desplegar en AWS SageMaker u otros.
-
-**Conclusión**: Cumplimos al hacer el despliegue.
-
-🏆 Conclusión General
-Cumplimos con la mayoría de los criterios para una calificación sobresaliente, y al completar los elementos pendientes, aseguraremos el éxito del proyecto.
+## Conclusión 🏆
+Este proyecto proporciona una solución integral para la implementación y optimización de una flota de vehículos ambientalmente amigables en Nueva York, apoyada por un análisis robusto de datos y visualizaciones eficaces.
