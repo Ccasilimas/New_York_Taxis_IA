@@ -4,13 +4,6 @@ import pandas as pd
 import pymysql
 import os
 
-# Configuración de la conexión a la base de datos con credenciales integradas
-db_host = "urbantransit-db.cfou8mqoatn0.us-east-2.rds.amazonaws.com"
-db_port = 3306
-db_user = "proyecto_admin"
-db_password = "siempreaws"
-db_name = "UrbanTransit_DB"
-
 def lambda_handler(event, context):
     print("Inicio de la función Lambda")
     
