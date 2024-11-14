@@ -7,47 +7,9 @@
 Este proyecto tiene como finalidad asesorar a una empresa de transporte de pasajeros en la evaluación y viabilidad de implementar una nueva flota de taxis ambientalmente amigables en la ciudad de Nueva York. Se busca identificar las mejores zonas para iniciar el negocio, considerando la rentabilidad y los patrones de movilidad, alineando así los objetivos financieros con un impacto positivo en el medio ambiente.
 
 ## 🎯 Objetivos del Proyecto
-
-### **🔍 Análisis de Patrones de Movilidad y Demanda en Zonas Estratégicas**
-
-**Descripción:**
-Este objetivo busca identificar las zonas y horarios de alta demanda para optimizar la operación de la flota. Al entender mejor dónde y cuándo se necesita más transporte, podemos posicionar los taxis de manera eficiente para maximizar la cobertura y reducir los tiempos de espera.
-
-**Indicadores:**
-
-- **Número de Viajes por Zona y Hora:** Mide el número total de viajes iniciados en cada zona y hora del día.
-- **Frecuencia de Viajes:** Número de viajes en diferentes franjas horarias (mañana, tarde, noche).
-- **Puntos de Recogida y Destino más Comunes:** Identificación de los lugares más frecuentados para inicio y fin de los viajes.
-
-**Métricas:**
-
-- **Viajes por Hora:** Promedio de viajes por hora en diferentes zonas.
-- **Tiempo de Espera Medio:** Tiempo promedio que los pasajeros esperan un taxi en las zonas de alta demanda.
-- **Saturación de Zonas:** Porcentaje de veces que una zona está en su capacidad máxima de taxis disponibles.
-
-### **📍 Determinación de Zonas Óptimas para Operaciones Sostenibles**
-
-**Descripción:**
-Este objetivo se centra en desarrollar un sistema de recomendación que combine rentabilidad y sostenibilidad. Al identificar las zonas más eficientes y ecológicas para operar, podemos reducir las emisiones de CO₂ y mejorar la rentabilidad de la flota.
-
-**Indicadores:**
-
-- **Reducción de Emisiones de CO₂:** Comparación de emisiones antes y después de la optimización de rutas.
-- **Costos Operativos por Zona:** Análisis de los costos operativos en diferentes zonas para identificar las más rentables.
-- **Eficiencia de Rutas:** Evaluación de la eficiencia de las rutas en términos de distancia y tiempo.
-
-**Métricas:**
-
-- **Emisiones de CO₂ por Viaje:** Cantidad de CO₂ emitido por viaje en diferentes zonas.
-- **Costos de Combustible por Zona:** Costos promedio de combustible por zona de operación.
-- **Distancia Promedio de Viajes:** Distancia promedio de los viajes en zonas óptimas.
-
-### **📊 Generación de Informes para Decisiones Estratégicas**
-
-**Descripción:**
-Crear informes detallados que faciliten una toma de decisiones informada. Estos informes presentarán datos clave y análisis que ayudarán a los stakeholders a entender el desempeño de la flota y a tomar decisiones estratégicas para mejorar la operación y la sostenibilidad.
-
-
+1. **🔍 Análisis de Patrones de Movilidad y Demanda en Zonas Estratégicas**: Identificar zonas y horarios de alta demanda para optimizar la operación de la flota.
+2. **📍 Determinación de Zonas Óptimas para Operaciones Sostenibles**: Desarrollar un sistema de recomendación que combine rentabilidad y sostenibilidad.
+3. **📊 Generación de Informes para Decisiones Estratégicas**: Crear informes detallados que faciliten una toma de decisiones informada.
 
 ## 👥 Equipo del Proyecto
 - **Vera Guillen** - Analista de Datos
