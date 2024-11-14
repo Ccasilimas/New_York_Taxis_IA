@@ -8,7 +8,7 @@ Este proyecto tiene como finalidad asesorar a una empresa de transporte de pasaj
 
 ## 🎯 Objetivos del Proyecto
 
- **🔍 Análisis de Patrones de Movilidad y Demanda en Zonas Estratégicas**
+### **🔍 Análisis de Patrones de Movilidad y Demanda en Zonas Estratégicas**
 
 **Descripción:**
 Este objetivo busca identificar las zonas y horarios de alta demanda para optimizar la operación de la flota. Al entender mejor dónde y cuándo se necesita más transporte, podemos posicionar los taxis de manera eficiente para maximizar la cobertura y reducir los tiempos de espera.
@@ -25,7 +25,7 @@ Este objetivo busca identificar las zonas y horarios de alta demanda para optimi
 - **Tiempo de Espera Medio:** Tiempo promedio que los pasajeros esperan un taxi en las zonas de alta demanda.
 - **Saturación de Zonas:** Porcentaje de veces que una zona está en su capacidad máxima de taxis disponibles.
 
- **📍 Determinación de Zonas Óptimas para Operaciones Sostenibles**
+### **📍 Determinación de Zonas Óptimas para Operaciones Sostenibles**
 
 **Descripción:**
 Este objetivo se centra en desarrollar un sistema de recomendación que combine rentabilidad y sostenibilidad. Al identificar las zonas más eficientes y ecológicas para operar, podemos reducir las emisiones de CO₂ y mejorar la rentabilidad de la flota.
@@ -42,7 +42,7 @@ Este objetivo se centra en desarrollar un sistema de recomendación que combine 
 - **Costos de Combustible por Zona:** Costos promedio de combustible por zona de operación.
 - **Distancia Promedio de Viajes:** Distancia promedio de los viajes en zonas óptimas.
 
- **📊 Generación de Informes para Decisiones Estratégicas**
+### **📊 Generación de Informes para Decisiones Estratégicas**
 
 **Descripción:**
 Crear informes detallados que faciliten una toma de decisiones informada. Estos informes presentarán datos clave y análisis que ayudarán a los stakeholders a entender el desempeño de la flota y a tomar decisiones estratégicas para mejorar la operación y la sostenibilidad.
