@@ -9,7 +9,7 @@ Este proyecto tiene como finalidad asesorar a una empresa de transporte de pasaj
 ## 🎯 Objetivos del Proyecto
 1. **🔍 Análisis de Patrones de Movilidad y Demanda en Zonas Estratégicas**: Identificar zonas y horarios de alta demanda para optimizar la operación de la flota.
 2. **📍 Determinación de Zonas Óptimas para Operaciones Sostenibles**: Desarrollar un sistema de recomendación que combine rentabilidad y sostenibilidad.
-3. **📊 Generación de Informes para Decisiones Estratégicas**: Crear informes detallados que faciliten una toma de decisiones informada.
+3. **📊 Generación de Informes para Decisiones Estratégicas**: Crear informes detallados que faciliten una toma de decisiones informada. 
 
 ## 👥 Equipo del Proyecto
 - **Vera Guillen** - Analista de Datos
