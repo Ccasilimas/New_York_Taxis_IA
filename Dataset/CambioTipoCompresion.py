@@ -2,9 +2,8 @@ import os
 import pandas as pd
 
 # Definir las rutas de las carpetas de entrada y salida
-input_folder = 'D:\\Yellowandgreen'
-output_folder = 'D:\\Yellowandgreen\\nuevos'
-
+input_folder = r'D:\Yellowandgreen'
+output_folder = r'D:\Yellowandgreen\nuevos'
 
 # Asegurarse de que la carpeta de salida exista
 if not os.path.exists(output_folder):
@@ -34,5 +33,9 @@ for filename in os.listdir(input_folder):
         # Escribir el archivo en la carpeta de salida con el mismo nombre
         df.to_parquet(output_file_path, compression='snappy')
         print(f"Archivo {filename} guardado en {output_file_path}")
+
+        # Borrar el archivo de la carpeta de origen
+        os.remove(input_file_path)
+        print(f"Archivo {filename} eliminado de {input_folder}")
 
 print("Proceso completado")
