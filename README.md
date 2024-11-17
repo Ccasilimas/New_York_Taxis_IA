@@ -43,7 +43,7 @@ Desarrollaremos un sistema de recomendación basado en datos históricos desde e
 | **Fase 2: Preparación de Datos**  | - Limpieza de datos <br> - Selección de características <br> - Integración de datasets | Gustavo           | 4 días   | 6 - 9 de Noviembre de 2024   |
 | **Fase 3: Análisis Exploratorio** | - Análisis descriptivo <br> - Visualización inicial de datos | Vera             | 3 días   | 10 - 12 de Noviembre de 2024 |
 | **Fase 4: Modelado Predictivo**   | - Desarrollo de modelos <br> - Validación de modelos    | Camilo            | 5 días   | 13 - 17 de Noviembre de 2024 |
-| **Fase 5: Optimización de Rutas** | - Algoritmos de optimización <br> - Evaluación de rutas optimizadas | Camilo y Gustavo | 3 días   | 18 - 20 de Noviembre de 2024 |
+| **Fase 5: Optimización de Rutas** | - Algoritmos de optimización <br> - Evaluación de rutas optimizadas | Gustavo | 3 días   | 18 - 20 de Noviembre de 2024 |
 | **Fase 6: Generación de Informes** | - Preparación de informes visuales <br> - Presentación de resultados | Vera             | 1 día    | 21 de Noviembre de 2024      |
 
 ## 📄 Entregables
