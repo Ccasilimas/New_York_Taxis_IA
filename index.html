@@ -1,172 +1,186 @@
-import React from 'react';
-import { 
-  Calendar,
-  Target,
-  Users,
-  LineChart,
-  Clock,
-  FileText,
-  Settings,
-  MessageSquare,
-  AlertTriangle,
-  Git
-} from 'lucide-react';
-
-const ProjectPage = () => {
-  return (
-    <div className="max-w-4xl mx-auto bg-white">
-      {/* Header Section */}
-      <div className="p-6 border-b">
-        <div className="flex items-start justify-between">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900">🚕 Implementación de Vehículos Ambientalmente Amigables en Nueva York</h1>
-            <p className="mt-2 text-gray-600">Proyecto de transformación sostenible del transporte urbano</p>
-          </div>
-          <button className="px-4 py-2 text-white bg-blue-600 rounded-full hover:bg-blue-700">
-            Seguir Proyecto
-          </button>
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <div className="grid grid-cols-3 gap-6 p-6">
-        {/* Left Column - Main Content */}
-        <div className="col-span-2 space-y-6">
-          {/* Description */}
-          <section className="bg-white rounded-lg border p-4">
-            <h2 className="text-xl font-semibold mb-3">🌍 Descripción General</h2>
-            <p className="text-gray-600">
-              Este proyecto tiene como finalidad asesorar a una empresa de transporte de pasajeros 
-              en la evaluación y viabilidad de implementar una nueva flota de taxis ambientalmente 
-              amigables en la ciudad de Nueva York.
-            </p>
-          </section>
-
-          {/* Objectives */}
-          <section className="bg-white rounded-lg border p-4">
-            <div className="flex items-center mb-3">
-              <Target className="w-5 h-5 mr-2 text-blue-600" />
-              <h2 className="text-xl font-semibold">Objetivos del Proyecto</h2>
-            </div>
-            <ul className="list-disc list-inside text-gray-600 space-y-2">
-              <li>Análisis de Patrones de Movilidad y Demanda en Zonas Estratégicas</li>
-              <li>Determinación de Zonas Óptimas para Operaciones Sostenibles</li>
-              <li>Generación de Informes para Decisiones Estratégicas</li>
-            </ul>
-          </section>
-
-          {/* Timeline */}
-          <section className="bg-white rounded-lg border p-4">
-            <div className="flex items-center mb-3">
-              <Calendar className="w-5 h-5 mr-2 text-blue-600" />
-              <h2 className="text-xl font-semibold">Cronograma</h2>
-            </div>
-            <div className="space-y-3">
-              {[
-                { phase: "Recopilación de Datos", date: "4 - 5 Nov 2024", owner: "Gustavo" },
-                { phase: "Preparación de Datos", date: "6 - 9 Nov 2024", owner: "Gustavo" },
-                { phase: "Análisis Exploratorio", date: "10 - 12 Nov 2024", owner: "Vera" },
-                { phase: "Modelado Predictivo", date: "13 - 17 Nov 2024", owner: "Camilo" },
-                { phase: "Optimización de Rutas", date: "18 - 20 Nov 2024", owner: "Gustavo" },
-                { phase: "Generación de Informes", date: "21 Nov 2024", owner: "Vera" }
-              ].map((item, index) => (
-                <div key={index} className="flex items-center justify-between p-2 hover:bg-gray-50 rounded">
-                  <div>
-                    <p className="font-medium">{item.phase}</p>
-                    <p className="text-sm text-gray-500">Responsable: {item.owner}</p>
-                  </div>
-                  <span className="text-sm text-gray-500">{item.date}</span>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Taxis NY - Ambientalmente Amigables</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- Barra de navegación -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <span class="text-2xl">🚕</span>
+                    <h1 class="text-xl font-bold">Proyecto Taxis NY</h1>
                 </div>
-              ))}
-            </div>
-          </section>
-        </div>
-
-        {/* Right Column - Sidebar */}
-        <div className="space-y-6">
-          {/* Team Section */}
-          <section className="bg-white rounded-lg border p-4">
-            <div className="flex items-center mb-3">
-              <Users className="w-5 h-5 mr-2 text-blue-600" />
-              <h2 className="text-xl font-semibold">Equipo</h2>
-            </div>
-            <div className="space-y-3">
-              {[
-                { name: "Vera Guillen", role: "Analista de Datos" },
-                { name: "Gustavo Coello", role: "Ingeniero de Datos" },
-                { name: "Camilo Casilimas", role: "Científico de Datos" },
-                { name: "Alberto Bernal", role: "Científico de Datos" }
-              ].map((member, index) => (
-                <div key={index} className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
-                    {member.name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="font-medium">{member.name}</p>
-                    <p className="text-sm text-gray-500">{member.role}</p>
-                  </div>
+                <div class="flex items-center space-x-4">
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700">
+                        Seguir Proyecto
+                    </button>
                 </div>
-              ))}
             </div>
-          </section>
-
-          {/* Tools Section */}
-          <section className="bg-white rounded-lg border p-4">
-            <div className="flex items-center mb-3">
-              <Settings className="w-5 h-5 mr-2 text-blue-600" />
-              <h2 className="text-xl font-semibold">Herramientas</h2>
-            </div>
-            <div className="space-y-2">
-              <p className="text-sm text-gray-600"><strong>Análisis:</strong> Python, SQL, Jupyter</p>
-              <p className="text-sm text-gray-600"><strong>Visualización:</strong> Matplotlib, Tableau</p>
-              <p className="text-sm text-gray-600"><strong>ML:</strong> Scikit-learn, TensorFlow</p>
-              <p className="text-sm text-gray-600"><strong>Pipeline:</strong> AWS S3, Lambda, RDS</p>
-            </div>
-          </section>
-
-          {/* Quick Stats */}
-          <section className="bg-white rounded-lg border p-4">
-            <div className="flex items-center mb-3">
-              <LineChart className="w-5 h-5 mr-2 text-blue-600" />
-              <h2 className="text-xl font-semibold">KPIs</h2>
-            </div>
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">Viajes por Zona</span>
-                <span className="text-sm font-medium">En Progreso</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">Ingresos Totales</span>
-                <span className="text-sm font-medium">En Progreso</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">Duración Promedio</span>
-                <span className="text-sm font-medium">En Progreso</span>
-              </div>
-            </div>
-          </section>
         </div>
-      </div>
+    </nav>
 
-      {/* Footer Actions */}
-      <div className="border-t p-4 mt-6">
-        <div className="flex space-x-4">
-          <button className="flex items-center text-gray-600 hover:text-blue-600">
-            <Git className="w-5 h-5 mr-1" />
-            Fork
-          </button>
-          <button className="flex items-center text-gray-600 hover:text-blue-600">
-            <MessageSquare className="w-5 h-5 mr-1" />
-            Comentar
-          </button>
-          <button className="flex items-center text-gray-600 hover:text-blue-600">
-            <AlertTriangle className="w-5 h-5 mr-1" />
-            Reportar
-          </button>
+    <!-- Contenido principal -->
+    <div class="max-w-6xl mx-auto mt-8 px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Columna principal -->
+            <div class="md:col-span-2 space-y-6">
+                <!-- Encabezado del proyecto -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h1 class="text-2xl font-bold mb-4">🚕 Implementación de Vehículos Ambientalmente Amigables en Nueva York</h1>
+                    <p class="text-gray-600">
+                        Este proyecto tiene como finalidad asesorar a una empresa de transporte de pasajeros 
+                        en la evaluación y viabilidad de implementar una nueva flota de taxis ambientalmente 
+                        amigables en la ciudad de Nueva York.
+                    </p>
+                </div>
+
+                <!-- Objetivos -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-bullseye text-blue-600 mr-2"></i>
+                        Objetivos del Proyecto
+                    </h2>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>Análisis de Patrones de Movilidad y Demanda en Zonas Estratégicas</li>
+                        <li>Determinación de Zonas Óptimas para Operaciones Sostenibles</li>
+                        <li>Generación de Informes para Decisiones Estratégicas</li>
+                    </ul>
+                </div>
+
+                <!-- Cronograma -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-calendar text-blue-600 mr-2"></i>
+                        Cronograma
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-3 hover:bg-gray-50 rounded">
+                            <div>
+                                <p class="font-medium">Recopilación de Datos</p>
+                                <p class="text-sm text-gray-500">Responsable: Gustavo</p>
+                            </div>
+                            <span class="text-sm text-gray-500">4 - 5 Nov 2024</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 hover:bg-gray-50 rounded">
+                            <div>
+                                <p class="font-medium">Preparación de Datos</p>
+                                <p class="text-sm text-gray-500">Responsable: Gustavo</p>
+                            </div>
+                            <span class="text-sm text-gray-500">6 - 9 Nov 2024</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 hover:bg-gray-50 rounded">
+                            <div>
+                                <p class="font-medium">Análisis Exploratorio</p>
+                                <p class="text-sm text-gray-500">Responsable: Vera</p>
+                            </div>
+                            <span class="text-sm text-gray-500">10 - 12 Nov 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Barra lateral -->
+            <div class="space-y-6">
+                <!-- Equipo -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-users text-blue-600 mr-2"></i>
+                        Equipo
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                <span class="text-blue-600 font-bold">V</span>
+                            </div>
+                            <div>
+                                <p class="font-medium">Vera Guillen</p>
+                                <p class="text-sm text-gray-500">Analista de Datos</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                                <span class="text-green-600 font-bold">G</span>
+                            </div>
+                            <div>
+                                <p class="font-medium">Gustavo Coello</p>
+                                <p class="text-sm text-gray-500">Ingeniero de Datos</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                                <span class="text-purple-600 font-bold">C</span>
+                            </div>
+                            <div>
+                                <p class="font-medium">Camilo Casilimas</p>
+                                <p class="text-sm text-gray-500">Científico de Datos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Herramientas -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-tools text-blue-600 mr-2"></i>
+                        Herramientas
+                    </h2>
+                    <div class="space-y-2">
+                        <p class="text-sm text-gray-600"><strong>Análisis:</strong> Python, SQL, Jupyter</p>
+                        <p class="text-sm text-gray-600"><strong>Visualización:</strong> Matplotlib, Tableau</p>
+                        <p class="text-sm text-gray-600"><strong>ML:</strong> Scikit-learn, TensorFlow</p>
+                        <p class="text-sm text-gray-600"><strong>Pipeline:</strong> AWS S3, Lambda, RDS</p>
+                    </div>
+                </div>
+
+                <!-- KPIs -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-chart-line text-blue-600 mr-2"></i>
+                        KPIs
+                    </h2>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-600">Viajes por Zona</span>
+                            <span class="text-sm font-medium">En Progreso</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-600">Ingresos Totales</span>
+                            <span class="text-sm font-medium">En Progreso</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-600">Duración Promedio</span>
+                            <span class="text-sm font-medium">En Progreso</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  );
-};
 
-export default ProjectPage;
+    <!-- Footer -->
+    <footer class="bg-white mt-8 border-t">
+        <div class="max-w-6xl mx-auto px-4 py-6">
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-600 hover:text-blue-600">
+                    <i class="fas fa-code-branch mr-2"></i>
+                    Fork
+                </a>
+                <a href="#" class="text-gray-600 hover:text-blue-600">
+                    <i class="fas fa-comment mr-2"></i>
+                    Comentar
+                </a>
+                <a href="#" class="text-gray-600 hover:text-blue-600">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                    Reportar
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
