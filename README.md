@@ -77,6 +77,5 @@ Para contribuir al proyecto, sigue estos pasos:
 
 1. Clona el repositorio desde GitHub:
    ```bash
-   git clone [URL del repositorio]
+   git clone https://github.com/Ccasilimas/New_York_Taxis_IA
    ```
-
