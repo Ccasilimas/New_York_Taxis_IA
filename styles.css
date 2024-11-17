@@ -1,200 +1,96 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Implementación de Vehículos Ambientalmente Amigables en Nueva York</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        nav {
-            background-color: #555;
-            overflow: hidden;
-        }
-        nav a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-        .menu-icon {
-            display: none;
-        }
-        @media screen and (max-width: 600px) {
-            nav a { 
-                float: none; 
-                display: block; 
-                text-align: left; 
-            }
-            .menu-icon {
-                display: block;
-                float: right;
-                padding: 14px 20px;
-                cursor: pointer;
-            }
-        }
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h2, h3 {
-            color: #007bff;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1em 0;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .contact-info, .contribuir {
-            padding: 10px;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .contact-info {
-            background-color: #d9edf7;
-        }
-        .contribuir {
-            background-color: #fcf8e3;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Implementación de Vehículos Ambientalmente Amigables en Nueva York</h1>
-    </header>
-    <nav>
-        <span class="menu-icon" onclick="toggleMenu()">☰</span>
-        <a href="#descripcion">Descripción General</a>
-        <a href="#objetivos">Objetivos del Proyecto</a>
-        <a href="#equipo">Equipo del Proyecto</a>
-        <a href="#sistema">Sistema de Recomendación</a>
-        <a href="#kpi">Indicadores Clave de Rendimiento (KPI)</a>
-        <a href="#cronograma">Cronograma de Trabajo</a>
-        <a href="#entregables">Entregables</a>
-        <a href="#herramientas">Herramientas y Tecnologías</a>
-        <a href="#comunicacion">Comunicación y Reuniones</a>
-        <a href="#riesgos">Riesgos y Mitigación</a>
-        <a href="#contacto">Contacto</a>
-        <a href="#contribuir">Cómo Contribuir</a>
-    </nav>
-    <section id="descripcion">
-        <h2>🌍 Descripción General</h2>
-        <p>Este proyecto tiene como finalidad asesorar a una empresa de transporte de pasajeros en la evaluación y viabilidad de implementar una nueva flota de taxis ambientalmente amigables en la ciudad de Nueva York. Se busca identificar las mejores zonas para iniciar el negocio, considerando la rentabilidad y los patrones de movilidad, alineando así los objetivos financieros con un impacto positivo en el medio ambiente.</p>
-    </section>
-    <section id="objetivos">
-        <h2>🎯 Objetivos del Proyecto</h2>
-        <ol>
-            <li><strong>🔍 Análisis de Patrones de Movilidad y Demanda en Zonas Estratégicas</strong>: Identificar zonas y horarios de alta demanda para optimizar la operación de la flota.</li>
-            <li><strong>📍 Determinación de Zonas Óptimas para Operaciones Sostenibles</strong>: Desarrollar un sistema de recomendación que combine rentabilidad y sostenibilidad.</li>
-            <li><strong>📊 Generación de Informes para Decisiones Estratégicas</strong>: Crear informes detallados que faciliten una toma de decisiones informada.</li>
-        </ol>
-    </section>
-    <section id="equipo">
-        <h2>👥 Equipo del Proyecto</h2>
-        <div class="project-team">
-            <div class="team-member">
-                <strong>Vera Guillen</strong> - Analista de Datos
-            </div>
-            <div class="team-member">
-                <strong>Gustavo Coello</strong> - Ingeniero de Datos
-            </div>
-            <div class="team-member">
-                <strong>Camilo Casilimas</strong> - Científico de Datos
-            </div>
-            <div class="team-member">
-                <strong>Alberto Bernal</strong> - Científico de Datos
-            </div>
-        </div>
-    </section>
-    <section id="sistema">
-        <h2>🧠 Sistema de Recomendación</h2>
-        <p>Desarrollaremos un sistema de recomendación basado en datos históricos desde enero de 2023 hasta agosto de 2024. Este sistema recomendará a los conductores de la flota que se desplacen a la zona más cercana con alta demanda histórica, calculada por hora, día de la semana y mes. Utilizaremos una muestra de 50 vehículos para medir los KPI históricamente y tomaremos un periodo de 4 meses para evaluar el modelo predictivo. Esto permitirá optimizar la operación diaria y maximizar la eficiencia de los conductores, asegurando que estén en los lugares correctos en los momentos correctos para satisfacer la demanda de manera efectiva.</p>
-    </section>
-    <section id="kpi">
-        <h2>📈 Indicadores Clave de Rendimiento (KPI)</h2>
-        <ul>
-            <li><strong>Número de Viajes por Zona y Hora</strong>
-                <ul>
-                    <li><em>Descripción</em>: Mide el número total de viajes iniciados en cada zona y hora del día.</li>
-                    <li><em>Meta</em>: Maximizar la disponibilidad de la flota en zonas y horarios de alta demanda.</li>
-                </ul>
-            </li>
-            <li><strong>Ingresos Totales por Zona</strong>
-                <ul>
-                    <li><em>Descripción</em>: Mide el total de ingresos generados en cada zona de recogida.</li>
-                    <li><em>Meta</em>: Identificar y optimizar las zonas más rentables para maximizar los ingresos.</li>
-                </ul>
-            </li>
-            <li><strong>Duración Promedio del Viaje por Zona</strong>
-                <ul>
-                    <li><em>Descripción</em>: Mide la duración promedio de los viajes iniciados en cada zona.</li>
-                    <li><em>Meta</em>: Optimizar las rutas para reducir la duración promedio de los viajes.</li>
-                </ul>
-            </li>
-        </ul>
-    </section>
-    <section id="cronograma">
-        <h2>🗓️ Cronograma de Trabajo</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Fase del Proyecto</th>
-                    <th>Actividades Principales</th>
-                    <th>Responsable</th>
-                    <th>Duración</th>
-                    <th>Fechas</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Fase 1: Recopilación de Datos</td>
-                    <td>Identificación de fuentes de datos<br> Recolección de datasets</td>
-                    <td>Gustavo</td>
-                    <td>2 días</td>
-                    <td>4 - 5 de Noviembre de 2024</td>
-                </tr>
-                <tr>
-                    <td>Fase 2: Preparación de Datos</td>
-                    <td>Limpieza de datos<br> Selección de características<br> Integración de datasets</td>
-                    <td>Gustavo</td>
-                    <td>4 días</td>
-                    <td>6 - 9 de Noviembre de 2024</td>
-                </tr>
-                <tr>
-                    <td>Fase 3: Análisis Exploratorio</td>
-                    <td>An[_{{{CITATION{{{_1{](https://github.com/la9una/web/tree/ba1073ae044ebb7b538a3b13f0f9598f7c410bb6/docs%2Fbootstrap%2Falignci.md)
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f6f8;
+    color: #333333;
+}
+header {
+    background-color: #0a66c2; /* Updated LinkedIn Blue */
+    color: #ffffff;
+    padding: 16px 0;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+    font-weight: 600;
+    color: #ffffff; /* White for header title */
+}
+nav {
+    background-color: #313e4f; /* Darker shade for navigation bar */
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+}
+nav a {
+    float: left;
+    display: block;
+    color: #f3f6f8;
+    text-align: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+nav a:hover {
+    background-color: #e1e9ee;
+    color: #333;
+}
+.menu-icon {
+    display: none;
+}
+@media screen and (max-width: 600px) {
+    nav a { 
+        float: none; 
+        display: block; 
+        text-align: left; 
+    }
+    .menu-icon {
+        display: block;
+        float: right;
+        padding: 14px 20px;
+        cursor: pointer;
+    }
+}
+section {
+    max-width: 900px;
+    margin: 24px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+h2, h3 {
+    color: #0a66c2; /* Updated LinkedIn Blue for titles */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+table, th, td {
+    border: 1px solid #dfe3e8;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #e6f1f5;
+    color: #333;
+}
+.contact-info, .contribuir {
+    padding: 12px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+.contact-info {
+    background-color: #d0ebff;
+    color: #004085;
+}
+.contribuir {
+    background-color: #fff3cd;
+    color: #856404;
+}
