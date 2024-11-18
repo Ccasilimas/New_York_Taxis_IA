@@ -3,6 +3,7 @@ import boto3
 import pandas as pd
 import pymysql
 from io import BytesIO
+import env
 import os
 
 def lambda_handler(event, context):
@@ -13,6 +14,11 @@ def lambda_handler(event, context):
     file_key = event['Records'][0]['s3']['object']['key']
     print(f"Archivo subido a S3: {file_key} en el bucket: {bucket_name}")
     
+    db_host = env.DB_HOST
+    db_port = env.DB_PORT
+    db_user = env.DB_USER
+    db_password = env.DB_PASS
+    db_name = env.DB_NAME
 
     
     # Verificar las credenciales de la base de datos (evitando imprimir información sensible)
