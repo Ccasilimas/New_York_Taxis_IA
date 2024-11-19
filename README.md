@@ -88,32 +88,9 @@ Desarrollaremos un sistema de recomendación basado en datos históricos desde e
   * Sistema de recomendación
   * Herramientas de análisis
 
-## 🛠️ Herramientas y Tecnologías
+🛠️ Herramientas y Tecnologías
+CategoríaHerramientasAnálisis de Datos• Python (Pandas, NumPy)<br>• SQL<br>• Jupyter NotebooksVisualización• Matplotlib<br>• Seaborn<br>• TableauMachine Learning• Scikit-learn<br>• TensorFlowPipeline de Datos• AWS S3<br>• AWS Lambda<br>• MySQL en AWS RDSColaboración y Gestión• GitHub<br>• Slack<br>• Trello<br>• Microsoft Teams
 
-### Análisis de Datos
-* Python (Pandas, NumPy)
-* SQL
-* Jupyter Notebooks
-
-### Visualización
-* Matplotlib
-* Seaborn
-* Tableau
-
-### Machine Learning
-* Scikit-learn
-* TensorFlow
-
-### Pipeline de Datos
-* AWS S3
-* AWS Lambda
-* MySQL en AWS RDS
-
-### Colaboración
-* GitHub
-* Slack
-* Trello
-* Microsoft Teams
 
 ## 📢 Comunicación y Reuniones
 
