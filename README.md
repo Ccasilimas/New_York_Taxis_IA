@@ -12,10 +12,12 @@ Este proyecto tiene como finalidad asesorar a una empresa de transporte de pasaj
 3. **📊 Generación de Informes para Decisiones Estratégicas**: Crear informes detallados que faciliten una toma de decisiones informada. 
 
 ## 👥 Equipo del Proyecto
+
 - **Vera Guillen** - Analista de Datos
 - **Gustavo Coello** - Ingeniero de Datos
-- **Camilo Casilimas** - Científico de Datos
 - **Alberto Bernal** - Científico de Datos
+- **Camilo Casilimas** - Científico de Datos
+
 
 ## 🧠 Sistema de Recomendación
 
@@ -71,6 +73,11 @@ Desarrollaremos un sistema de recomendación basado en datos históricos desde e
 - **Cambios en requerimientos**: Mantener comunicación constante con el PO para adaptar el alcance de manera oportuna.
 
 ## 📬 Contacto
+
+- **Vera Guillen** - Analista de Datos
+- **Gustavo Coello** - (https://www.linkedin.com/in/gustavo-coello-01039b270/)
+- **Alberto Bernal** - (https://www.linkedin.com/in/alberto-bernal-duplat-90a283a2/)
+- **Camilo Casilimas** - (https://www.linkedin.com/in/camilo-casilimas/)
 
 ## 🤝 Cómo Contribuir
 Para contribuir al proyecto, sigue estos pasos:
