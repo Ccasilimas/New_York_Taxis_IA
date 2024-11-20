@@ -59,62 +59,87 @@ st.title("🚖 Análisis de Viabilidad para Flota de Taxis Ecológicos en Nueva 
 # Introducción
 with st.expander("🌍 Introducción"):
     st.write("""
-    Este proyecto tiene como objetivo asesorar a una empresa de transporte de pasajeros en la evaluación y viabilidad de implementar una nueva flota de taxis ambientalmente amigables en la ciudad de Nueva York...
+    Green Route Solutions presenta un estudio de viabilidad para una flota de taxis ecológicos en Nueva York.
     """)
 
-# Análisis de Viabilidad
-with st.expander("💡 Análisis de Viabilidad"):
+# Quiénes Somos
+with st.expander("🌟 Quiénes Somos"):
     st.write("""
-    **Objetivo del Análisis:** Evaluar la viabilidad de implementar una flota de taxis ecológicos en Nueva York, considerando aspectos económicos, ambientales y operativos.
+    Green Route Solutions es una consultora especializada en soluciones sostenibles para el transporte urbano.
+
+    **Áreas de Especialización:**
+    - Análisis de Datos: Optimización de rutas y reducción de la huella de carbono.
+    - Análisis de Rutas: Identificación de zonas óptimas para operaciones.
+    - Soluciones Sostenibles: Implementación de tecnologías ecológicas.
     """)
 
-# Datos y Metodología
-with st.expander("📊 Datos y Metodología"):
-    st.write("""
-    **Fuentes de Datos:** Se utilizaron datos históricos de movilidad urbana, emisiones de CO2, y costos operativos.
-    
-    **Metodología:** El análisis se llevó a cabo mediante modelado predictivo y simulaciones para identificar las áreas de mayor demanda y los beneficios ambientales potenciales.
-    """)
-
-# Resultados del Análisis
-with st.expander("📈 Resultados del Análisis"):
-    st.write("""
-    **Rentabilidad:** Las simulaciones indican una mejora significativa en la rentabilidad debido a la reducción de costos operativos y el aumento de la demanda por taxis ecológicos.
-
-    **Impacto Ambiental:** Se estima una reducción del 20% en las emisiones de CO2 con la implementación de la flota propuesta.
-    """)
-
-# Recomendaciones
-with st.expander("📝 Recomendaciones"):
-    st.write("""
-    1. **Implementar Flotas Piloto:** Iniciar con una flota piloto de 50 vehículos en las áreas de mayor demanda identificadas.
-    2. **Evaluación Continua:** Monitorear y evaluar continuamente el desempeño de la flota para ajustar las estrategias operativas y de expansión.
-    3. **Incentivos y Subvenciones:** Buscar incentivos y subvenciones gubernamentales para apoyar la transición hacia una flota ecológica.
-    """)
-
-# Equipo del Proyecto
-st.header("👥 Equipo del Proyecto")
+# Nuestro Equipo
+st.header("👥 Nuestro Equipo")
 data_equipo = {
-    "Nombre": ["Vera Guillen", "Gustavo Coello", "Alberto Bernal", "Camilo Casilimas"],
-    "Cargo": ["Analista de Datos", "Ingeniero de Datos", "Científico de Datos", "Científico de Datos"],
+    "Nombre": ["Camilo Casilimas", "Gustavo Coello", "Alberto Bernal", "Vera Guillen"],
+    "Cargo": ["Arquitecto e Ingeniero de Datos", "Ingeniero de Datos", "Científico de Datos", "Data Analyst"],
     "LinkedIn": [
-        "https://www.linkedin.com/in/vera-guillen-9b464a303/",
+        "https://www.linkedin.com/in/camilo-casilimas/",
         "https://www.linkedin.com/in/gustavo-coello-01039b270/",
         "https://www.linkedin.com/in/alberto-bernal-duplat-90a283a2/",
-        "https://www.linkedin.com/in/camilo-casilimas/"
+        "https://www.linkedin.com/in/vera-guillen-9b464a303/"
     ]
 }
 df_equipo = pd.DataFrame(data_equipo)
 for i, row in df_equipo.iterrows():
     st.markdown(f"**{row['Nombre']}** - {row['Cargo']} - [LinkedIn]({row['LinkedIn']})")
 
-# Cronograma de Trabajo
-st.header("🗓️ Cronograma de Trabajo")
+# Objetivo General
+with st.expander("🎯 Objetivo General"):
+    st.write("""
+    Este proyecto tiene como finalidad asesorar a Urban Transit Corp transportadora de pasajeros en la evaluación y viabilidad de implementar una nueva flota de taxis ambientalmente amigables en la ciudad de Nueva York. Se busca identificar las mejores zonas para iniciar el negocio, considerando la rentabilidad y los patrones de movilidad, alineando así los objetivos financieros con un impacto positivo en el medio ambiente.
+    """)
+
+# Objetivos Específicos
+with st.expander("📌 Objetivos Específicos"):
+    st.write("""
+    1. **Análisis de Demanda:** Identificar zonas y horarios de alta demanda para optimizar la operación de la flota.
+    2. **Evaluación de Emisiones:** Analizar rutas para reducir el consumo de combustible y emisiones.
+    3. **Zonas Óptimas:** Crear un sistema de recomendación que optimice la rentabilidad y reducción de emisiones.
+    """)
+
+# Alcance del Proyecto
+with st.expander("🔍 ¿Cuál Será El Alcance?"):
+    st.write("""
+    1. **Recopilación de Datos:** Análisis de datos de demanda de taxis.
+    2. **Evaluación de Áreas:** Identificar áreas óptimas para taxis ecológicos.
+    3. **Análisis de Costos:** Reducción de costos de operación.
+    4. **Estimación de Incentivos:** Evaluación de incentivos fiscales y ambientales.
+    """)
+
+# Entregables
+with st.expander("📦 ¿Qué Entregaremos?"):
+    st.write("""
+    1. **Dashboard:** Monitoreo de KPIs: Demanda, Emisiones de CO₂, Rentabilidad.
+    2. **Modelo de Machine Learning:** Predicción de demanda y optimización de rutas.
+    3. **Análisis Completo:** Evaluación de la viabilidad económica y ambiental de la flota.
+    """)
+
+# Metodología
+st.header("🔧 Metodología")
+st.write("""
+Se utilizará el proceso Scrum para la gestión del proyecto.
+""")
+
 data_timeline = {
-    "Fase": ["Recopilación de Datos", "Preparación de Datos", "Análisis Exploratorio", "Modelado Predictivo", "Optimización de Rutas", "Generación de Informes"],
-    "Duración": ["2 días", "4 días", "3 días", "5 días", "3 días", "1 día"],
-    "Fechas": ["4-5 Nov 2024", "6-9 Nov 2024", "10-12 Nov 2024", "13-17 Nov 2024", "18-20 Nov 2024", "21 Nov 2024"]
+    "Fase del Proyecto": ["Fase 1: Recopilación de Datos", "Fase 2: Preparación de Datos", "Fase 3: Análisis Exploratorio", 
+                          "Fase 4: Modelado Predictivo", "Fase 5: Optimización de Rutas", "Fase 6: Evaluación Ambiental", 
+                          "Fase 7: Generación de Informes"],
+    "Actividades Principales": ["Identificación de fuentes de datos, Recolección de datasets", "Limpieza de datos, Selección de características, Integración de datasets", 
+                                "Análisis descriptivo, Visualización inicial de datos", "Desarrollo de modelos, Validación de modelos", 
+                                "Algoritmos de optimización, Evaluación de rutas optimizadas", "Análisis de emisiones, Evaluación de impacto ambiental", 
+                                "Preparación de informes visuales, Presentación de resultados"],
+    "Responsable": ["Gustavo", "Gustavo", "Vera", "Camilo", "Camilo y Gustavo", "Alberto", "Vera"],
+    "Duración": ["SPRINT 1", "SPRINT 1", "SPRINT 2", "SPRINT 2", "SPRINT 3", "SPRINT 3", "SPRINT 3"],
+    "Fechas": ["5 - 9 de Noviembre de 2024", "10 - 12 de Noviembre de 2024", "13 - 17 de Noviembre de 2024", 
+               "18 - 20 de Noviembre de 2024", "21 de Noviembre de 2024", "22 de Noviembre de 2024", "23 de Noviembre de 2024"]
 }
+
 df_timeline = pd.DataFrame(data_timeline)
 st.dataframe(df_timeline.style.set_properties(**{
     'background-color': '#f0f2f6',
@@ -122,39 +147,28 @@ st.dataframe(df_timeline.style.set_properties(**{
     'border-color': '#fff'
 }))
 
-# Herramientas y Tecnologías
-st.header("🛠️ Herramientas y Tecnologías")
-data_herramientas = {
-    "Categoría": ["Análisis de Datos", "Visualización", "Machine Learning", "Pipeline de Datos", "Colaboración y Gestión"],
-    "Herramientas": ["Python (Pandas, NumPy), SQL, Jupyter Notebooks", "Matplotlib, Seaborn, Tableau", "Scikit-learn, TensorFlow", "AWS S3, AWS Lambda, MySQL en AWS RDS", "GitHub, Slack, Trello, Microsoft Teams"]
-}
-df_herramientas = pd.DataFrame(data_herramientas)
-st.dataframe(df_herramientas.style.set_properties(**{
-    'background-color': '#f0f2f6',
-    'color': '#333',
-    'border-color': '#fff'
-}))
+# Tecnologías Clave para el Análisis de Datos
+st.header("💻 Tecnologías Clave para el Análisis de Datos")
+st.write("""
+- Utilizaremos Python como lenguaje principal de programación por su flexibilidad y amplia comunidad de desarrolladores.
+- Aprovecharemos los servicios de AWS como Lambda, S3 para procesar y almacenar los datos de manera escalable y eficiente.
+- Emplearemos Power BI para generar informes visuales e interactivos que permitan una mejor comprensión de los insights clave.
+- Finalmente no utilizaremos Microsoft Azure ni Tableau.
+""")
 
-# Riesgos y Mitigación
-st.header("⚠️ Riesgos y Mitigación")
-data_riesgos = {
-    "Riesgo": ["Retrasos en datos", "Inconsistencias", "Cambios en requerimientos"],
-    "Estrategia de Mitigación": ["Identificar fuentes alternativas", "Implementar validaciones rigurosas", "Mantener comunicación con PO"]
-}
-df_riesgos = pd.DataFrame(data_riesgos)
-st.dataframe(df_riesgos.style.set_properties(**{
-    'background-color': '#f0f2f6',
-    'color': '#333',
-    'border-color': '#fff'
-}))
+# La Vida del Dato
+st.header("🔄 La Vida del Dato")
+st.write("""
+Desde la recolección hasta el análisis y la visualización, cada dato pasará por un proceso meticuloso que garantiza su calidad y relevancia para la toma de decisiones.
+""")
 
 # Contacto
 st.header("📬 Contacto")
 st.write("""
-- Vera Guillen - [LinkedIn](https://www.linkedin.com/in/vera-guillen-9b464a303/)
+- Camilo Casilimas - [LinkedIn](https://www.linkedin.com/in/camilo-casilimas/)
 - Gustavo Coello - [LinkedIn](https://www.linkedin.com/in/gustavo-coello-01039b270/)
 - Alberto Bernal - [LinkedIn](https://www.linkedin.com/in/alberto-bernal-duplat-90a283a2/)
-- Camilo Casilimas - [LinkedIn](https://www.linkedin.com/in/camilo-casilimas/)
+- Vera Guillen - [LinkedIn](https://www.linkedin.com/in/vera-guillen-9b464a303/)
 """)
 
 # Cómo Contribuir
