@@ -1,80 +1,121 @@
-# 🌟 **Ciclo de Vida del Dato**
+# 🚖 Ciclo de Vida del Dato en el Proyecto de Predicción de Demanda de Taxis FHV en NYC
 
-![Descripción de la imagen](docs/img/IAdata.jpg)
+## 📌 Introducción
+El objetivo de este proyecto es desarrollar un modelo predictivo que ayude a los conductores de taxis FHV (For-Hire Vehicle) en la ciudad de Nueva York a identificar las mejores zonas a las que desplazarse, optimizando sus oportunidades de recoger pasajeros. Utilizamos datos históricos de viajes, información de tráfico y detalles geográficos para cumplir con este propósito. A continuación, se detalla el ciclo de vida del dato desde su origen hasta su uso en el modelo predictivo.
 
-## 1️⃣ Ingesta de Datos
-**Descripción**: Recopilación y almacenamiento inicial de datos desde diversas fuentes.
+---
 
-**Tecnologías y Herramientas**:
-- **AWS S3**: Almacenamiento de datasets originales en formato .parquet o .csv.
-- **Python**: Scripts de descarga y carga de datos.
+## 1️⃣ Origen y Recolección de Datos
 
-**Pasos Involucrados**:
-- **Descarga de Datos**: Obtención de datasets de fuentes públicas o privadas.
-- **Almacenamiento Inicial**: Guardar archivos de datos en un bucket de S3.
+### 1.1 🛺 Datos de Taxis FHV (`taxi_fhv_data`)
+- **Fuente:** Registros históricos proporcionados por empresas de transporte y agencias regulatorias.
+- **Contenido:**
+  - `id`
+  - `Pickup_datetime`
+  - `DropOff_datetime`
+  - `PULocationID`
+  - `DOLocationID`
+  - `source` (origen del dato)
 
-## 2️⃣ Procesamiento y ETL
-**Descripción**: Transformación y limpieza de datos para prepararlos para el análisis.
+### 1.2 🚦 Datos de Tráfico (`trafico`)
+- **Fuente:** Sensores y sistemas de monitoreo de tráfico en NYC.
+- **Contenido:**
+  - `id`
+  - `Yr` (Año)
+  - `M` (Mes)
+  - `D` (Día)
+  - `HH` (Hora)
+  - `MM` (Minuto)
+  - `Vol` (Volumen de tráfico)
+  - `SegmentID`
+  - `Direction`
 
-**Tecnologías y Herramientas**:
-- **Python y pandas**: Transformación y limpieza de datos.
-- **SQLAlchemy**: Interacción con la base de datos MySQL.
-- **AWS Lambda y EC2**: Ejecución automática y escalable de scripts de ETL.
+### 1.3 🗺️ Datos de Zonas de Taxis (`taxi_zones`)
+- **Fuente:** Administración de Transporte de NYC.
+- **Contenido:**
+  - `LocationID`
+  - `Borough`
+  - `Zone`
+  - `service_zone`
 
-**Pasos Involucrados**:
-- **Extracción**: Lectura de archivos desde S3.
-- **Transformación**: Limpieza y estructuración de datos con pandas.
-- **Carga**: Inserción de datos procesados en la base de datos MySQL en AWS RDS.
+---
 
-## 3️⃣ Almacenamiento
-**Descripción**: Gestión y almacenamiento de datos transformados en una base de datos relacional.
+## 2️⃣ Almacenamiento
+- **Base de Datos:** MySQL  
+- **Esquema:** `UrbanTransit`  
+- **Tablas Principales:**
+  - `taxi_fhv_data`
+  - `trafico`
+  - `taxi_zones`
 
-**Tecnologías y Herramientas**:
-- **MySQL en AWS RDS**: Almacenamiento de datos estructurados.
+---
 
-**Pasos Involucrados**:
-- **Creación de Tablas**: Definición de la estructura de las tablas.
-- **Carga de Datos**: Inserción de datos en las tablas.
-- **Indexación**: Creación de índices para optimizar las consultas.
+## 3️⃣ Procesamiento y Transformación (ETL)
 
-## 4️⃣ Análisis
-**Descripción**: Realización de EDA y cálculos de KPIs.
+### 3.1 🔍 Extracción
+- **Herramientas Utilizadas:**
+  - Python  
+  - Librerías: `pandas`, `sqlalchemy`, `mysql-connector-python`, `python-dotenv`
+- **Scripts:**
+  - `nyc_taxi_etl.py`: Extrae datos desde la base de datos.
 
-**Tecnologías y Herramientas**:
-- **Python y pandas**: Análisis exploratorio y cálculo de KPIs.
-- **SQLAlchemy**: Consultas a la base de datos.
+### 3.2 🔄 Transformación
+- **Unión de Datos:**
+  - **Datos de Taxis y Tráfico:** Se unen basándose en componentes temporales: `Pickup_datetime` con `Yr`, `M`, `D`, `HH`, `MM`.  
+    - Nueva columna: `traffic_volume` (promedio del volumen de tráfico).
+  - **Mapeo de Zonas:** `PULocationID` se mapea a `pickup_borough` utilizando `taxi_zones`.
 
-**Pasos Involucrados**:
-- **EDA**: Análisis para entender la estructura y calidad de los datos.
-- **Cálculo de KPIs**: Definición y cálculo de KPIs (Número de Viajes, Ingresos Totales, Duración Promedio).
+- **Creación de Variables Temporales:**
+  - A partir de `Pickup_datetime` se extraen:
+    - `pickup_year`, `pickup_month`, `pickup_day`, `pickup_hour`, `pickup_minute`
+    - `day_of_week` (0=Lunes, 6=Domingo)
 
-## 5️⃣ Visualización
-**Descripción**: Presentación de datos y KPIs en visualizaciones comprensibles.
+- **Depuración de Datos:**
+  - Eliminación de columnas no esenciales:
+    - `temperature`, `trip_miles`, `driver_pay`, `VendorID`, `trip_time`.
 
-**Tecnologías y Herramientas**:
-- **Amazon QuickSight**: Creación de dashboards interactivos.
+### 3.3 💾 Carga
+- **Tabla de Destino:** `enriched_taxi_data`
+- **Proceso:**
+  - Los datos transformados se cargan en la tabla enriquecida para su posterior análisis.
 
-**Pasos Involucrados**:
-- **Desarrollo de Dashboards**: Diseño e implementación de visualizaciones.
-- **Publicación**: Acceso a dashboards para stakeholders.
+---
 
-## 6️⃣ Automatización y Monitoreo
-**Descripción**: Automatización y monitoreo de procesos ETL para asegurar eficiencia y corrección.
+## 4️⃣ Análisis y Modelado
 
-**Tecnologías y Herramientas**:
-- **AWS Step Functions**: Orquestación de flujos de trabajo.
-- **AWS CloudWatch**: Monitorización y registro de ejecuciones.
+### 4.1 📊 Preparación de Datos
+- **Selección de Variables para el Modelo:**
+  - **Variables de Entrada (X):**
+    - `day_of_week`
+    - `pickup_hour`
+    - `pickup_borough` (One-Hot Encoding)
+    - `traffic_volume`
+  - **Variable Objetivo (y):**
+    - `trip_count` (número de viajes en un período y zona específicos)
 
-**Pasos Involucrados**:
-- **Automatización del ETL**: Orquestación de procesos ETL con Step Functions.
-- **Monitorización**: Configuración de CloudWatch para monitorear y capturar logs de ejecución.
+- **Agrupación de Datos:**
+  - Los datos se agrupan por `pickup_borough`, `day_of_week` y `pickup_hour` para calcular `trip_count`.
 
-## 7️⃣ Seguridad y Compliance 🔐
-**Descripción**: Asegurar el manejo seguro y conforme a normativas de los datos.
+- **Codificación de Variables Categóricas:**
+  - Se aplica **One-Hot Encoding** a `pickup_borough`.
 
-**Tecnologías y Herramientas**:
-- **AWS IAM**: Gestión de roles y permisos.
-- **AWS KMS**: Cifrado de datos en reposo y en tránsito.
+### 4.2 🤖 Entrenamiento del Modelo
+- **Algoritmo Utilizado:** Regresión Lineal
+- **Proceso:**
+  - División del dataset en conjuntos de entrenamiento y prueba.
+  - Entrenamiento del modelo con los datos de entrenamiento.
+  - Evaluación del modelo con métricas como **MAE** y **R²**.
 
-**Pasos Involucrados**:
-- **Configuración de Permisos
+- **Variables Finales Utilizadas:**
+  - `day_of_week`, `pickup_hour`, `pickup_borough` (codificada), `traffic_volume`
+
+---
+
+## 5️⃣ Despliegue
+- **Implementación del Modelo:**
+  - El modelo entrenado se integra en una aplicación o sistema que proporciona predicciones en tiempo real.
+- **Funcionalidad:**
+  - Los conductores ingresan la hora actual y reciben recomendaciones sobre las mejores zonas para dirigirse.
+
+---
+
