@@ -32,4 +32,4 @@ document.getElementById('predictionForm').addEventListener('submit', async funct
                 <div class="bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded relative" role="alert">
                     <strong class="font-bold">Resultado: </strong>
                     La zona con mayor probabilidad de tráfico es: ${responseData.max_zone_name} a las ${new Date().getHours()}:${new Date().getMinutes()}
-                </div>
+ 
