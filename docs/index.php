@@ -21,6 +21,7 @@
         }
     </style>
 </head>
+
 <body class="bg-gray-100">
     <!-- Barra de navegación -->
     <nav class="bg-white shadow-lg">
