@@ -110,12 +110,3 @@ El objetivo de este proyecto es desarrollar un modelo predictivo que ayude a los
   - `day_of_week`, `pickup_hour`, `pickup_borough` (codificada), `traffic_volume`
 
 ---
-
-## 5️⃣ Despliegue
-- **Implementación del Modelo:**
-  - El modelo entrenado se integra en una aplicación o sistema que proporciona predicciones en tiempo real.
-- **Funcionalidad:**
-  - Los conductores ingresan la hora actual y reciben recomendaciones sobre las mejores zonas para dirigirse.
-
----
-
