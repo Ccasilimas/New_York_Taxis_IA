@@ -5,14 +5,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pickup_weekday = date('w'); // Día de la semana (0 para Domingo hasta 6 para Sábado)
     $pickup_hour = date('G');    // Hora actual en formato 24 horas
     
-    // URL del endpoint de FastAPI
+    // URL del contenedor Docker (ajusta según tu configuración)
     $url = 'http://0.tcp.ngrok.io:16013/predict/';
 
     // Datos a enviar en la solicitud
     $data = array(
-        "PULocationID" => $PULocationID,
-        "pickup_weekday" => $pickup_weekday,
-        "pickup_hour" => $pickup_hour
+        "PULocationID" => intval($PULocationID),
+        "pickup_weekday" => intval($pickup_weekday),
+        "pickup_hour" => intval($pickup_hour)
     );
 
     // Inicializar cURL
@@ -28,9 +28,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $response = curl_exec($ch);
 
     if (curl_errno($ch)) {
-        $error = 'Error: ' . curl_error($ch);
+        $error = 'Error de conexión: ' . curl_error($ch);
     } else {
-        $data = json_decode($response, true);
+        $responseData = json_decode($response, true);
+        
+        // Verificar si la respuesta es válida
+        if ($responseData === null) {
+            $error = 'Error al decodificar la respuesta JSON';
+        }
     }
 
     // Cerrar cURL
@@ -50,14 +55,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded relative" role="alert">
                 <?php echo $error; ?>
             </div>
-        <?php elseif (isset($data['max_zone_name'])): ?>
+        <?php elseif (isset($responseData['max_zone_name'])): ?>
             <div class="bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded relative" role="alert">
                 <strong class="font-bold">Resultado: </strong>
-                La zona con mayor probabilidad de tráfico es: <?php echo $data['max_zone_name']; ?> a las <?php echo date('G:i'); ?>
+                La zona con mayor probabilidad de tráfico es: <?php echo $responseData['max_zone_name']; ?> a las <?php echo date('G:i'); ?>
             </div>
         <?php else: ?>
             <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded relative" role="alert">
-                Error en la predicción: <?php echo json_encode($data); ?>
+                Error en la predicción: No se recibió una respuesta válida
             </div>
         <?php endif; ?>
         
