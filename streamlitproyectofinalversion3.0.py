@@ -1,176 +1,127 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+from sqlalchemy import create_engine
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_absolute_error, r2_score
+from dotenv import load_dotenv
+import os
+import numpy as np
 
-# Configuración de la página
-st.set_page_config(
-    page_title="Análisis de Viabilidad para Flota de Taxis Ecológicos en Nueva York",
-    page_icon="🚖",
-    layout="wide",
-    initial_sidebar_state="expanded"
+# 🌟 Cargar variables de entorno para la conexión a la base de datos
+load_dotenv()
+
+# 🔐 Configuración de la conexión a la base de datos
+DB_CONFIG = {
+    'host': os.getenv("DB_HOST"),
+    'port': int(os.getenv("DB_PORT", 3306)),
+    'user': os.getenv("DB_USER"),
+    'password': os.getenv("DB_PASSWORD"),
+    'database': os.getenv("DB_NAME")
+}
+
+# Crear el motor de SQLAlchemy para conectarse a la base de datos
+engine = create_engine(
+    f"mysql+pymysql://{DB_CONFIG['user']}:{DB_CONFIG['password']}@{DB_CONFIG['host']}:{DB_CONFIG['port']}/{DB_CONFIG['database']}"
 )
 
-# Tema personalizado
-def load_custom_css():
-    st.markdown("""
-        <style>
-        .main {
-            background-color: #f0f2f6; /* Gris Claro */
-            color: #333;
-        }
-        .stHeader, .stSubheader, .stText {
-            color: #333;
-        }
-        .stMarkdown h1, .stMarkdown h2, .stMarkdown h3 {
-            animation: blink 1s step-end infinite;
-        }
-        .stMarkdown h1 {
-            color: #1f77b4; /* Azul */
-        }
-        .stMarkdown h2 {
-            color: #ff7f0e; /* Naranja */
-        }
-        .stMarkdown h3 {
-            color: #2ca02c; /* Verde */
-        }
-        .stMarkdown p {
-            font-size: 16px;
-        }
-        @keyframes blink {
-            50% {
-                opacity: 0.5;
-            }
-        }
-        .css-1vkb0c3 {
-            background-color: #f0f2f6; /* Gris Claro */
-        }
-        .css-15nxh3m {
-            background-color: #f0f2f6; /* Gris Claro */
-        }
-        </style>
-        """, unsafe_allow_html=True)
-
-load_custom_css()
+# 🌟 Configuración de la página Streamlit
+st.set_page_config(
+    page_title="Recomendación de Rutas de Taxis en Nueva York",
+    page_icon="🚖",
+    layout="wide"
+)
 
 # Título
-st.title("🚖 Análisis de Viabilidad para Flota de Taxis Ecológicos en Nueva York")
+st.title("🚖 Recomendación de Rutas para Conductores de Taxis en Nueva York")
 
-# Introducción
-with st.expander("🌍 Introducción"):
-    st.write("""
-    Green Route Solutions presenta un estudio de viabilidad para una flota de taxis ecológicos en Nueva York.
-    """)
-
-# Quiénes Somos
-with st.expander("🌟 Quiénes Somos"):
-    st.write("""
-    Green Route Solutions es una consultora especializada en soluciones sostenibles para el transporte urbano.
-
-    **Áreas de Especialización:**
-    - Análisis de Datos: Optimización de rutas y reducción de la huella de carbono.
-    - Análisis de Rutas: Identificación de zonas óptimas para operaciones.
-    - Soluciones Sostenibles: Implementación de tecnologías ecológicas.
-    """)
-
-# Nuestro Equipo
-st.header("👥 Nuestro Equipo")
-data_equipo = {
-    "Nombre": ["Camilo Casilimas", "Gustavo Coello", "Alberto Bernal", "Vera Guillen"],
-    "Cargo": ["Arquitecto e Ingeniero de Datos", "Ingeniero de Datos", "Científico de Datos", "Data Analyst"],
-    "LinkedIn": [
-        "https://www.linkedin.com/in/camilo-casilimas/",
-        "https://www.linkedin.com/in/gustavo-coello-01039b270/",
-        "https://www.linkedin.com/in/alberto-bernal-duplat-90a283a2/",
-        "https://www.linkedin.com/in/vera-guillen-9b464a303/"
-    ]
-}
-df_equipo = pd.DataFrame(data_equipo)
-for i, row in df_equipo.iterrows():
-    st.markdown(f"**{row['Nombre']}** - {row['Cargo']} - [LinkedIn]({row['LinkedIn']})")
-
-# Objetivo General
-with st.expander("🎯 Objetivo General"):
-    st.write("""
-    Este proyecto tiene como finalidad asesorar a Urban Transit Corp transportadora de pasajeros en la evaluación y viabilidad de implementar una nueva flota de taxis ambientalmente amigables en la ciudad de Nueva York. Se busca identificar las mejores zonas para iniciar el negocio, considerando la rentabilidad y los patrones de movilidad, alineando así los objetivos financieros con un impacto positivo en el medio ambiente.
-    """)
-
-# Objetivos Específicos
-with st.expander("📌 Objetivos Específicos"):
-    st.write("""
-    1. **Análisis de Demanda:** Identificar zonas y horarios de alta demanda para optimizar la operación de la flota.
-    2. **Evaluación de Emisiones:** Analizar rutas para reducir el consumo de combustible y emisiones.
-    3. **Zonas Óptimas:** Crear un sistema de recomendación que optimice la rentabilidad y reducción de emisiones.
-    """)
-
-# Alcance del Proyecto
-with st.expander("🔍 ¿Cuál Será El Alcance?"):
-    st.write("""
-    1. **Recopilación de Datos:** Análisis de datos de demanda de taxis.
-    2. **Evaluación de Áreas:** Identificar áreas óptimas para taxis ecológicos.
-    3. **Análisis de Costos:** Reducción de costos de operación.
-    4. **Estimación de Incentivos:** Evaluación de incentivos fiscales y ambientales.
-    """)
-
-# Entregables
-with st.expander("📦 ¿Qué Entregaremos?"):
-    st.write("""
-    1. **Dashboard:** Monitoreo de KPIs: Demanda, Emisiones de CO₂, Rentabilidad.
-    2. **Modelo de Machine Learning:** Predicción de demanda y optimización de rutas.
-    3. **Análisis Completo:** Evaluación de la viabilidad económica y ambiental de la flota.
-    """)
-
-# Metodología
-st.header("🔧 Metodología")
-st.write("""
-Se utilizará el proceso Scrum para la gestión del proyecto.
+# **Objetivos del Proyecto**
+st.header("Objetivos del Proyecto")
+st.markdown("""
+Este proyecto tiene como objetivo desarrollar un sistema de recomendación para conductores de taxis en Nueva York, basado en el análisis de datos históricos de viajes. Los objetivos principales son:
+- **Optimización de rutas**: Ayudar a los conductores a tomar las mejores decisiones sobre qué ruta seguir según el tráfico y la demanda de taxis.
+- **Mejora en la eficiencia**: Reducir el tiempo de inactividad y aumentar los ingresos de los conductores.
+- **Análisis predictivo**: Predecir la cantidad de viajes en diferentes zonas de la ciudad en función de la hora, el día y la zona de recogida.
 """)
 
-data_timeline = {
-    "Fase del Proyecto": ["Fase 1: Recopilación de Datos", "Fase 2: Preparación de Datos", "Fase 3: Análisis Exploratorio", 
-                          "Fase 4: Modelado Predictivo", "Fase 5: Optimización de Rutas", "Fase 6: Evaluación Ambiental", 
-                          "Fase 7: Generación de Informes"],
-    "Actividades Principales": ["Identificación de fuentes de datos, Recolección de datasets", "Limpieza de datos, Selección de características, Integración de datasets", 
-                                "Análisis descriptivo, Visualización inicial de datos", "Desarrollo de modelos, Validación de modelos", 
-                                "Algoritmos de optimización, Evaluación de rutas optimizadas", "Análisis de emisiones, Evaluación de impacto ambiental", 
-                                "Preparación de informes visuales, Presentación de resultados"],
-    "Responsable": ["Gustavo", "Gustavo", "Vera", "Camilo", "Camilo y Gustavo", "Alberto", "Vera"],
-    "Duración": ["SPRINT 1", "SPRINT 1", "SPRINT 2", "SPRINT 2", "SPRINT 3", "SPRINT 3", "SPRINT 3"],
-    "Fechas": ["5 - 9 de Noviembre de 2024", "10 - 12 de Noviembre de 2024", "13 - 17 de Noviembre de 2024", 
-               "18 - 20 de Noviembre de 2024", "21 de Noviembre de 2024", "22 de Noviembre de 2024", "23 de Noviembre de 2024"]
-}
-
-df_timeline = pd.DataFrame(data_timeline)
-st.dataframe(df_timeline.style.set_properties(**{
-    'background-color': '#f0f2f6',
-    'color': '#333',
-    'border-color': '#fff'
-}))
-
-# Tecnologías Clave para el Análisis de Datos
-st.header("💻 Tecnologías Clave para el Análisis de Datos")
-st.write("""
-- Utilizaremos Python como lenguaje principal de programación por su flexibilidad y amplia comunidad de desarrolladores.
-- Aprovecharemos los servicios de AWS como Lambda, S3 para procesar y almacenar los datos de manera escalable y eficiente.
-- Emplearemos Power BI para generar informes visuales e interactivos que permitan una mejor comprensión de los insights clave.
-- Finalmente no utilizaremos Microsoft Azure ni Tableau.
+# **Equipo de Trabajo**
+st.header("Equipo de Trabajo")
+st.markdown("""
+El proyecto fue desarrollado por el siguiente equipo:
+- **Nombre 1**: Data Scientist
+- **Nombre 2**: Desarrollador de Backend
+- **Nombre 3**: Especialista en Big Data
+- **Nombre 4**: Ingeniero de Machine Learning
 """)
 
-# La Vida del Dato
-st.header("🔄 La Vida del Dato")
-st.write("""
-Desde la recolección hasta el análisis y la visualización, cada dato pasará por un proceso meticuloso que garantiza su calidad y relevancia para la toma de decisiones.
+# **Descripción del Modelo de Machine Learning**
+st.header("Modelo de Machine Learning")
+st.markdown("""
+El modelo utilizado para realizar las recomendaciones es un modelo de **regresión lineal**, entrenado con datos históricos de viajes de taxis en Nueva York. Utiliza las siguientes características:
+- **PULocationID**: Código de la zona de recogida del taxi.
+- **pickup_borough**: Barrio de la recogida.
+- **pickup_day**: Día de la semana.
+- **pickup_hour**: Hora de la recogida.
+
+El modelo predice la cantidad de viajes que se espera para una zona dada en un determinado momento del día.
 """)
 
-# Contacto
-st.header("📬 Contacto")
-st.write("""
-- Camilo Casilimas - [LinkedIn](https://www.linkedin.com/in/camilo-casilimas/)
-- Gustavo Coello - [LinkedIn](https://www.linkedin.com/in/gustavo-coello-01039b270/)
-- Alberto Bernal - [LinkedIn](https://www.linkedin.com/in/alberto-bernal-duplat-90a283a2/)
-- Vera Guillen - [LinkedIn](https://www.linkedin.com/in/vera-guillen-9b464a303/)
+# **Datos**
+st.header("Datos")
+st.markdown("""
+Los datos utilizados en el proyecto provienen de una base de datos MySQL, y contienen información histórica sobre los viajes de taxis en Nueva York. Los datos incluyen detalles como:
+- Fecha y hora de recogida
+- Ubicación del viaje
+- Número de viajes realizados
+- Información de las zonas y barrios
+
+### Ejemplo de los primeros registros:
 """)
 
-# Cómo Contribuir
-st.header("🤝 Cómo Contribuir")
-st.write("Clona el repositorio y comienza a contribuir.")
+# Conexión a la base de datos y carga de datos
+query = "SELECT * FROM enriched_taxi_data LIMIT 10"
+df = pd.read_sql(query, engine)
+st.write(df)
+
+# **Formulario de Entrada para los Conductores**
+st.header("Formulario para Recomendación de Ruta")
+st.markdown("""
+Por favor, ingrese los siguientes datos para obtener la recomendación de la mejor ruta.
+""")
+
+# Entradas del usuario
+with st.form("input_form"):
+    hora = st.slider("Hora del día (0-23)", min_value=0, max_value=23, value=12)
+    zona = st.number_input("Zona de Recogida (PULocationID)", min_value=1, max_value=255, value=1)
+    barrio = st.selectbox("Barrio de Recogida", ["Manhattan", "Brooklyn", "Queens", "Bronx", "Staten Island"])
+    dia = st.selectbox("Día de la Semana", ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"])
+
+    submit_button = st.form_submit_button("Obtener Recomendación")
+
+# Si el formulario es enviado
+if submit_button:
+    # Convertir el barrio a variable dummy
+    barrio_dict = {"Manhattan": 1, "Brooklyn": 2, "Queens": 3, "Bronx": 4, "Staten Island": 5}
+    barrio_encoded = barrio_dict.get(barrio, 0)
+
+    # Crear el DataFrame para la predicción
+    input_data = pd.DataFrame({
+        'PULocationID': [zona],
+        'pickup_borough': [barrio_encoded],
+        'pickup_day': [dia],
+        'pickup_hour': [hora]
+    })
+
+    # Convertir la variable categórica 'pickup_borough' en variables dummy
+    input_data = pd.get_dummies(input_data, columns=['pickup_borough'], drop_first=True)
+
+    # Realizar la predicción (aquí cargaríamos el modelo si está previamente entrenado)
+    model = LinearRegression()
+    model.fit(df[['PULocationID', 'pickup_borough', 'pickup_day', 'pickup_hour']], df['trip_count'])
+
+    prediction = model.predict(input_data)
+
+    # Mostrar la recomendación
+    st.write(f"Predicción de la cantidad de viajes: {prediction[0]}")
+    st.markdown("Con esta información, recomendamos dirigirse a la zona con mayor demanda.")
+
