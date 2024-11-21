@@ -122,7 +122,7 @@
 
                     <div class="p-6">
                         <!-- Prediction Form -->
-                        <form method="post" action="predict.php" class="space-y-4">
+                        <form id="predictionForm" class="space-y-4">
                             <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
                                 <div>
                                     <label for="PULocationID" class="block text-sm font-medium text-gray-700">PULocationID</label>
@@ -135,6 +135,9 @@
                                 </button>
                             </div>
                         </form>
+
+                        <!-- Resultados de la Predicción -->
+                        <div id="result" class="mt-4"></div>
                     </div>
                 </div>
             </div>
@@ -226,7 +229,6 @@
         </div>
     </div>
 
-   
     <!-- Footer -->
     <footer class="bg-white mt-8 border-t">
         <div class="max-w-6xl mx-auto px-4 py-6">
@@ -246,5 +248,8 @@
             </div>
         </div>
     </footer>
+
+    <!-- Script externo -->
+    <script src="script.js"></script>
 </body>
 </html>
