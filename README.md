@@ -56,19 +56,6 @@ Desarrollamos un sistema de recomendación basado en un modelo de regresión lin
 * **Descripción**: Mide la duración promedio de los viajes iniciados en cada zona.  
 * **Meta**: Optimizar las rutas para reducir la duración promedio de los viajes.
 
-## 🗓️ Cronograma de Trabajo
-
-### Fases del Proyecto
-
-| Fase                  | Actividades                                   | Responsable | Duración | Fechas       |
-|-----------------------|-----------------------------------------------|-------------|----------|--------------|
-| **Fase 1:** Recopilación de Datos | • Identificación de fuentes<br>• Recolección de datasets | Gustavo     | 2 días   | 4-5 Nov 2024 |
-| **Fase 2:** Preparación de Datos  | • Limpieza<br>• Selección de características<br>• Integración | Alberto     | 4 días   | 6-9 Nov 2024 |
-| **Fase 3:** Análisis Exploratorio | • Análisis descriptivo<br>• Visualización inicial | Alberto        | 3 días   | 10-12 Nov 2024 |
-| **Fase 4:** Modelado Predictivo   | • Desarrollo de modelos<br>• Validación | Camilo       | 5 días   | 13-17 Nov 2024 |
-| **Fase 5:** Optimización de Rutas | • Algoritmos<br>• Evaluación | Gustavo     | 3 días   | 18-20 Nov 2024 |
-| **Fase 6:** Generación de Informes| • Informes visuales<br>• Presentación | Vera        | 1 día    | 21 Nov 2024  |
-
 ## 📄 Entregables
 
 * **Informe Final**  
