@@ -1,0 +1,8 @@
+# Usar una imagen de Nginx como base
+FROM nginx:alpine
+
+# Copiar el archivo HTML en el directorio donde Nginx sirve archivos
+COPY index.html /usr/share/nginx/html/index.html
+
+# Exponer el puerto 8081
+EXPOSE 8081
