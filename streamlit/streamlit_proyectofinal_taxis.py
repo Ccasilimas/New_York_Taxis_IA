@@ -7,144 +7,305 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 import ast
 
-# 🌟 Configuración de la página Streamlit
+# Custom CSS with LinkedIn-inspired styling
+st.markdown("""
+<style>
+    /* Main container styling */
+    .main {
+        background-color: #f3f2ef;
+    }
+    
+    /* Card styling */
+    .css-1r6slb0 {
+        background-color: white;
+        border-radius: 8px;
+        padding: 24px;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+        margin-bottom: 20px;
+    }
+    
+    /* Headers styling */
+    h1 {
+        color: #000000;
+        font-size: 32px !important;
+        font-weight: 600 !important;
+        margin-bottom: 24px !important;
+    }
+    
+    h2 {
+        color: #000000;
+        font-size: 24px !important;
+        font-weight: 600 !important;
+        margin-bottom: 16px !important;
+    }
+    
+    h3 {
+        color: #000000;
+        font-size: 20px !important;
+        font-weight: 600 !important;
+        margin-bottom: 12px !important;
+    }
+    
+    /* Links styling */
+    a {
+        color: #0a66c2 !important;
+        text-decoration: none !important;
+    }
+    
+    a:hover {
+        text-decoration: underline !important;
+    }
+    
+    /* Button styling */
+    .stButton>button {
+        background-color: #0a66c2;
+        color: white;
+        border: none;
+        border-radius: 24px;
+        padding: 10px 24px;
+        font-weight: 600;
+    }
+    
+    .stButton>button:hover {
+        background-color: #004182;
+    }
+    
+    /* Profile card styling */
+    .profile-card {
+        background-color: white;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 16px;
+        border: 1px solid #e0e0e0;
+    }
+    
+    /* Stats card styling */
+    .stats-card {
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 10px 0;
+        border: 1px solid #e0e0e0;
+    }
+    
+    /* Metric styling */
+    .metric-container {
+        background-color: white;
+        border-radius: 8px;
+        padding: 16px;
+        margin: 8px 0;
+        border: 1px solid #e0e0e0;
+    }
+    
+    .metric-value {
+        font-size: 24px;
+        font-weight: 600;
+        color: #0a66c2;
+    }
+    
+    .metric-label {
+        font-size: 14px;
+        color: #666666;
+    }
+    
+    /* Form styling */
+    .stSelectbox, .stSlider {
+        background-color: white;
+        border-radius: 4px;
+        margin-bottom: 16px;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# Page configuration
 st.set_page_config(
-    page_title="Predicción de Demanda de Taxis",
+    page_title="NYC Taxi Analysis | Green Route Solutions",
     page_icon="🚖",
     layout="wide"
 )
 
-# 🌟 Información del proyecto con iconos y colores
-st.title("🚖 Análisis de Viabilidad para Flota de Taxis Ecológicos en Nueva York 🚖")
-st.image("https://www.nyc.gov/assets/dca/images/taxi.jpg", use_container_width=True)
+# Header Section
+col1, col2 = st.columns([1, 2])
+
+with col1:
+    st.image("https://www.nyc.gov/assets/dca/images/taxi.jpg", use_container_width=True)
+
+with col2:
+    st.title("🚖 Green Route Solutions")
+    st.markdown("""
+    <div class="profile-card">
+        <h3>Sustainable Urban Transport Consultancy</h3>
+        <p>New York, United States • Transport & Logistics</p>
+        <p>500+ employees • Environmental Services</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+# About Section
 st.markdown("""
-### 🌱 Green Route Solutions 🌱
-Somos una consultora especializada en soluciones sostenibles para el transporte urbano. Nuestro proyecto evalúa la viabilidad de implementar una nueva flota de taxis ambientalmente amigables en Nueva York.
+<div class="stats-card">
+    <h2>About Our Project</h2>
+    <p>We're revolutionizing NYC's taxi industry with eco-friendly solutions. Our data-driven approach helps identify optimal zones for sustainable taxi operations while maximizing profitability.</p>
+    
+    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+        <div class="metric-container" style="flex: 1; margin: 0 10px;">
+            <div class="metric-value">255+</div>
+            <div class="metric-label">Taxi Zones Analyzed</div>
+        </div>
+        <div class="metric-container" style="flex: 1; margin: 0 10px;">
+            <div class="metric-value">24/7</div>
+            <div class="metric-label">Demand Analysis</div>
+        </div>
+        <div class="metric-container" style="flex: 1; margin: 0 10px;">
+            <div class="metric-value">100%</div>
+            <div class="metric-label">Eco-Friendly Focus</div>
+        </div>
+    </div>
+</div>
+""", unsafe_allow_html=True)
 
-#### 🌍 Objetivo General
-Asesorar a Urban Transit Corp en la evaluación y viabilidad de implementar una nueva flota de taxis ambientalmente amigables en Nueva York, identificando las mejores zonas para iniciar el negocio.
-
-#### 📊 Objetivos Específicos
-- **Análisis de Demanda**: Identificar zonas y horarios de alta demanda.
-- **Evaluación de Emisiones**: Analizar rutas para reducir consumo de combustible y emisiones.
-- **Zonas Óptimas**: Crear un sistema de recomendación que optimice rentabilidad y reducción de emisiones.
-
-#### 👥 Nuestro Equipo
-- [Camilo Casilimas](https://www.linkedin.com/in/camilo-casilimas/): Arquitecto e Ingeniero de Datos
-- [Gustavo Coello](https://www.linkedin.com/in/gustavo-coello-01039b270/): Ingeniero de Datos
-- [Alberto Bernal](https://www.linkedin.com/in/alberto-bernal-duplat-90a283a2/): Científico de Datos
-- [Vera Guillen](https://www.linkedin.com/in/vera-guillen-9b464a303/): Data Analyst
-""")
-
-# 🌟 Cargar datos de zonas de taxis
+# Load and cache data functions
 @st.cache_data
 def load_zone_data():
-    # URL del archivo GeoJSON de zonas de taxis
     zones_url = "https://raw.githubusercontent.com/Inclick-me/New_York_Taxis_IA/main/NYC%20Taxi%20Zones.geojson"
-    
-    # Cargar el archivo GeoJSON
     gdf = gpd.read_file(zones_url)
     return gdf
 
-# Cargar los datos de zonas
-zone_gdf = load_zone_data()
-
-# **Crear el mapa de zonas de taxis**
-def create_map(gdf):
-    # Centro del mapa en Nueva York
-    m = folium.Map(location=[40.7128, -74.0060], zoom_start=10)
-    
-    # Agregar las zonas al mapa
-    folium.GeoJson(gdf).add_to(m)
-    
-    return m
-
-# Crear y mostrar el mapa
-taxi_map = create_map(zone_gdf)
-st.title("🗺️ Mapa de Zonas de Taxis en Nueva York 🗺️")
-st_folium(taxi_map, width=700, height=500)
-
-# 🌟 Cargar datos desde GitHub
 @st.cache_data
 def load_data():
-    # URLs crudas de los archivos en GitHub
     enriched_data_url = "https://raw.githubusercontent.com/Inclick-me/New_York_Taxis_IA/main/Machine_Learning/enriched_taxi_data.csv"
     adjacent_zones_url = "https://raw.githubusercontent.com/Inclick-me/New_York_Taxis_IA/main/Machine_Learning/adjacent_zones.csv"
     
-    # Cargar los datos desde las URLs
     enriched_data = pd.read_csv(enriched_data_url)
     adjacent_zones = pd.read_csv(adjacent_zones_url)
-    
-    # Convertir la columna `adjacent_zones` a listas de Python
     adjacent_zones['adjacent_zones'] = adjacent_zones['adjacent_zones'].apply(ast.literal_eval)
     
     return enriched_data, adjacent_zones
 
-# Cargar los datos
+# Load data
+zone_gdf = load_zone_data()
 df, adjacent_zones_df = load_data()
 
-# **Entrenar el modelo de regresión lineal**
-@st.cache_data
-def train_model(data):
-    # Seleccionar las características (X) y el objetivo (y)
-    X = data[['PULocationID', 'pickup_weekday', 'pickup_hour']]  # Cambié a 'pickup_hour' para tener más influencia en la predicción
-    y = data['trip_count']
+# Map and Analysis Section
+st.markdown("""
+<div class="stats-card">
+    <h2>Interactive Zone Analysis</h2>
+</div>
+""", unsafe_allow_html=True)
+
+col1, col2 = st.columns([2, 1])
+
+with col1:
+    # Create and display map
+    def create_map(gdf):
+        m = folium.Map(location=[40.7128, -74.0060], zoom_start=10)
+        folium.GeoJson(
+            gdf,
+            style_function=lambda x: {
+                'fillColor': '#0a66c2',
+                'color': '#004182',
+                'weight': 1,
+                'fillOpacity': 0.3
+            }
+        ).add_to(m)
+        return m
+
+    taxi_map = create_map(zone_gdf)
+    st_folium(taxi_map, width=700, height=500)
+
+with col2:
+    st.markdown("""
+    <div class="stats-card">
+        <h3>Demand Prediction Tool</h3>
+    </div>
+    """, unsafe_allow_html=True)
     
-    # Dividir los datos en entrenamiento y prueba
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    
-    # Inicializar y entrenar el modelo
-    model = LinearRegression()
-    model.fit(X_train, y_train)
-    
-    return model
+    # Model training function
+    @st.cache_data
+    def train_model(data):
+        X = data[['PULocationID', 'pickup_weekday', 'pickup_hour']]
+        y = data['trip_count']
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+        model = LinearRegression()
+        model.fit(X_train, y_train)
+        return model
 
-# Entrenar el modelo
-model = train_model(df)
+    model = train_model(df)
 
-# **Obtener zonas adyacentes**
-def get_adjacent_zones(location_id):
-    row = adjacent_zones_df.loc[adjacent_zones_df['LocationID'] == location_id]
-    if not row.empty:
-        return row.iloc[0]['adjacent_zones']
-    else:
-        return []
+    # Prediction functions
+    def get_adjacent_zones(location_id):
+        row = adjacent_zones_df.loc[adjacent_zones_df['LocationID'] == location_id]
+        return row.iloc[0]['adjacent_zones'] if not row.empty else []
 
-# **Predecir demanda con zonas adyacentes**
-def predict_demand_with_adjacent(location_id, pickup_weekday, pickup_hour):
-    adjacent_zones = get_adjacent_zones(location_id)
-    all_zones = adjacent_zones + [location_id]
-    input_data = pd.DataFrame({
-        'PULocationID': all_zones,
-        'pickup_weekday': [pickup_weekday] * len(all_zones),
-        'pickup_hour': [pickup_hour] * len(all_zones)
-    })
-    predictions = model.predict(input_data)
-    result = {zone: prediction for zone, prediction in zip(all_zones, predictions)}
-    return result
+    def predict_demand_with_adjacent(location_id, pickup_weekday, pickup_hour):
+        adjacent_zones = get_adjacent_zones(location_id)
+        all_zones = adjacent_zones + [location_id]
+        input_data = pd.DataFrame({
+            'PULocationID': all_zones,
+            'pickup_weekday': [pickup_weekday] * len(all_zones),
+            'pickup_hour': [pickup_hour] * len(all_zones)
+        })
+        predictions = model.predict(input_data)
+        return {zone: prediction for zone, prediction in zip(all_zones, predictions)}
 
-# **Título y descripción**
-st.title("🔍 Predicción de Demanda de Taxis en NYC 🔍")
-st.markdown("Ingrese la hora y la zona para obtener recomendaciones de alta demanda basadas en Machine Learning.")
+    # Input form
+    with st.form("prediction_form"):
+        pickup_hour = st.slider("🕒 Hour of Day", min_value=0, max_value=23, value=12)
+        pickup_weekday = st.selectbox(
+            "📅 Day of Week",
+            ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        )
+        pulocation_id = st.number_input("📍 Pickup Zone ID", min_value=1, max_value=255, value=1)
+        submit_button = st.form_submit_button("Generate Prediction")
 
-# **Formulario de entrada con íconos y colores**
-st.header("📋 Formulario para Recomendación de Demanda 📋")
-with st.form("input_form"):
-    pickup_hour = st.slider("🕒 Hora del día (0-23)", min_value=0, max_value=23, value=12)
-    pickup_weekday = st.selectbox("📅 Día de la semana", ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"])
-    pulocation_id = st.number_input("📍 Zona de Recogida (PULocationID)", min_value=1, max_value=255, value=1)
-    submit_button = st.form_submit_button("🔍 Obtener Predicción")
+    # Display predictions
+    if submit_button:
+        weekday_mapping = {
+            "Monday": 0, "Tuesday": 1, "Wednesday": 2, "Thursday": 3,
+            "Friday": 4, "Saturday": 5, "Sunday": 6
+        }
+        pickup_weekday_encoded = weekday_mapping[pickup_weekday]
+        predicted_demands = predict_demand_with_adjacent(pulocation_id, pickup_weekday_encoded, pickup_hour)
+        max_zone = max(predicted_demands, key=predicted_demands.get)
+        
+        st.markdown("""
+        <div class="stats-card">
+            <h3>Prediction Results</h3>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        for zone, demand in predicted_demands.items():
+            st.markdown(f"""
+            <div class="metric-container">
+                <div class="metric-value">Zone {zone}</div>
+                <div class="metric-label">Predicted Demand: {demand:.2f}</div>
+            </div>
+            """, unsafe_allow_html=True)
 
-# **Si se envía el formulario**
-if submit_button:
-    weekday_mapping = {"Lunes": 0, "Martes": 1, "Miércoles": 2, "Jueves": 3, "Viernes": 4, "Sábado": 5, "Domingo": 6}
-    pickup_weekday_encoded = weekday_mapping[pickup_weekday]
-    
-    # Predecir demanda
-    predicted_demands = predict_demand_with_adjacent(pulocation_id, pickup_weekday_encoded, pickup_hour)
-    max_zone = max(predicted_demands, key=predicted_demands.get)
-    
-    # Mostrar los resultados
-    st.write("🚖 Predicción de demanda para la zona seleccionada y sus adyacentes 🚖:")
-    st.write(predicted_demands)
-    st.markdown(f"### **Zona recomendada con mayor demanda:** {max_zone} (Demanda: {predicted_demands[max_zone]:.2f})")
+# Team Section
+st.markdown("""
+<div class="stats-card">
+    <h2>Meet Our Team</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+        <div class="profile-card" style="flex: 1; min-width: 200px; margin: 10px;">
+            <h3>Camilo Casilimas</h3>
+            <p>Data Architect & Engineer</p>
+            <a href="https://www.linkedin.com/in/camilo-casilimas/">View Profile</a>
+        </div>
+        <div class="profile-card" style="flex: 1; min-width: 200px; margin: 10px;">
+            <h3>Gustavo Coello</h3>
+            <p>Data Engineer</p>
+            <a href="https://www.linkedin.com/in/gustavo-coello-01039b270/">View Profile</a>
+        </div>
+        <div class="profile-card" style="flex: 1; min-width: 200px; margin: 10px;">
+            <h3>Alberto Bernal</h3>
+            <p>Data Scientist</p>
+            <a href="https://www.linkedin.com/in/alberto-bernal-duplat-90a283a2/">View Profile</a>
+        </div>
+        <div class="profile-card" style="flex: 1; min-width: 200px; margin: 10px;">
+            <h3>Vera Guillen</h3>
+            <p>Data Analyst</p>
+            <a href="https://www.linkedin.com/in/vera-guillen-9b464a303/">View Profile</a>
+        </div>
+    </div>
+</div>
+""", unsafe_allow_html=True)
