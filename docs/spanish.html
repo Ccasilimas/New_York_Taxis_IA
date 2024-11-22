@@ -22,7 +22,7 @@
     </style>
 </head>
 <body class="bg-gray-100">
-    <!-- Barra de navegación -->
+    <!-- Barra de navegación (Unchanged) -->
     <nav class="bg-white shadow-lg">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center py-4">
@@ -38,17 +38,19 @@
             </div>
         </div>  
     </nav>
-    <!-- Imagen de portada -->
+
+    <!-- Imagen de portada (Unchanged) -->
     <div class="max-w-6xl mx-auto mt-8 px-4">
         <div class="w-full h-64 rounded-lg overflow-hidden shadow-lg">
             <img src="img/ny.jpg" alt="Taxis de Nueva York" class="w-full h-full object-cover">
         </div>
     </div>
-    <!-- Contenido principal -->
+
+    <!-- Contenido principal con dos columnas -->
     <div class="max-w-6xl mx-auto mt-8 px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Columna principal -->
-            <div class="md:col-span-2 space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Columna principal (Contenido principal) -->
+            <div class="space-y-6">
                 <!-- Encabezado del proyecto -->
                 <div class="bg-white rounded-lg shadow p-6">
                     <h1 class="text-2xl font-bold mb-4">🚕 Implementación de Vehículos Ambientalmente Amigables en Nueva York</h1>
@@ -58,6 +60,7 @@
                         amigables en la ciudad de Nueva York.
                     </p>
                 </div>
+
                 <!-- Objetivos -->
                 <div class="bg-white rounded-lg shadow p-6">
                     <h2 class="text-xl font-bold mb-4">
@@ -83,41 +86,6 @@
                     </div>
                 </div>
 
-                <!-- Modal -->
-                <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden" onclick="closeModal()">
-                    <div class="max-w-4xl w-full mx-4">
-                        <div class="relative">
-                            <button onclick="closeModal()" class="absolute top-0 right-0 -mt-12 text-white text-xl hover:text-gray-300">
-                                <i class="fas fa-times"></i> Cerrar
-                            </button>
-                            <img id="modalImage" src="" alt="Imagen ampliada" class="w-full h-auto rounded">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Script para el modal -->
-                <script>
-                function openModal(imageSrc) {
-                    const modal = document.getElementById('imageModal');
-                    const modalImg = document.getElementById('modalImage');
-                    modal.classList.remove('hidden');
-                    modalImg.src = imageSrc;
-                    document.body.style.overflow = 'hidden'; // Previene el scroll del body
-                }
-
-                function closeModal() {
-                    const modal = document.getElementById('imageModal');
-                    modal.classList.add('hidden');
-                    document.body.style.overflow = ''; // Restaura el scroll del body
-                }
-
-                // Cerrar modal con la tecla ESC
-                document.addEventListener('keydown', function(event) {
-                    if (event.key === 'Escape') {
-                        closeModal();
-                    }
-                });
-                </script>
                 <!-- Mapa de zonas de taxi de NY -->
                 <div class="bg-white rounded-lg shadow p-6 mt-4">
                     <h2 class="text-xl font-bold mb-4">
@@ -127,9 +95,10 @@
                     <img src="img/mapa.png" alt="Mapa de zonas de taxi de NY" class="w-full h-auto rounded">
                 </div>
             </div>
-            <!-- Barra lateral -->
+
+            <!-- Columna lateral -->
             <div class="space-y-6">
-                <!-- Enlaces -->
+                <!-- Links del Proyecto -->
                 <div class="bg-white rounded-lg shadow p-6">
                     <h2 class="text-xl font-bold mb-4">
                         <i class="fas fa-link text-blue-600 mr-2"></i>
@@ -158,8 +127,7 @@
                         </a>
                     </div>
                 </div>
-                    
-                </div>
+
                 <!-- Equipo -->
                 <div class="bg-white rounded-lg shadow p-6">
                     <h2 class="text-xl font-bold mb-4">
@@ -176,6 +144,7 @@
                                 <p class="text-sm text-gray-500"><a href="https://www.linkedin.com/in/vera-guillen-9b464a303/" target="_blank" class="text-blue-600 underline">LinkedIn</a></p>
                             </div>
                         </div>
+                        <!-- Otros miembros del equipo (Unchanged) -->
                         <div class="flex items-center space-x-3">
                             <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
                                 <span class="text-green-600 font-bold">G</span>
@@ -204,8 +173,8 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
+
                 <!-- Herramientas -->
                 <div class="bg-white rounded-lg shadow p-6">
                     <h2 class="text-xl font-bold mb-4">
@@ -219,6 +188,7 @@
                         <p class="text-sm text-gray-600"><strong>Pipeline:</strong> AWS S3, Lambda, RDS</p>
                     </div>
                 </div>
+
                 <!-- KPIs -->
                 <div class="bg-white rounded-lg shadow p-6">
                     <h2 class="text-xl font-bold mb-4">
@@ -243,8 +213,42 @@
             </div>
         </div>
     </div>
-    
-    <!-- Footer -->
+
+    <!-- Modal and script (Unchanged) -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden" onclick="closeModal()">
+        <div class="max-w-4xl w-full mx-4">
+            <div class="relative">
+                <button onclick="closeModal()" class="absolute top-0 right-0 -mt-12 text-white text-xl hover:text-gray-300">
+                    <i class="fas fa-times"></i> Cerrar
+                </button>
+                <img id="modalImage" src="" alt="Imagen ampliada" class="w-full h-auto rounded">
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function openModal(imageSrc) {
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        modal.classList.remove('hidden');
+        modalImg.src = imageSrc;
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('imageModal');
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+    </script>
+
+    <!-- Footer (Unchanged) -->
     <footer class="bg-white mt-8 border-t">
         <div class="max-w-6xl mx-auto px-4 py-6">
             <div class="flex space-x-6">
