@@ -115,7 +115,7 @@ Desarrollaremos un sistema de recomendación basado en datos históricos desde e
 
 ## 📬 Contacto
 
-* **Vera Guillen** - Analista de Datos.  [LinkedIn]https://www.linkedin.com/in/vera-guillen-9b464a303/
+* **Vera Guillen** - Analista de Datos.  [LinkedIn](https://www.linkedin.com/in/vera-guillen-9b464a303/)
 * **Gustavo Coello** - Ingeniero de Datos [LinkedIn](https://www.linkedin.com/in/gustavo-coello-01039b270/).  
 * **Alberto Bernal** - Cientifico de Datos [LinkedIn](https://www.linkedin.com/in/alberto-bernal-duplat-90a283a2/).  
 * **Camilo Casilimas** - Arquitecto e Ingeniero de Datos  [LinkedIn](https://www.linkedin.com/in/camilo-casilimas/).
