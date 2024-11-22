@@ -4,49 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Predicción de Demanda de Taxis</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f3f2ef;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
-        .linkedin-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        .linkedin-header {
-            background-color: #1d4ed8;
-            color: white;
+        .gradient-header {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+        .input-field {
+            transition: all 0.3s ease;
+        }
+        .input-field:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+            border-color: #3b82f6;
         }
     </style>
 </head>
-<body class="bg-gray-100">
-    <div class="container mx-auto max-w-4xl px-4 py-8">
-        <div class="linkedin-card">
-            <div class="linkedin-header p-4 rounded-t-lg flex justify-between items-center">
-                <div class="flex items-center space-x-4">
-                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-                        <span class="text-3xl">🚕</span>
-                    </div>
-                    <div>
-                        <h1 class="text-xl font-bold">Predicción de Demanda de Taxis</h1>
-                        <p class="text-sm">Análisis de Zonas de Mayor Tráfico</p>
-                    </div>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="container max-w-xl w-full">
+        <div class="glass-card overflow-hidden">
+            <div class="gradient-header p-6 flex items-center space-x-4">
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg">
+                    <span class="text-4xl">🚕</span>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold text-white">Predicción de Demanda de Taxis</h1>
+                    <p class="text-sm text-blue-100">Análisis Inteligente de Zonas de Tráfico</p>
                 </div>
             </div>
 
-            <div class="p-6">
-                <!-- Prediction Form -->
-                <form method="post" action="" class="space-y-4">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="p-8">
+                <form method="post" action="" class="space-y-6">
+                    <div class="grid md:grid-cols-3 gap-4">
                         <div>
-                            <label for="zone_name" class="block text-sm font-medium text-gray-700">ID de la Zona</label>
-                            <input type="number" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" id="zone_name" name="zone_name" required min="1">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">ID de la Zona</label>
+                            <input type="number" name="zone_name" class="input-field w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none" placeholder="Ingrese ID" required>
                         </div>
                         <div>
-                            <label for="pickup_weekday" class="block text-sm font-medium text-gray-700">Día de la Semana</label>
-                            <select class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" id="pickup_weekday" name="pickup_weekday" required>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Día de la Semana</label>
+                            <select name="pickup_weekday" class="input-field w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none" required>
+                                <option value="">Seleccione un día</option>
                                 <option value="0">Lunes</option>
                                 <option value="1">Martes</option>
                                 <option value="2">Miércoles</option>
@@ -57,18 +63,18 @@
                             </select>
                         </div>
                         <div>
-                            <label for="pickup_hour" class="block text-sm font-medium text-gray-700">Hora de Recogida</label>
-                            <input type="number" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" id="pickup_hour" name="pickup_hour" min="0" max="23" required>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Hora de Recogida</label>
+                            <input type="number" name="pickup_hour" class="input-field w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none" min="0" max="23" placeholder="0-23" required>
                         </div>
                     </div>
-                    <div>
-                        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-300">
-                            <i class="fas fa-chart-line mr-2"></i>Zona con Mayor Probabilidad de Viajes
-                        </button>
-                    </div>
+
+                    <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center space-x-2">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Predecir Zona de Mayor Tráfico</span>
+                    </button>
                 </form>
 
-                <!-- Prediction Results -->
+                <!-- PHP Prediction Results -->
                 <?php
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $zone_name = $_POST['zone_name'];
@@ -90,24 +96,35 @@
                     $response = curl_exec($ch);
 
                     if (curl_errno($ch)) {
-                        echo '<div class="mt-4 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded relative" role="alert">Error: ' . curl_error($ch) . '</div>';
+                        echo '<div class="mt-6 bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg flex items-center space-x-3">
+                                <i class="fas fa-exclamation-triangle text-red-600"></i>
+                                <p class="text-red-800 font-medium">Error de Conexión: ' . curl_error($ch) . '</p>
+                              </div>';
                     } else {
                         $data = json_decode($response, true);
-                        echo '<div class="mt-4 bg-white border border-gray-300 text-gray-700 px-4 py-3 rounded relative">';
                         
-                        // Mostrar predicciones organizadas
+                        // Main prediction result
                         if (isset($data['max_zone_name'])) {
-                            echo '<strong class="font-bold">Resultado:</strong><br>';
-                            echo 'La zona con mayor probabilidad de tráfico es: <strong>' . htmlspecialchars($data['max_zone_name']) . '</strong><br>';
+                            echo '<div class="mt-6 bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
+                                    <div class="flex items-center space-x-3">
+                                        <i class="fas fa-map-marker-alt text-green-600"></i>
+                                        <h3 class="text-lg font-semibold text-green-800">Resultado de la Predicción</h3>
+                                    </div>
+                                    <p class="mt-2 text-green-700">La zona con mayor probabilidad de tráfico es: <strong>' . htmlspecialchars($data['max_zone_name']) . '</strong></p>
+                                  </div>';
                         }
-                        echo '</div>';
-                    }
 
-                    // Mostrar toda la salida de la API
-                    echo '<div class="mt-4 bg-white border border-gray-300 text-gray-700 px-4 py-3 rounded relative">';
-                    echo '<strong class="font-bold">Resultado Completo:</strong><br>';
-                    echo '<pre>' . htmlspecialchars(json_encode(json_decode($response), JSON_PRETTY_PRINT)) . '</pre>';
-                    echo '</div>';
+                        // Full API response
+                        echo '<div class="mt-4 bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-info-circle text-blue-600"></i>
+                                    <h3 class="text-lg font-semibold text-blue-800">Respuesta Completa de la API</h3>
+                                </div>
+                                <pre class="mt-2 text-sm text-blue-700 overflow-x-auto">' . 
+                                    htmlspecialchars(json_encode(json_decode($response), JSON_PRETTY_PRINT)) . 
+                                '</pre>
+                              </div>';
+                    }
 
                     curl_close($ch);
                 }
