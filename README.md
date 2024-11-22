@@ -31,15 +31,16 @@ Este proyecto tiene como finalidad asesorar a una empresa de transporte de pasaj
 
 ## 🧠 Sistema de Recomendación
 
-Desarrollaremos un sistema de recomendación basado en datos históricos desde enero de 2023 hasta agosto de 2024. Este sistema incluirá:
+Desarrollamos un sistema de recomendación basado en un modelo de regresión lineal que utiliza datos históricos desde enero de 2023 hasta agosto de 2024. Este sistema incluirá:
 
-* Recomendaciones en tiempo real para conductores.
-* Análisis de datos históricos por:  
-  * Hora.  
-  * Día de la semana.  
-  * Mes.  
-* Muestra inicial de 50 vehículos.
-* Período de evaluación de 4 meses.
+* Predicciones de demanda considerando zonas adyacentes.
+* Análisis de datos históricos por:
+  * Hora.
+  * Día de la semana.
+  * Mes.
+* Recomendaciones detalladas de las zonas con mayor demanda predicha.
+* Comparación detallada entre las mejores zonas basadas en la demanda predicha y la zona actual del conductor.
+
 
 ## 📈 Indicadores Clave de Rendimiento (KPI)
 
@@ -77,24 +78,22 @@ Desarrollaremos un sistema de recomendación basado en datos históricos desde e
   * Recomendaciones.
 
 * **Presentación Ejecutiva**  
-  * Diapositivas para stakeholders.  
-  * Puntos clave del proyecto.
+   * Puntos clave del proyecto.
 
 * **Pipeline de Datos**  
   * Infraestructura automatizada.  
-  * Documentación técnica.
-
+  
 * **Modelos Predictivos**  
   * Sistema de recomendación.  
-  * Herramientas de análisis.
+  
 
 ## 🛠️ Herramientas y Tecnologías
 
 | Categoría             | Herramientas                                  |
 |-----------------------|-----------------------------------------------|
 | **Análisis de Datos** | • Python (Pandas, NumPy)<br>• SQL<br>• Jupyter Notebooks |
-| **Visualización**     | • Matplotlib<br>• Seaborn<br>• Tableau       |
-| **Machine Learning**  | • Scikit-learn<br>• TensorFlow               |
+| **Visualización**     | • Matplotlib<br>• Seaborn<br>• PowerBI       |
+| **Machine Learning**  | • Scikit-learn<br>•                |
 | **Pipeline de Datos** | • AWS S3<br>• AWS Lambda<br>• MySQL en AWS RDS |
 | **Colaboración y Gestión** | • GitHub<br>• Slack<br>• Trello<br>• Microsoft Teams |
 
