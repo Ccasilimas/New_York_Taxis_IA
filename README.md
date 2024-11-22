@@ -1,6 +1,8 @@
-# 🚕 Implementación de Vehículos Ambientalmente Amigables en Nueva York
+![nyctaxis](https://github.com/user-attachments/assets/b064bc10-83dd-423d-a89f-1b74a894b2f2)# 🚕 Implementación de Vehículos Ambientalmente Amigables en Nueva York
 
-![Descripción de la imagen](docs/img/taxis.jpg)
+
+
+
 
 ## 🌍 Descripción General
 
