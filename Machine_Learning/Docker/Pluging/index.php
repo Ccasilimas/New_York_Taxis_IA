@@ -71,52 +71,44 @@
                 <!-- Prediction Results -->
                 <?php
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    // Obtener los datos del formulario
                     $zone_name = $_POST['zone_name'];
                     $pickup_weekday = $_POST['pickup_weekday'];
                     $pickup_hour = $_POST['pickup_hour'];
 
-                    // URL del endpoint de FastAPI
                     $url = 'http://100.78.115.22:9000/predict/';
-
-                    // Datos a enviar en la solicitud
                     $data = array(
                         "PULocationID" => $zone_name,
                         "pickup_weekday" => $pickup_weekday,
                         "pickup_hour" => $pickup_hour
                     );
 
-                    // Inicializar cURL
                     $ch = curl_init($url);
-
-                    // Configurar las opciones de cURL
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                     curl_setopt($ch, CURLOPT_POST, true);
                     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
                     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-
-                    // Ejecutar la solicitud y obtener la respuesta
                     $response = curl_exec($ch);
 
                     if (curl_errno($ch)) {
-                        echo '<div class="mt-4 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded relative" role="alert">';
-                        echo 'Error: ' . curl_error($ch);
-                        echo '</div>';
+                        echo '<div class="mt-4 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded relative" role="alert">Error: ' . curl_error($ch) . '</div>';
                     } else {
                         $data = json_decode($response, true);
+                        echo '<div class="mt-4 bg-white border border-gray-300 text-gray-700 px-4 py-3 rounded relative">';
+                        
+                        // Mostrar predicciones organizadas
                         if (isset($data['max_zone_name'])) {
-                            echo '<div class="mt-4 bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded relative" role="alert">';
-                            echo '<strong class="font-bold">Resultado: </strong>';
-                            echo 'La zona con mayor probabilidad de tráfico es: ' . $data['max_zone_name'];
-                            echo '</div>';
-                        } else {
-                            echo '<div class="mt-4 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded relative" role="alert">';
-                            echo 'Error en la predicción: ' . json_encode($data);
-                            echo '</div>';
+                            echo '<strong class="font-bold">Resultado:</strong><br>';
+                            echo 'La zona con mayor probabilidad de tráfico es: <strong>' . htmlspecialchars($data['max_zone_name']) . '</strong><br>';
                         }
+                        echo '</div>';
                     }
 
-                    // Cerrar cURL
+                    // Mostrar toda la salida de la API
+                    echo '<div class="mt-4 bg-white border border-gray-300 text-gray-700 px-4 py-3 rounded relative">';
+                    echo '<strong class="font-bold">Resultado Completo:</strong><br>';
+                    echo '<pre>' . htmlspecialchars(json_encode(json_decode($response), JSON_PRETTY_PRINT)) . '</pre>';
+                    echo '</div>';
+
                     curl_close($ch);
                 }
                 ?>
