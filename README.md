@@ -59,40 +59,54 @@ Our recommendation system is based on a linear regression model using historical
 * **Description**: Measures total trips initiated in each zone and hour
 * **Goal**: Maximize fleet availability in high-demand areas and times
 
-### 2. Total Revenue per Zone
-* **Description**: Measures total revenue generated in each pickup zone
-* **Goal**: Identify and optimize most profitable zones
+### 2. Ingresos Totales por Zona
+* **Descripción**: Mide el total de ingresos generados en cada zona de recogida.  
+* **Meta**: Identificar y optimizar las zonas más rentables para maximizar los ingresos.
 
-### 3. Average Trip Duration per Zone
-* **Description**: Measures average duration of trips initiated in each zone
-* **Goal**: Optimize routes to reduce average trip duration
+### 3. Duración Promedio del Viaje por Zona
+* **Descripción**: Mide la duración promedio de los viajes iniciados en cada zona.  
+* **Meta**: Optimizar las rutas para reducir la duración promedio de los viajes.
 
-## Deliverables 📄
+## 🗓️ Cronograma de Trabajo
 
-### Final Report
-* Detailed analysis
-* Methodology
-* Findings
-* Recommendations
+### Fases del Proyecto
 
-### Executive Presentation
-* Key project points and insights
+| Fase                  | Actividades                                   | Responsable | Duración | Fechas       |
+|-----------------------|-----------------------------------------------|-------------|----------|--------------|
+| **Fase 1:** Recopilación de Datos | • Identificación de fuentes<br>• Recolección de datasets | Gustavo     | 2 días   | 4-5 Nov 2024 |
+| **Fase 2:** Preparación de Datos  | • Limpieza<br>• Selección de características<br>• Integración | Alberto     | 4 días   | 6-9 Nov 2024 |
+| **Fase 3:** Análisis Exploratorio | • Análisis descriptivo<br>• Visualización inicial | Alberto        | 3 días   | 10-12 Nov 2024 |
+| **Fase 4:** Modelado Predictivo   | • Desarrollo de modelos<br>• Validación | Camilo       | 5 días   | 13-17 Nov 2024 |
+| **Fase 5:** Optimización de Rutas | • Algoritmos<br>• Evaluación | Gustavo     | 3 días   | 18-20 Nov 2024 |
+| **Fase 6:** Generación de Informes| • Informes visuales<br>• Presentación | Vera        | 1 día    | 21 Nov 2024  |
 
-### Data Pipeline
-* Automated infrastructure setup
+## 📄 Entregables
 
-### Predictive Models
-* Recommendation system implementation
+* **Informe Final**  
+  * Análisis detallado.  
+  * Metodología.  
+  * Hallazgos.  
+  * Recomendaciones.
 
-## Tools & Technologies 🛠️
+* **Presentación Ejecutiva**  
+   * Puntos clave del proyecto.
 
-| Category | Tools |
-|----------|-------|
-| **Data Analysis** | Python (Pandas, NumPy), SQL, Jupyter Notebooks |
-| **Visualization** | Matplotlib, Seaborn, PowerBI |
-| **Machine Learning** | Scikit-learn |
-| **Data Pipeline** | AWS S3, AWS Lambda, MySQL on AWS RDS |
-| **Collaboration** | GitHub, Slack, Trello, Microsoft Teams |
+* **Pipeline de Datos**  
+  * Infraestructura automatizada.  
+  
+* **Modelos Predictivos**  
+  * Sistema de recomendación.  
+  
+
+## 🛠️ Herramientas y Tecnologías
+
+| Categoría             | Herramientas                                  |
+|-----------------------|-----------------------------------------------|
+| **Análisis de Datos** | • Python (Pandas, NumPy)• SQL • Jupyter Notebooks |
+| **Visualización**     | • Matplotlib • Seaborn • PowerBI       |
+| **Machine Learning**  | • Scikit-learn •                |
+| **Pipeline de Datos** | • AWS S3 • AWS Lambda • MySQL en AWS RDS |
+| **Colaboración y Gestión** | • GitHub • Slack • Trello • Microsoft Teams |
 
 ## Communication 📢
 
