@@ -28,7 +28,7 @@ Este proyecto tiene como finalidad asesorar a una empresa de transporte de pasaj
 | Vera Guillen     | Analista de Datos |
 | Gustavo Coello   | Ingeniero de Datos |
 | Alberto Bernal   | Científico de Datos |
-| Camilo Casilimas | Científico de Datos |
+| Camilo Casilimas | Ingeniero de Datos |
 
 ## 🧠 Sistema de Recomendación
 
@@ -64,8 +64,8 @@ Desarrollamos un sistema de recomendación basado en un modelo de regresión lin
 | Fase                  | Actividades                                   | Responsable | Duración | Fechas       |
 |-----------------------|-----------------------------------------------|-------------|----------|--------------|
 | **Fase 1:** Recopilación de Datos | • Identificación de fuentes<br>• Recolección de datasets | Gustavo     | 2 días   | 4-5 Nov 2024 |
-| **Fase 2:** Preparación de Datos  | • Limpieza<br>• Selección de características<br>• Integración | Gustavo     | 4 días   | 6-9 Nov 2024 |
-| **Fase 3:** Análisis Exploratorio | • Análisis descriptivo<br>• Visualización inicial | Vera        | 3 días   | 10-12 Nov 2024 |
+| **Fase 2:** Preparación de Datos  | • Limpieza<br>• Selección de características<br>• Integración | Alberto     | 4 días   | 6-9 Nov 2024 |
+| **Fase 3:** Análisis Exploratorio | • Análisis descriptivo<br>• Visualización inicial | Alberto        | 3 días   | 10-12 Nov 2024 |
 | **Fase 4:** Modelado Predictivo   | • Desarrollo de modelos<br>• Validación | Camilo       | 5 días   | 13-17 Nov 2024 |
 | **Fase 5:** Optimización de Rutas | • Algoritmos<br>• Evaluación | Gustavo     | 3 días   | 18-20 Nov 2024 |
 | **Fase 6:** Generación de Informes| • Informes visuales<br>• Presentación | Vera        | 1 día    | 21 Nov 2024  |
@@ -92,11 +92,11 @@ Desarrollamos un sistema de recomendación basado en un modelo de regresión lin
 
 | Categoría             | Herramientas                                  |
 |-----------------------|-----------------------------------------------|
-| **Análisis de Datos** | • Python (Pandas, NumPy)<br>• SQL<br>• Jupyter Notebooks |
-| **Visualización**     | • Matplotlib<br>• Seaborn<br>• PowerBI       |
-| **Machine Learning**  | • Scikit-learn<br>•                |
-| **Pipeline de Datos** | • AWS S3<br>• AWS Lambda<br>• MySQL en AWS RDS |
-| **Colaboración y Gestión** | • GitHub<br>• Slack<br>• Trello<br>• Microsoft Teams |
+| **Análisis de Datos** | • Python (Pandas, NumPy)• SQL • Jupyter Notebooks |
+| **Visualización**     | • Matplotlib • Seaborn • PowerBI       |
+| **Machine Learning**  | • Scikit-learn •                |
+| **Pipeline de Datos** | • AWS S3 • AWS Lambda • MySQL en AWS RDS |
+| **Colaboración y Gestión** | • GitHub • Slack • Trello • Microsoft Teams |
 
 ## 📢 Comunicación y Reuniones
 
