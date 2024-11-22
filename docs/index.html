@@ -22,7 +22,7 @@
     </style>
 </head>
 <body class="bg-gray-100">
-    <!-- Navbar -->
+    <!-- Navigation bar -->
     <nav class="bg-white shadow-lg">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center py-4">
@@ -38,23 +38,24 @@
             </div>
         </div>  
     </nav>
-    <!-- Cover Image -->
+    <!-- Cover image -->
     <div class="max-w-6xl mx-auto mt-8 px-4">
         <div class="w-full h-64 rounded-lg overflow-hidden shadow-lg">
-            <img src="img/taxis.jpg" alt="Taxis in New York" class="w-full h-full object-cover">
+            <img src="img/ny.jpg" alt="New York Taxis" class="w-full h-full object-cover">
         </div>
     </div>
-    <!-- Main Content -->
+    <!-- Main content -->
     <div class="max-w-6xl mx-auto mt-8 px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Main Column -->
+            <!-- Main column -->
             <div class="md:col-span-2 space-y-6">
-                <!-- Project Header -->
+                <!-- Project header -->
                 <div class="bg-white rounded-lg shadow p-6">
                     <h1 class="text-2xl font-bold mb-4">🚕 Implementation of Environmentally Friendly Vehicles in New York</h1>
                     <p class="text-gray-600">
                         This project aims to advise a passenger transport company
-                        on the evaluation and feasibility of implementing a new fleet of environmentally friendly taxis in New York City.
+                        in evaluating the feasibility of implementing a new fleet of environmentally
+                        friendly taxis in New York City.
                     </p>
                 </div>
                 <!-- Objectives -->
@@ -63,23 +64,100 @@
                         <i class="fas fa-bullseye text-blue-600 mr-2"></i>
                         Project Objectives
                     </h2>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                    <ul class="list-disc list-inside text-gray-600 space-y-2 mb-4">
                         <li>Analysis of Mobility Patterns and Demand in Strategic Areas</li>
-                        <li>Determination of Optimal Areas for Sustainable Operations</li>
-                        <li>Generation of Reports for Strategic Decisions</li>
+                        <li>Determination of Optimal Zones for Sustainable Operations</li>
+                        <li>Generation of Reports for Strategic Decision Making</li>
                     </ul>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                        <div class="w-full">
+                            <img src="img/Mayordemanda.png" alt="Mobility Pattern Analysis" 
+                                class="w-full h-auto rounded shadow cursor-pointer transition-transform hover:scale-105"
+                                onclick="openModal(this.src)">
+                        </div>
+                        <div class="w-full">
+                            <img src="img/Mayordemanda2.png" alt="Optimal Zones" 
+                                class="w-full h-auto rounded shadow cursor-pointer transition-transform hover:scale-105"
+                                onclick="openModal(this.src)">
+                        </div>
+                    </div>
                 </div>
-                <!-- Taxi Zones Map -->
+
+                <!-- Modal -->
+                <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden" onclick="closeModal()">
+                    <div class="max-w-4xl w-full mx-4">
+                        <div class="relative">
+                            <button onclick="closeModal()" class="absolute top-0 right-0 -mt-12 text-white text-xl hover:text-gray-300">
+                                <i class="fas fa-times"></i> Close
+                            </button>
+                            <img id="modalImage" src="" alt="Enlarged Image" class="w-full h-auto rounded">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Script -->
+                <script>
+                function openModal(imageSrc) {
+                    const modal = document.getElementById('imageModal');
+                    const modalImg = document.getElementById('modalImage');
+                    modal.classList.remove('hidden');
+                    modalImg.src = imageSrc;
+                    document.body.style.overflow = 'hidden';
+                }
+
+                function closeModal() {
+                    const modal = document.getElementById('imageModal');
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape') {
+                        closeModal();
+                    }
+                });
+                </script>
+                <!-- NY taxi zone map -->
                 <div class="bg-white rounded-lg shadow p-6 mt-4">
                     <h2 class="text-xl font-bold mb-4">
                         <i class="fas fa-map-marked-alt text-blue-600 mr-2"></i>
-                        NY Taxi Zones Map
+                        NY Taxi Zone Map
                     </h2>
-                    <img src="img/mapa.png" alt="NY Taxi Zones Map" class="w-full h-auto rounded">
+                    <img src="img/mapa.png" alt="NY Taxi Zone Map" class="w-full h-auto rounded">
                 </div>
             </div>
             <!-- Sidebar -->
             <div class="space-y-6">
+                <!-- Links -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-link text-blue-600 mr-2"></i>
+                        Project Links
+                    </h2>
+                    <div class="space-y-2">
+                        <a href="machineEN.html" target="_blank" class="text-blue-600 hover:underline block">
+                            <i class="fas fa-brain mr-2"></i>
+                            Machine Learning Analysis
+                        </a>
+                        <a href="https://github.com/Inclick-me/New_York_Taxis_IA" target="_blank" class="text-blue-600 hover:underline block">
+                            <i class="fab fa-github mr-2"></i> 
+                            GitHub Repository
+                        </a>
+                        <a href="https://newyorktaxisia-nkrysveiuzvz5zoawdkyzh.streamlit.app/" target="_blank" class="text-blue-600 hover:underline block">
+                            <i class="fas fa-code mr-2"></i> 
+                            Streamlit App
+                        </a>
+                        <a href="http://6.tcp.ngrok.io:17972/" target="_blank" class="text-blue-600 hover:underline block">
+                            <i class="fas fa-project-diagram mr-2"></i>
+                            Plugin API
+                        </a>
+                        <a href="https://github.com/Inclick-me/New_York_Taxis_IA/blob/main/Machine_Learning/EDA_ML.ipynb" target="_blank" class="text-blue-600 hover:underline block">
+                            <i class="fas fa-chart-line mr-2"></i>
+                            Exploratory Data Analysis
+                        </a>
+                    </div>
+                </div>
+                
                 <!-- Team -->
                 <div class="bg-white rounded-lg shadow p-6">
                     <h2 class="text-xl font-bold mb-4">
@@ -93,7 +171,7 @@
                             </div>
                             <div>
                                 <p class="font-medium">Vera Guillen</p>
-                                <p class="text-sm text-gray-500">Data Analyst</p>
+                                <p class="text-sm text-gray-500"><a href="https://www.linkedin.com/in/vera-guillen-9b464a303/" target="_blank" class="text-blue-600 underline">LinkedIn</a></p>
                             </div>
                         </div>
                         <div class="flex items-center space-x-3">
@@ -132,31 +210,10 @@
                         Tools
                     </h2>
                     <div class="space-y-2">
-                        <p class="text-sm text-gray-600"><strong>Analysis:</strong> Python, SQL, Jupyter</p>
-                        <p class="text-sm text-gray-600"><strong>Visualization:</strong> Matplotlib, Tableau</p>
+                        <p class="text-sm text-gray-600"><strong>Analysis:</strong> Python, SQL, Jupyter, AWS Glue</p>
+                        <p class="text-sm text-gray-600"><strong>Visualization:</strong> Matplotlib, PowerBI</p>
                         <p class="text-sm text-gray-600"><strong>ML:</strong> Scikit-learn</p>
                         <p class="text-sm text-gray-600"><strong>Pipeline:</strong> AWS S3, Lambda, RDS</p>
-                    </div>
-                </div>
-                <!-- KPIs -->
-                <div class="bg-white rounded-lg shadow p-6">
-                    <h2 class="text-xl font-bold mb-4">
-                        <i class="fas fa-chart-line text-blue-600 mr-2"></i>
-                        KPIs
-                    </h2>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-600">Trips by Zone</span>
-                            <span class="text-sm font-medium">In Progress</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-600">Total Revenue</span>
-                            <span class="text-sm font-medium">In Progress</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-600">Average Duration</span>
-                            <span class="text-sm font-medium">In Progress</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -167,22 +224,12 @@
     <footer class="bg-white mt-8 border-t">
         <div class="max-w-6xl mx-auto px-4 py-6">
             <div class="flex space-x-6">
-                <a href="#" class="text-gray-600 hover:text-blue-600">
+                <a href="https://github.com/Inclick-me/New_York_Taxis_IA/fork" class="text-gray-600 hover:text-blue-600">
                     <i class="fas fa-code-branch mr-2"></i>
                     Fork
-                </a>
-                <a href="#" class="text-gray-600 hover:text-blue-600">
-                    <i class="fas fa-comment mr-2"></i>
-                    Comment
-                </a>
-                <a href="#" class="text-gray-600 hover:text-blue-600">
-                    <i class="fas fa-exclamation-triangle mr-2"></i>
-                    Report
                 </a>
             </div>
         </div>
     </footer>
-    <!-- External Script -->
-    <script src="script.js"></script>
 </body>
 </html>

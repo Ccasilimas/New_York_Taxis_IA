@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NY Taxis Project - Machine Learning Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f3f2ef;
+        }
+        .linkedin-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .linkedin-header {
+            background-color: #1d4ed8;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <span class="text-2xl">🚕</span>
+                    <h1 class="text-xl font-bold">NY Taxis Project</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700">
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>  
+    </nav>
+
+    <!-- Cover Image -->
+    <div class="max-w-6xl mx-auto mt-8 px-4">
+        <div class="w-full h-64 rounded-lg overflow-hidden shadow-lg">
+            <img src="img/ny2.jpg" alt="Taxis in New York" class="w-full h-full object-cover">
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="max-w-6xl mx-auto mt-8 px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Main Column -->
+            <div class="md:col-span-2 space-y-6">
+                <!-- Project Header -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h1 class="text-2xl font-bold mb-4">🤖 Machine Learning Analysis: Demand Prediction</h1>
+                    <p class="text-gray-600">
+                        In this project, we have developed a linear regression model to predict taxi demand
+                        in different areas of New York, optimizing resource allocation and improving service efficiency.
+                    </p>
+                </div>
+
+                <!-- Data Description -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-database text-blue-600 mr-2"></i>
+                        Data Description
+                    </h2>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li><strong>Pickup Location ID (PULocationID):</strong> Identifies specific pickup zones</li>
+                        <li><strong>Day of Week:</strong> Numbers from 0 (Sunday) to 6 (Saturday)</li>
+                        <li><strong>Pickup Time:</strong> 24-hour format for temporal analysis</li>
+                    </ul>
+                </div>
+
+                <!-- Taxi Zones Map -->
+                <div class="bg-white rounded-lg shadow p-6 mt-4">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-map-marked-alt text-blue-600 mr-2"></i>
+                        NY Taxi Zones Map
+                    </h2>
+                    <img src="img/mapa.png" alt="NY Taxi Zones Map" class="w-full h-auto rounded">
+                </div>
+                
+                <!-- JFK Airport Zone -->
+                <div class="bg-white rounded-lg shadow p-6 mt-4">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-map-marked-alt text-blue-600 mr-2"></i>
+                        Zone 1 JFK Airport
+                    </h2>
+                    <img src="img/Zonas1.png" alt="NY Taxi Zones Map" class="w-full h-auto rounded">
+                </div>
+                
+                <!-- Results -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-chart-bar text-blue-600 mr-2"></i>
+                        Results and Benefits
+                    </h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-600"><strong>Operational Efficiency:</strong> Optimization in vehicle allocation</p>
+                        <p class="text-gray-600"><strong>Cost Reduction:</strong> Minimization of idle times</p>
+                        <p class="text-gray-600"><strong>Service Improvement:</strong> Enhanced customer satisfaction</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Navigation -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-link text-blue-600 mr-2"></i>
+                        Navigation
+                    </h2>
+                    <div class="space-y-2">
+                        <a href="index.html" class="block text-blue-600 hover:underline">
+                            <i class="fas fa-arrow-left mr-2"></i>Back to Home
+                        </a>
+                        <a href="http://6.tcp.ngrok.io:17972/" target="_blank" class="block text-blue-600 hover:underline">
+                            <i class="fas fa-external-link-alt mr-2"></i>View Model Example
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Technologies Used -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-laptop-code text-blue-600 mr-2"></i>
+                        Technologies
+                    </h2>
+                    <div class="space-y-2">
+                        <p class="text-sm text-gray-600"><strong>Framework:</strong> Scikit-learn</p>
+                        <p class="text-sm text-gray-600"><strong>Deployment:</strong> FastAPI, Docker, Streamlit</p>
+                        <p class="text-sm text-gray-600"><strong>Analysis:</strong> Python, Pandas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-white mt-8 border-t">
+        <div class="max-w-6xl mx-auto px-4 py-6">
+            <div class="flex space-x-6">
+                <a href="https://github.com/Inclick-me/New_York_Taxis_IA/fork" class="text-gray-600 hover:text-blue-600">
+                    <i class="fas fa-code-branch mr-2"></i>
+                    Fork
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
