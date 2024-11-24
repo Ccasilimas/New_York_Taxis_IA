@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Taxi Demand Prediction System - Analyze traffic zones intelligently">
     <title>Taxi Demand Prediction</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -19,24 +18,16 @@
         .glass-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
-            border-radius: 24px;
-            box-shadow: 
-                0 10px 25px rgba(0, 0, 0, 0.1),
-                0 1px 3px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 50%; /* Reduce width to half */
-        }
-        
-        .glass-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 
-                0 15px 35px rgba(0, 0, 0, 0.12),
-                0 3px 6px rgba(0, 0, 0, 0.07);
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            width: 90%;
+            max-width: 500px;
         }
         
         .gradient-header {
             background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
-            border-radius: 24px 24px 0 0;
+            border-radius: 16px 16px 0 0;
         }
         
         .input-field {
@@ -45,79 +36,42 @@
         }
         
         .input-field:focus {
-            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+            box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
             border-color: #4f46e5;
         }
         
-        .loading {
-            display: none;
-        }
-        
-        .form-submitting .loading {
-            display: inline-block;
-        }
-        
-        .prediction-button {
-            background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
-            transition: all 0.3s ease;
-        }
-        
-        .prediction-button:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
-        }
-
         .back-button {
             background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
             transition: all 0.3s ease;
         }
-
-        .back-button:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
-        }
     </style>
 </head>
-<body class="p-4 md:p-8">
-    <div class="min-h-screen flex flex-col items-center justify-center max-w-4xl mx-auto space-y-6">
-        <!-- Main Card -->
-        <div class="glass-card w-full mx-auto"> <!-- Center the card horizontally -->
-            <div class="gradient-header p-8">
-                <div class="flex items-center space-x-6">
-                    <div class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-lg transform rotate-12 hover:rotate-0 transition-transform duration-300">
-                        <span class="text-5xl" role="img" aria-label="taxi">🚕</span>
+<body class="p-4">
+    <div class="min-h-screen flex flex-col items-center justify-center space-y-4">
+        <div class="glass-card">
+            <div class="gradient-header p-4">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center">
+                        <span class="text-3xl" role="img" aria-label="taxi">🚕</span>
                     </div>
                     <div>
-                        <h1 class="text-3xl font-bold text-white mb-2">Taxi Demand Prediction</h1>
-                        <p class="text-lg text-blue-100 opacity-90">Intelligent Traffic Zone Analysis</p>
+                        <h1 class="text-xl font-bold text-white">Taxi Demand Prediction</h1>
+                        <p class="text-sm text-blue-100">Traffic Zone Analysis</p>
                     </div>
                 </div>
             </div>
 
-            <div class="p-8">
-                <form method="post" action="" class="space-y-8" id="predictionForm">
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="space-y-2">
-                            <label for="zone_name" class="block text-sm font-semibold text-gray-700">Zone ID</label>
-                            <input 
-                                type="number" 
-                                id="zone_name" 
-                                name="zone_name" 
-                                class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none text-gray-700" 
-                                placeholder="Enter Zone ID" 
-                                required 
-                                min="1"
-                            >
+            <div class="p-4">
+                <form method="post" action="" class="space-y-4" id="predictionForm">
+                    <div class="space-y-4">
+                        <div>
+                            <label for="zone_name" class="block text-sm font-medium text-gray-700">Zone ID</label>
+                            <input type="number" id="zone_name" name="zone_name" class="input-field w-full px-3 py-2 border border-gray-200 rounded-lg" placeholder="Enter Zone ID" required min="1">
                         </div>
                         
-                        <div class="space-y-2">
-                            <label for="pickup_weekday" class="block text-sm font-semibold text-gray-700">Day of Week</label>
-                            <select 
-                                id="pickup_weekday" 
-                                name="pickup_weekday" 
-                                class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none text-gray-700 appearance-none" 
-                                required
-                            >
+                        <div>
+                            <label for="pickup_weekday" class="block text-sm font-medium text-gray-700">Day of Week</label>
+                            <select id="pickup_weekday" name="pickup_weekday" class="input-field w-full px-3 py-2 border border-gray-200 rounded-lg" required>
                                 <option value="">Select a day</option>
                                 <option value="0">Monday</option>
                                 <option value="1">Tuesday</option>
@@ -129,40 +83,21 @@
                             </select>
                         </div>
                         
-                        <div class="space-y-2">
-                            <label for="pickup_hour" class="block text-sm font-semibold text-gray-700">Pickup Hour</label>
-                            <input 
-                                type="number" 
-                                id="pickup_hour" 
-                                name="pickup_hour" 
-                                class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none text-gray-700" 
-                                min="0" 
-                                max="23" 
-                                placeholder="0-23" 
-                                required
-                            >
+                        <div>
+                            <label for="pickup_hour" class="block text-sm font-medium text-gray-700">Pickup Hour</label>
+                            <input type="number" id="pickup_hour" name="pickup_hour" class="input-field w-full px-3 py-2 border border-gray-200 rounded-lg" min="0" max="23" placeholder="0-23" required>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
 
-        <!-- Back Button Card -->
-        <div class="glass-card w-full p-6 flex justify-start">
-            <a 
-                href="machineEN.html" 
-                class="back-button text-white px-6 py-3 rounded-xl font-semibold flex items-center space-x-2"
-            >
+        <div class="glass-card p-3">
+            <a href="machineEN.html" class="back-button text-white px-4 py-2 rounded-lg font-medium flex items-center space-x-2">
                 <i class="fas fa-arrow-left"></i>
                 <span>Back to Dashboard</span>
             </a>
         </div>
     </div>
-
-    <script>
-        document.getElementById('predictionForm').addEventListener('submit', function(e) {
-            this.classList.add('form-submitting');
-        });
-    </script>
 </body>
 </html>
