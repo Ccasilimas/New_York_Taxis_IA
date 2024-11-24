@@ -71,10 +71,10 @@ Our recommendation system is based on a linear regression model using historical
 | Requirement Changes | Maintain regular PO communication |
 
 ## Contact Information 📬
-* **Vera Guillen** - Data Analyst - [LinkedIn](https://www.linkedin.com/in/vera-guillen-9b464a303/)
-* **Gustavo Coello** - Data Engineer - [LinkedIn](https://www.linkedin.com/in/gustavo-coello-01039b270/)
-* **Alberto Bernal** - Data Scientist - [LinkedIn](https://www.linkedin.com/in/alberto-bernal-duplat-90a283a2/)
-* **Camilo Casilimas** - Data Architect & Engineer - [LinkedIn](https://www.linkedin.com/in/camilo-casilimas/)
+* **Vera Guillen** - Data Analyst - [LinkedIn](https://www.linkedin.com/in/vera-guillen-9b464a303/){:target="_blank"}
+* **Gustavo Coello** - Data Engineer - [LinkedIn](https://www.linkedin.com/in/gustavo-coello-01039b270/){:target="_blank"}
+* **Alberto Bernal** - Data Scientist - [LinkedIn](https://www.linkedin.com/in/alberto-bernal-duplat-90a283a2/){:target="_blank"}
+* **Camilo Casilimas** - Data Architect & Engineer - [LinkedIn](https://www.linkedin.com/in/camilo-casilimas/){:target="_blank"}
 
 ## How to Contribute 🤝
 1. Clone the repository:
