@@ -22,7 +22,7 @@
     </style>
 </head>
 <body class="bg-gray-100">
-    <!-- Barra de navegación -->
+    <!-- Barra de Navegación -->
     <nav class="bg-white shadow-lg">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center py-4">
@@ -31,7 +31,7 @@
                     <h1 class="text-xl font-bold">Proyecto Taxis NY</h1>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="spanish.html" class="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700">
+                    <a href="index.html" class="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700">
                         Volver al Inicio
                     </a>
                 </div>
@@ -39,32 +39,68 @@
         </div>  
     </nav>
 
-    <!-- Cover Image -->
+    <!-- Imagen de Portada -->
     <div class="max-w-6xl mx-auto mt-8 px-4">
         <div class="w-full h-64 rounded-lg overflow-hidden shadow-lg">
-            <img src="img/ny2.jpg" alt="Taxis in New York" class="w-full h-full object-cover">
+            <img src="img/ny2.jpg" alt="Taxis en Nueva York" class="w-full h-full object-cover">
+        </div>
     </div>
     
-    <!-- Contenido principal -->
+    <!-- Contenido Principal -->
     <div class="max-w-6xl mx-auto mt-8 px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Columna principal -->
+            <!-- Columna Principal -->
             <div class="md:col-span-2 space-y-6">
-                <!-- Encabezado del proyecto -->
+                <!-- Encabezado del Proyecto -->
                 <div class="bg-white rounded-lg shadow p-6">
                     <h1 class="text-2xl font-bold mb-4">🤖 Análisis de Machine Learning: Predicción de Demanda</h1>
                     <p class="text-gray-600">
-                        En este proyecto, hemos desarrollado un modelo de regresión lineal para predecir la demanda de taxis
-                        en diferentes zonas de Nueva York, optimizando la asignación de recursos y mejorando la eficiencia del servicio.
+                        El objetivo de este proyecto es mejorar la eficiencia de la flota de taxis de Nueva York excluyendo el área del aeropuerto JFK. Mediante la optimización del uso de combustible y la identificación de zonas de alta demanda según la hora del día, día de la semana y proximidad a la ubicación actual, el proyecto se centra en mejorar la eficiencia operativa a través de una mejor asignación de vehículos, reduciendo costos al minimizar los tiempos de inactividad y mejorando la satisfacción del cliente con un servicio más confiable. Nuestro enfoque integra un modelo predictivo utilizando datos históricos, implementado a través de un backend basado en FastAPI y una interfaz web PHP fácil de usar. Esta integración respalda la toma de decisiones en tiempo real y los ajustes operativos para satisfacer eficazmente la demanda fluctuante de taxis.
                     </p>
-                          
+                </div>
+
+                <!-- Objetivos Alcanzados -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-check-circle text-blue-600 mr-2"></i>
+                        Objetivos Alcanzados
+                    </h2>
+                    <div class="space-y-4">
+                        <!-- Implementación FastAPI -->
+                        <div class="border-l-4 border-blue-600 pl-4">
+                            <h3 class="font-bold text-lg">Implementación FastAPI</h3>
+                            <p class="text-gray-600">Desarrollo de una API usando FastAPI para predicciones de demanda de taxis en varias zonas de Nueva York. Maneja solicitudes POST con datos específicos (ID de zona, día de la semana, hora de recogida) y devuelve predicciones de demanda.</p>
+                            <img src="img/fastapi-example.png" alt="Implementación FastAPI" class="mt-2 rounded-lg w-full">
+                        </div>
+
+                        <!-- Modelo de Regresión Lineal -->
+                        <div class="border-l-4 border-blue-600 pl-4">
+                            <h3 class="font-bold text-lg">Entrenamiento del Modelo de Regresión Lineal</h3>
+                            <p class="text-gray-600">Entrenamiento de un modelo de regresión lineal utilizando datos históricos de demanda de taxis, integrado con la API para predicciones en tiempo real.</p>
+                            <img src="img/model-training.png" alt="Entrenamiento del Modelo" class="mt-2 rounded-lg w-full">
+                        </div>
+
+                        <!-- Implementación Docker -->
+                        <div class="border-l-4 border-blue-600 pl-4">
+                            <h3 class="font-bold text-lg">Implementación Docker</h3>
+                            <p class="text-gray-600">Creación de Dockerfiles para aplicaciones FastAPI y PHP, asegurando un despliegue consistente y escalabilidad.</p>
+                            <img src="img/docker-structure.png" alt="Estructura Docker" class="mt-2 rounded-lg w-full">
+                        </div>
+
+                        <!-- Interfaz Web PHP -->
+                        <div class="border-l-4 border-blue-600 pl-4">
+                            <h3 class="font-bold text-lg">Interfaz Web PHP</h3>
+                            <p class="text-gray-600">Diseño e implementación de una interfaz PHP fácil de usar para interactuar con la API de predicción, incluyendo entrada de datos y visualización de resultados.</p>
+                            <img src="img/php-interface.png" alt="Interfaz PHP" class="mt-2 rounded-lg w-full">
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Descripción de Datos -->
                 <div class="bg-white rounded-lg shadow p-6">
                     <h2 class="text-xl font-bold mb-4">
                         <i class="fas fa-database text-blue-600 mr-2"></i>
-                        Descripción de los Datos
+                        Descripción de Datos
                     </h2>
                     <ul class="list-disc list-inside text-gray-600 space-y-2">
                         <li><strong>ID de Ubicación de Recogida (PULocationID):</strong> Identifica zonas específicas de recogida</li>
@@ -72,59 +108,51 @@
                         <li><strong>Hora de Recogida:</strong> Formato 24 horas para análisis temporal</li>
                     </ul>
                 </div>
-                
 
-                <!-- Taxi Zones Map -->
-                <div class="bg-white rounded-lg shadow p-6 mt-4">
-                    <h2 class="text-xl font-bold mb-4">
-                        <i class="fas fa-map-marked-alt text-blue-600 mr-2"></i>
-                        NY Taxi Zones Map
-                    </h2>
-                    <img src="img/mapa.png" alt="NY Taxi Zones Map" class="w-full h-auto rounded">
-                </div>
-                
-                <!-- Mapa de zonas de taxi de NY -->
-                <div class="bg-white rounded-lg shadow p-6 mt-4">
-                    <h2 class="text-xl font-bold mb-4">
-                        <i class="fas fa-map-marked-alt text-blue-600 mr-2"></i>
-                        Zona 1 JFK airport
-                    </h2>
-                    <img src="img/Zonas1.png" alt="Mapa de zonas de taxi de NY" class="w-full h-auto rounded">
-                </div>
-                
-                <!-- Resultados -->
+                <!-- Sección de Mapas -->
                 <div class="bg-white rounded-lg shadow p-6">
                     <h2 class="text-xl font-bold mb-4">
-                        <i class="fas fa-chart-bar text-blue-600 mr-2"></i>
-                        Resultados y Beneficios
+                        <i class="fas fa-map-marked-alt text-blue-600 mr-2"></i>
+                        Áreas de Cobertura
                     </h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-600"><strong>Eficiencia Operacional:</strong> Optimización en la asignación de vehículos</p>
-                        <p class="text-gray-600"><strong>Reducción de Costos:</strong> Minimización de tiempos muertos</p>
-                        <p class="text-gray-600"><strong>Mejora del Servicio:</strong> Mayor satisfacción del cliente</p>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div>
+                            <h3 class="font-bold mb-2">Vista General de Zonas de Taxi NY</h3>
+                            <img src="img/mapa.png" alt="Mapa de Zonas de Taxi NY" class="w-full h-auto rounded">
+                        </div>
                     </div>
                 </div>
-
-                
             </div>
 
-            <!-- Barra lateral -->
+            <!-- Barra Lateral -->
             <div class="space-y-6">
-                <!-- Navegación -->
+                <!-- Botón Ver Modelo -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <a href="pluging.html" class="w-full px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 text-center block">
+                        <i class="fas fa-external-link-alt mr-2"></i>Ver Ejemplo del Modelo
+                    </a>
+                </div>
+
+                <!-- Sección de Impacto -->
                 <div class="bg-white rounded-lg shadow p-6">
                     <h2 class="text-xl font-bold mb-4">
-                        <i class="fas fa-link text-blue-600 mr-2"></i>
-                        Navegación
+                        <i class="fas fa-chart-line text-blue-600 mr-2"></i>
+                        Impacto del Proyecto
                     </h2>
-                    <div class="space-y-2">
-                        <a href="spanish.html" class="block text-blue-600 hover:underline">
-                            <i class="fas fa-arrow-left mr-2"></i>Volver al Inicio
-                        </a>
-                        <a href="plugingES.html" class="block text-blue-600 hover:underline">
-                            <i class="fas fa-external-link-alt mr-2"></i> Ver Ejemplo del Modelo
-                        </a>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-cog text-blue-600 mr-2"></i>
+                            <p class="text-gray-600"><strong>Eficiencia Operativa:</strong> Asignación optimizada de vehículos</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-dollar-sign text-blue-600 mr-2"></i>
+                            <p class="text-gray-600"><strong>Reducción de Costos:</strong> Tiempos de inactividad minimizados</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-smile text-blue-600 mr-2"></i>
+                            <p class="text-gray-600"><strong>Mejora del Servicio:</strong> Mayor satisfacción del cliente</p>
+                        </div>
                     </div>
-                     
                 </div>
 
                 <!-- Tecnologías Utilizadas -->
@@ -135,18 +163,28 @@
                     </h2>
                     <div class="space-y-2">
                         <p class="text-sm text-gray-600"><strong>Framework:</strong> Scikit-learn</p>
-                        <p class="text-sm text-gray-600"><strong>Deployment:</strong> FastAPI, Docker, Streamlit</p>
+                        <p class="text-sm text-gray-600"><strong>Despliegue:</strong> FastAPI, Docker, PHP</p>
                         <p class="text-sm text-gray-600"><strong>Análisis:</strong> Python, Pandas</p>
                     </div>
                 </div>
-                
-                
-            
+
+                <!-- Navegación -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-link text-blue-600 mr-2"></i>
+                        Navegación
+                    </h2>
+                    <div class="space-y-2">
+                        <a href="index.html" class="block text-blue-600 hover:underline">
+                            <i class="fas fa-arrow-left mr-2"></i>Volver al Inicio
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     
-    <!-- Footer -->
+    <!-- Pie de Página -->
     <footer class="bg-white mt-8 border-t">
         <div class="max-w-6xl mx-auto px-4 py-6">
             <div class="flex space-x-6">
@@ -154,7 +192,6 @@
                     <i class="fas fa-code-branch mr-2"></i>
                     Fork
                 </a>
-                
             </div>
         </div>
     </footer>
