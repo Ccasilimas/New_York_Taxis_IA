@@ -1,7 +1,7 @@
 # 🚕 Environmentally Friendly Vehicle Implementation in New York
 ![nyctaxis](https://github.com/user-attachments/assets/b064bc10-83dd-423d-a89f-1b74a894b2f2)
 ## Overview 🌍
-This project aims to advise a passenger transport company in evaluating the feasibility of implementing a new environmentally friendly taxi fleet in New York City. We seek to identify the best areas to start operations, considering profitability and mobility patterns, thus aligning financial objectives with a positive environmental impact.
+This project aims to improve the efficiency of New York City's taxi fleet by excluding the JFK Airport area. Our goal is to optimize fuel usage and identify zones with the highest taxi demand based on the time of day, day of the week, and proximity to the current location. The project focuses on operational efficiency by optimizing vehicle allocation, cost reduction by minimizing idle times, and service improvement through enhanced customer satisfaction.
 
 ## Table of Contents
 - [Project Objectives](#project-objectives)
@@ -45,6 +45,7 @@ Our recommendation system is based on a linear regression model using historical
 * Comparative analysis between best zones based on predicted demand and driver's current zone
 
 ## Key Performance Indicators 📈
+
 ### 1. Trips per Zone and Hour
 * **Description**: Measures total trips initiated in each zone and hour
 * **Goal**: Maximize fleet availability in high-demand areas and times
@@ -58,6 +59,7 @@ Our recommendation system is based on a linear regression model using historical
 * **Goal**: Optimize routes to reduce average trip duration
 
 ## Communication 📢
+
 ### Regular Meetings
 * **Daily**: Morning stand-ups
 * **Weekly**: Progress reviews
