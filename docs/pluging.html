@@ -3,134 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taxi Demand Prediction</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>NY Taxis Project - Environmentally Friendly</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background-color: #f3f2ef;
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        .linkedin-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .gradient-header {
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-        }
-        .input-field {
-            transition: all 0.3s ease;
-        }
-        .input-field:focus {
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
-            border-color: #3b82f6;
+        .linkedin-header {
+            background-color: #1d4ed8;
+            color: white;
         }
     </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-4">
-    <div class="container max-w-xl w-full">
-        <div class="glass-card overflow-hidden">
-            <div class="gradient-header p-6 flex items-center space-x-4">
-                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg">
-                    <span class="text-4xl">🚕</span>
+<body class="bg-gray-100">
+    <!-- Navigation bar -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <span class="text-2xl">🚕</span>
+                    <h1 class="text-xl font-bold">NY Taxis Project</h1>
                 </div>
-                <div>
-                    <h1 class="text-2xl font-bold text-white">Taxi Demand Prediction</h1>
-                    <p class="text-sm text-blue-100">Intelligent Traffic Zone Analysis</p>
+                <div class="flex items-center space-x-4">
+                    <a href="spanish.html" class="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700">
+                        Español
+                    </a>
+                </div>
+            </div>
+        </div>  
+    </nav>
+
+    <!-- Cover image -->
+    <div class="max-w-6xl mx-auto mt-8 px-4">
+        <div class="w-full h-64 rounded-lg overflow-hidden shadow-lg">
+            <img src="img/ny.jpg" alt="New York Taxis" class="w-full h-full object-cover">
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="max-w-6xl mx-auto mt-8 px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Main column -->
+            <div class="md:col-span-2 space-y-6">
+                <!-- Project header -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h1 class="text-2xl font-bold mb-4">🚕 Implementation of Environmentally Friendly Vehicles in New York</h1>
+                    <p class="text-gray-600">
+                        This project aims to advise a passenger transport company
+                        in evaluating the feasibility of implementing a new fleet of environmentally
+                        friendly taxis in New York City.
+                    </p>
+                </div>
+
+                <!-- Objectives -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-bullseye text-blue-600 mr-2"></i>
+                        Project Objectives
+                    </h2>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2 mb-4">
+                        <li>Analysis of Mobility Patterns and Demand in Strategic Areas</li>
+                        <li>Determination of Optimal Zones for Sustainable Operations</li>
+                        <li>Generation of Reports for Strategic Decision Making</li>
+                    </ul>
+                </div>
+
+                <!-- NY taxi zone map -->
+                <div class="bg-white rounded-lg shadow p-6 mt-4">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-map-marked-alt text-blue-600 mr-2"></i>
+                        NY Taxi Zone Map
+                    </h2>
+                    <img src="img/mapa.png" alt="NY Taxi Zone Map" class="w-full h-auto rounded">
                 </div>
             </div>
 
-            <div class="p-8">
-                <form method="post" action="" class="space-y-6">
-                    <div class="grid md:grid-cols-3 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Zone ID</label>
-                            <input type="number" name="zone_name" class="input-field w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none" placeholder="Enter ID" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Day of Week</label>
-                            <select name="pickup_weekday" class="input-field w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none" required>
-                                <option value="">Select a day</option>
-                                <option value="0">Monday</option>
-                                <option value="1">Tuesday</option>
-                                <option value="2">Wednesday</option>
-                                <option value="3">Thursday</option>
-                                <option value="4">Friday</option>
-                                <option value="5">Saturday</option>
-                                <option value="6">Sunday</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Pickup Hour</label>
-                            <input type="number" name="pickup_hour" class="input-field w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none" min="0" max="23" placeholder="0-23" required>
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Links -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-link text-blue-600 mr-2"></i>
+                        Project Links
+                    </h2>
+                    <div class="space-y-2">
+                        <a href="machineEN.html" class="text-blue-600 hover:underline block">
+                            <i class="fas fa-brain mr-2"></i>
+                            Machine Learning Analysis
+                        </a>
+                        <a href="#" class="text-blue-600 hover:underline block">
+                            <i class="fab fa-github mr-2"></i> 
+                            GitHub Repository
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Team -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-users text-blue-600 mr-2"></i>
+                        Team
+                    </h2>
+                    <div class="space-y-4">
+                        <!-- Team member template -->
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                <span class="text-blue-600 font-bold">V</span>
+                            </div>
+                            <div>
+                                <p class="font-medium">Team Member Name</p>
+                                <p class="text-sm text-gray-500">Role</p>
+                            </div>
                         </div>
                     </div>
-
-                    <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center space-x-2">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Predict Highest Demand Zone</span>
-                    </button>
-                </form>
-
-                <!-- PHP Prediction Results -->
-                <?php
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $zone_name = $_POST['zone_name'];
-                    $pickup_weekday = $_POST['pickup_weekday'];
-                    $pickup_hour = $_POST['pickup_hour'];
-
-                    $url = 'http://100.78.115.22:9000/predict/';
-                    $data = array(
-                        "PULocationID" => $zone_name,
-                        "pickup_weekday" => $pickup_weekday,
-                        "pickup_hour" => $pickup_hour
-                    );
-
-                    $ch = curl_init($url);
-                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                    curl_setopt($ch, CURLOPT_POST, true);
-                    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-                    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
-                    $response = curl_exec($ch);
-
-                    if (curl_errno($ch)) {
-                        echo '<div class="mt-6 bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg flex items-center space-x-3">
-                                <i class="fas fa-exclamation-triangle text-red-600"></i>
-                                <p class="text-red-800 font-medium">Connection Error: ' . curl_error($ch) . '</p>
-                              </div>';
-                    } else {
-                        $data = json_decode($response, true);
-                        
-                        // Main prediction result
-                        if (isset($data['max_zone_name'])) {
-                            echo '<div class="mt-6 bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
-                                    <div class="flex items-center space-x-3">
-                                        <i class="fas fa-map-marker-alt text-green-600"></i>
-                                        <h3 class="text-lg font-semibold text-green-800">Prediction Result</h3>
-                                    </div>
-                                    <p class="mt-2 text-green-700">The zone with the highest traffic probability is: <strong>' . htmlspecialchars($data['max_zone_name']) . '</strong></p>
-                                  </div>';
-                        }
-
-                        // Full API response
-                        echo '<div class="mt-4 bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-info-circle text-blue-600"></i>
-                                    <h3 class="text-lg font-semibold text-blue-800">Complete API Response</h3>
-                                </div>
-                                <pre class="mt-2 text-sm text-blue-700 overflow-x-auto">' . 
-                                    htmlspecialchars(json_encode(json_decode($response), JSON_PRETTY_PRINT)) . 
-                                '</pre>
-                              </div>';
-                    }
-
-                    curl_close($ch);
-                }
-                ?>
+                </div>
             </div>
         </div>
     </div>
+    
+    <!-- Footer -->
+    <footer class="bg-white mt-8 border-t">
+        <div class="max-w-6xl mx-auto px-4 py-6">
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-600 hover:text-blue-600">
+                    <i class="fas fa-code-branch mr-2"></i>
+                    Fork
+                </a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
