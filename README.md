@@ -1,4 +1,4 @@
-# 🚕 Environmentally Friendly Vehicle Implementation in New York
+# 🚕 Optimizing New York City's Taxi Fleet Efficiency and Fuel Usage
 ![nyctaxis](https://github.com/user-attachments/assets/b064bc10-83dd-423d-a89f-1b74a894b2f2)
 ## Overview 🌍
 This project aims to improve the efficiency of New York City's taxi fleet by excluding the JFK Airport area. Our goal is to optimize fuel usage and identify zones with the highest taxi demand based on the time of day, day of the week, and proximity to the current location. The project focuses on operational efficiency by optimizing vehicle allocation, cost reduction by minimizing idle times, and service improvement through enhanced customer satisfaction.
