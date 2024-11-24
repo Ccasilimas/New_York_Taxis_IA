@@ -60,6 +60,43 @@
                     </p>
                 </div>
 
+                <!-- Achieved Objectives -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-check-circle text-blue-600 mr-2"></i>
+                        Achieved Objectives
+                    </h2>
+                    <div class="space-y-4">
+                        <!-- FastAPI Implementation -->
+                        <div class="border-l-4 border-blue-600 pl-4">
+                            <h3 class="font-bold text-lg">FastAPI Implementation</h3>
+                            <p class="text-gray-600">Developed an API using FastAPI for taxi demand predictions in various New York zones. Handles POST requests with specific data (zone ID, day of week, pickup time) and returns demand predictions.</p>
+                            <img src="img/fastapi-example.png" alt="FastAPI Implementation" class="mt-2 rounded-lg w-full">
+                        </div>
+
+                        <!-- Linear Regression Model -->
+                        <div class="border-l-4 border-blue-600 pl-4">
+                            <h3 class="font-bold text-lg">Linear Regression Model Training</h3>
+                            <p class="text-gray-600">Trained a linear regression model using historical taxi demand data, integrated with the API for real-time predictions.</p>
+                            <img src="img/model-training.png" alt="Model Training" class="mt-2 rounded-lg w-full">
+                        </div>
+
+                        <!-- Docker Implementation -->
+                        <div class="border-l-4 border-blue-600 pl-4">
+                            <h3 class="font-bold text-lg">Docker Implementation</h3>
+                            <p class="text-gray-600">Created Dockerfiles for both FastAPI and PHP applications, ensuring consistent deployment and scalability.</p>
+                            <img src="img/docker-structure.png" alt="Docker Structure" class="mt-2 rounded-lg w-full">
+                        </div>
+
+                        <!-- PHP Web Interface -->
+                        <div class="border-l-4 border-blue-600 pl-4">
+                            <h3 class="font-bold text-lg">PHP Web Interface</h3>
+                            <p class="text-gray-600">Designed and implemented a user-friendly PHP interface for interacting with the prediction API, including data input and result visualization.</p>
+                            <img src="img/php-interface.png" alt="PHP Interface" class="mt-2 rounded-lg w-full">
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Data Description -->
                 <div class="bg-white rounded-lg shadow p-6">
                     <h2 class="text-xl font-bold mb-4">
@@ -73,40 +110,62 @@
                     </ul>
                 </div>
 
-                <!-- Taxi Zones Map -->
-                <div class="bg-white rounded-lg shadow p-6 mt-4">
-                    <h2 class="text-xl font-bold mb-4">
-                        <i class="fas fa-map-marked-alt text-blue-600 mr-2"></i>
-                        NY Taxi Zones Map
-                    </h2>
-                    <img src="img/mapa.png" alt="NY Taxi Zones Map" class="w-full h-auto rounded">
-                </div>
-                
-                <!-- JFK Airport Zone -->
-                <div class="bg-white rounded-lg shadow p-6 mt-4">
-                    <h2 class="text-xl font-bold mb-4">
-                        <i class="fas fa-map-marked-alt text-blue-600 mr-2"></i>
-                        Zone 1 JFK Airport
-                    </h2>
-                    <img src="img/Zonas1.png" alt="NY Taxi Zones Map" class="w-full h-auto rounded">
-                </div>
-                
-                <!-- Results -->
+                <!-- Maps Section -->
                 <div class="bg-white rounded-lg shadow p-6">
                     <h2 class="text-xl font-bold mb-4">
-                        <i class="fas fa-chart-bar text-blue-600 mr-2"></i>
-                        Results and Benefits
+                        <i class="fas fa-map-marked-alt text-blue-600 mr-2"></i>
+                        Coverage Areas
                     </h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-600"><strong>Operational Efficiency:</strong> Optimization in vehicle allocation</p>
-                        <p class="text-gray-600"><strong>Cost Reduction:</strong> Minimization of idle times</p>
-                        <p class="text-gray-600"><strong>Service Improvement:</strong> Enhanced customer satisfaction</p>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div>
+                            <h3 class="font-bold mb-2">NY Taxi Zones Overview</h3>
+                            <img src="img/mapa.png" alt="NY Taxi Zones Map" class="w-full h-auto rounded">
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2">JFK Airport Zone Analysis</h3>
+                            <img src="img/Zonas1.png" alt="JFK Airport Zone" class="w-full h-auto rounded">
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Sidebar -->
             <div class="space-y-6">
+                <!-- Impact Section -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-chart-line text-blue-600 mr-2"></i>
+                        Project Impact
+                    </h2>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-cog text-blue-600 mr-2"></i>
+                            <p class="text-gray-600"><strong>Operational Efficiency:</strong> Optimized vehicle allocation</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-dollar-sign text-blue-600 mr-2"></i>
+                            <p class="text-gray-600"><strong>Cost Reduction:</strong> Minimized idle times</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-smile text-blue-600 mr-2"></i>
+                            <p class="text-gray-600"><strong>Service Improvement:</strong> Enhanced customer satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technologies Used -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-laptop-code text-blue-600 mr-2"></i>
+                        Technologies
+                    </h2>
+                    <div class="space-y-2">
+                        <p class="text-sm text-gray-600"><strong>Framework:</strong> Scikit-learn</p>
+                        <p class="text-sm text-gray-600"><strong>Deployment:</strong> FastAPI, Docker, PHP</p>
+                        <p class="text-sm text-gray-600"><strong>Analysis:</strong> Python, Pandas</p>
+                    </div>
+                </div>
+
                 <!-- Navigation -->
                 <div class="bg-white rounded-lg shadow p-6">
                     <h2 class="text-xl font-bold mb-4">
@@ -120,19 +179,6 @@
                         <a href="pluging.html" class="block text-blue-600 hover:underline">
                             <i class="fas fa-external-link-alt mr-2"></i>View Model Example
                         </a>
-                    </div>
-                </div>
-
-                <!-- Technologies Used -->
-                <div class="bg-white rounded-lg shadow p-6">
-                    <h2 class="text-xl font-bold mb-4">
-                        <i class="fas fa-laptop-code text-blue-600 mr-2"></i>
-                        Technologies
-                    </h2>
-                    <div class="space-y-2">
-                        <p class="text-sm text-gray-600"><strong>Framework:</strong> Scikit-learn</p>
-                        <p class="text-sm text-gray-600"><strong>Deployment:</strong> FastAPI, Docker, Streamlit</p>
-                        <p class="text-sm text-gray-600"><strong>Analysis:</strong> Python, Pandas</p>
                     </div>
                 </div>
             </div>
