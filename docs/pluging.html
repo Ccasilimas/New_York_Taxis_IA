@@ -88,77 +88,7 @@
 
                     <div id="results"></div>
 
-                    <?php
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                        try {
-                            $zone_name = filter_input(INPUT_POST, 'zone_name', FILTER_VALIDATE_INT);
-                            $pickup_weekday = filter_input(INPUT_POST, 'pickup_weekday', FILTER_VALIDATE_INT);
-                            $pickup_hour = filter_input(INPUT_POST, 'pickup_hour', FILTER_VALIDATE_INT);
-
-                            if ($zone_name === false || $pickup_weekday === false || $pickup_hour === false) {
-                                throw new Exception("Invalid input data");
-                            }
-
-                            $url = 'http://100.78.115.22:9000/predict/';
-                            $data = array(
-                                "PULocationID" => $zone_name,
-                                "pickup_weekday" => $pickup_weekday,
-                                "pickup_hour" => $pickup_hour
-                            );
-
-                            $ch = curl_init($url);
-                            curl_setopt_array($ch, [
-                                CURLOPT_RETURNTRANSFER => true,
-                                CURLOPT_POST => true,
-                                CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
-                                CURLOPT_POSTFIELDS => json_encode($data),
-                                CURLOPT_TIMEOUT => 10
-                            ]);
-
-                            $response = curl_exec($ch);
-
-                            if (curl_errno($ch)) {
-                                throw new Exception(curl_error($ch));
-                            }
-
-                            $data = json_decode($response, true);
-                            
-                            if (json_last_error() !== JSON_ERROR_NONE) {
-                                throw new Exception("Invalid JSON response");
-                            }
-
-                            if (isset($data['max_zone_name'])) {
-                                echo '<div class="mt-6 bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
-                                        <div class="flex items-center space-x-3">
-                                            <i class="fas fa-map-marker-alt text-green-600"></i>
-                                            <h3 class="text-lg font-semibold text-green-800">Prediction Result</h3>
-                                        </div>
-                                        <p class="mt-2 text-green-700">The zone with the highest traffic probability is: <strong>' . htmlspecialchars($data['max_zone_name']) . '</strong></p>
-                                      </div>';
-                                
-                                echo '<div class="mt-4 bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
-                                        <div class="flex items-center space-x-3">
-                                            <i class="fas fa-info-circle text-blue-600"></i>
-                                            <h3 class="text-lg font-semibold text-blue-800">Complete API Response</h3>
-                                        </div>
-                                        <pre class="mt-2 text-sm text-blue-700 overflow-x-auto">' . 
-                                            htmlspecialchars(json_encode($data, JSON_PRETTY_PRINT)) . 
-                                        '</pre>
-                                      </div>';
-                            }
-                        } catch (Exception $e) {
-                            echo '<div class="mt-6 bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg flex items-center space-x-3">
-                                    <i class="fas fa-exclamation-triangle text-red-600"></i>
-                                    <p class="text-red-800 font-medium">Error: ' . htmlspecialchars($e->getMessage()) . '</p>
-                                  </div>';
-                        } finally {
-                            if (isset($ch) && is_resource($ch)) {
-                                curl_close($ch);
-                            }
-                        }
-                    }
-                    ?>
-                </div>
+                                   </div>
             </div>
         </div>
     </div>
