@@ -58,7 +58,44 @@
                         The objective of this project is to enhance the efficiency of New York City's taxi fleet while excluding the JFK Airport area. By optimizing fuel usage and identifying high-demand zones based on time of day, day of the week, and proximity to the current location, the project focuses on improving operational efficiency through better vehicle allocation, reducing costs by minimizing idle times, and enhancing customer satisfaction with more reliable service. Our approach integrates a predictive model using historical data, deployed via a FastAPI-based backend and a user-friendly PHP web interface. This integration supports real-time decision-making and operational adjustments to meet fluctuating taxi demand effectively.
                     </p>
                 </div>
+                
+                <!-- Usage Examples -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold mb-4">
+                        <i class="fas fa-lightbulb text-blue-600 mr-2"></i>
+                        Usage Examples
+                    </h2>
+                    <div class="space-y-6">
+                        <!-- High Demand Zones -->
+                        <div class="border-l-4 border-blue-600 pl-4">
+                            <h3 class="font-bold text-lg mb-2">High Demand Zone Identification</h3>
+                            <p class="text-gray-600">
+                                Using <strong>PULocationID</strong>, the FastAPI API predicts areas with higher taxi demand. 
+                                This helps administrators concentrate the fleet in specific zones during high-demand periods.
+                            </p>
+                        </div>
 
+                        <!-- Weekly Planning -->
+                        <div class="border-l-4 border-blue-600 pl-4">
+                            <h3 class="font-bold text-lg mb-2">Weekly Planning</h3>
+                            <p class="text-gray-600">
+                                By analyzing <strong>Day of Week</strong>, the API adjusts predictions based on weekly patterns. 
+                                This facilitates resource planning and allocation, ensuring sufficient taxis are available 
+                                during peak demand days.
+                            </p>
+                        </div>
+
+                        <!-- Time Optimization -->
+                        <div class="border-l-4 border-blue-600 pl-4">
+                            <h3 class="font-bold text-lg mb-2">Time Optimization</h3>
+                            <p class="text-gray-600">
+                                Using <strong>Pickup Time</strong>, the API adjusts taxi availability according to time of day. 
+                                This enables dynamic adjustments in taxi distribution to maximize efficiency during peak hours 
+                                and reduce fleet size during low-demand periods.
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 <!-- Achieved Objectives -->
                 <div class="bg-white rounded-lg shadow p-6">
                     <h2 class="text-xl font-bold mb-4">
